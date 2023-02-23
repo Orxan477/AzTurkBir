@@ -8,5 +8,9 @@ namespace Aztobir.UI.Controllers
         {
             return View();
         }
+        public IActionResult Detail()
+        {
+            return View();
+        }
     }
 }
