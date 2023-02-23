@@ -1,0 +1,14 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	@await Component.InvokeAsync("Head")
+</head>
+
+<body>
+	@await Component.InvokeAsync("Header")
+	@RenderBody()
+	@await Component.InvokeAsync("Footer")
+	@await Component.InvokeAsync("Script")
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\bin\Debug\net6.0\Aztobir.Core.deps.json
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\bin\Debug\net6.0\Aztobir.Core.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\bin\Debug\net6.0\Aztobir.Core.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\Aztobir.Core.csproj.AssemblyReference.cache
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\Aztobir.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\Aztobir.Core.AssemblyInfoInputs.cache
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\Aztobir.Core.AssemblyInfo.cs
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\Aztobir.Core.csproj.CoreCompileInputs.cache
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\Aztobir.Core.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\refint\Aztobir.Core.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\Aztobir.Core.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Core\obj\Debug\net6.0\ref\Aztobir.Core.dll

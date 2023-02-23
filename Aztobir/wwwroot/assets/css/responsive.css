@@ -1,0 +1,70 @@
+/* Large Screen :1920px. */
+@media (min-width: 1400px) and (max-width: 1920px) {
+.single-slider {
+  padding: 255px 0;
+}
+
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+.slider-text h3 {
+  font-size: 63px;
+}
+.menu-area ul li a {
+  padding: 40px 12px;
+}
+.subscribe-text h4 {
+  font-size: 24px;
+}
+
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+ .slider-text h3 {
+  font-size: 37px;
+}
+.slider-text p {
+  font-size: 14px;
+}
+.slider-text a {
+  font-size: 16px;
+  margin-top: 30px;
+  padding: 8px 23px;
+}
+ .courses-img img {
+  width: 100%;
+}
+ .copyright p {
+  text-align: center;
+}
+ .footer-icon {
+  float: none;
+  text-align: center;
+}
+.main-menu-area {
+  margin-bottom: 9px;
+}
+.logo {
+  margin-top: 15px;
+}
+
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+ 
+}
+ 

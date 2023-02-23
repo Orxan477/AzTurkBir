@@ -1,0 +1,15 @@
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\bin\Debug\net6.0\Aztobir.Data.deps.json
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\bin\Debug\net6.0\Aztobir.Data.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\bin\Debug\net6.0\Aztobir.Data.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\bin\Debug\net6.0\Aztobir.Core.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\bin\Debug\net6.0\Aztobir.Core.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.csproj.AssemblyReference.cache
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.AssemblyInfoInputs.cache
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.AssemblyInfo.cs
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.csproj.CoreCompileInputs.cache
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.csproj.CopyComplete
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\refint\Aztobir.Data.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\ref\Aztobir.Data.dll
