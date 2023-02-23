@@ -1,391 +1,470 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Detail";
 }
 
 <div class="breadcrumb-banner-area bg-img-2 bg-opacity-2 ptb-100">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="breadcrumb-text">
-						<div class="breadcrumb-menu">
-							<ul>
-								<li><a asp-controller="Home" asp-action="Index">Home</a></li>
-								<li><a asp-controller="Univeristy" asp-action="Index">Universities</a></li>
-								<li><span>course-details</span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- breadcrumb-banner-area-end -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <div class="breadcrumb-menu">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-controller="Univeristy" asp-action="Index">Universities</a></li>
+                            <li><span>course-details</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-banner-area-end -->
+<!-- course-details-start -->
+<div class="course-details-area pt-60 mb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!--carousel-->
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active " data-bs-interval="10000">
+                            <div class="course-details-img">
+                                <img src="~/assets/img/courses/5.jpg" alt="" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="course-details-img">
+                    <img src="~/assets/img/courses/5.jpg" alt="" class="w-100" />
+                </div>
 
-	<!-- course-details-start -->
-	<div class="course-details-area pt-60 mb-30">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="course-details-img">
-						<img src="~/assets/img/courses/5.jpg" alt="" class="w-100" />
-					</div>
-					<div class="class-schedule details-schedule">
-						<span>Duration: 18</span>
-						<span>Sit Available: 25</span>
-					</div>
-					<div class="course-details-title">
-						<h2>Computer Science</h2>
-					</div>
-					<div>
-						<!-- Nav tabs -->
-						<ul class="course-tab" role="tablist">
-							<li role="presentation">
-								<button type="button" class="active" id="home-tab" data-bs-toggle="tab"
-									data-bs-target="#home" aria-controls="home" role="tab" aria-selected="true">
-									<i class="fa fa-graduation-cap"></i>
-									Overview
-								</button>
-							</li>
-							<li role="presentation">
-								<button type="button" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-									aria-controls="profile" role="tab" role="tab" aria-selected="false">
-									<i class="fa fa-calendar"></i>
-									Week Courses Schedule
-								</button>
-							</li>
-							<li role="presentation">
-								<button type="button" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages"
-									aria-controls="messages" role="tab" role="tab" aria-selected="false">
-									<i class="fa fa-comments"></i>
-									Comments ( no )
-								</button>
-							</li>
-						</ul>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="course-details-img">
+                    <img src="~/assets/img/courses/5.jpg" alt="" class="w-100" />
+                </div>
 
-						<!-- Tab panes -->
-						<div class="tab-content">
-							<div role="tabpanel" class="tab-pane active" id="home" role="tabpanel"
-								aria-labelledby="home-tab" tabindex="0">
-								<div class="single-course-details mb-30">
-									<div class="course-story-details">
-										<p>Lorem Ipsum is simply dummy text of the printin and typesetting industry.
-											Lorem Ipsum has been the industry’s standard dummy text ever since the
-											1500s, when an unknown printer took a galley of type and scrambled it to
-											make a type specimen book. It has survived not only five centuries, but also
-											the leap into electronic typesetting, remaining essentially unchanged</p>
-										<h4>Course Description</h4>
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-											Lorem Ipsum has been the industry’s standard dummy text ever since the
-											1500s, when an unknown printer took a galley of type and scrambled it to
-											make a type specimen book. It has survived not only five centuries, but also
-											the leap into electronic typesetting, remaining essentially unchanged.</p>
-										<h4>Certification</h4>
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-											Lorem Ipsum has been the industry’s standard dummy text ever since the
-											1500s, when an unknown printer took a galley of type and scrambled it to
-											make a type specimen book. It has survived not only five centuries, but also
-											the leap into electronic typesetting, remaining essentially unchanged.</p>
-										<h4>Learning Outcomes</h4>
-										<div class="tab-info">
-											<span class="icon">Over 37 lectures and 55.5 hours of content!</span>
-											<span class="icon">LIVE PROJECT End to End Software Testing Training
-												Included.</span>
-											<span class="icon">Learn Software Testing and Automation basics from a
-												professional trainer from your own desk.</span>
-											<span class="icon">Information packed practical training starting from
-												basics to advanced testing techniques.</span>
-											<span class="icon">Best suitable for beginners to advanced level users and
-												who learn faster when demonstrated.</span>
-											<span class="icon">Course content designed by considering current software
-												testing technology and the job market.</span>
-											<span class="icon">Practical assignments at the end of every session.</span>
-											<span class="icon">Practical learning experience with live project work and
-												examples.</span>
-										</div>
-										<p>Pellentesque lacus vamus lorem arcu semper duiac Cras ornare arcu avamus nda
-											leo. Etiam ind arcu. Morbi justo mauri segtempus pharetra interdum congue
-											semper purus. Lorem ipsum dolor sit amet sed consectetur adipisicing elit
-											sed eiusmod tempor incididunt Lorem ipsum dolor sit amet consectetur
-											adipisicing elit.</p>
-									</div>
-								</div>
-							</div>
-							<div role="tabpanel" class="tab-pane" id="profile" role="tabpanel"
-								aria-labelledby="profile-tab" tabindex="0">
-								<div class="tab-details-area mb-30">
-									<div class="tab-details-info">
-										<h3>WEEKLY COURSES SCHEDULE FOR HIGH SCHOOL</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum officia unde
-											quas dolorum inventore voluptatem fugiat neque! Sunt ad harum dolores
-											voluptatem libero, tempore fugit perspiciatis commodi voluptas, nesciunt
-											quibusdam voluptatibus, dolor minima inventore accusantium sed aliquam, sint
-											nihil cumque consectetur. Optio exercitationem tempora deleniti. Laborum et
-											distinctio voluptas, rerum.</p>
-									</div>
-									<div class="table-content table-responsive">
-										<table>
-											<thead>
-												<tr>
-													<td>
-														<div>Mon &amp; Wed</div>
-													</td>
-													<td>
-														<div>Tues &amp; Thurs</div>
-													</td>
-													<td>
-														<div>Mon, Wed or Thurs</div>
-													</td>
-													<td>
-														<div>Friday</div>
-													</td>
-													<td>
-														<div>Friday</div>
-													</td>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="sub-titles">
-														<div>1 hr 15 min<span>twice per week</span></div>
-													</td>
-													<td class="sub-titles">
-														<div>1 hr 30 min<span>twice per week</span></div>
-													</td>
-													<td class="sub-titles">
-														<div>2 hr 15 min<span>twice per week</span></div>
-													</td>
-													<td class="sub-titles">
-														<div>1 hr 15 min<span>twice per week</span></div>
-													</td>
-													<td class="sub-titles">
-														<div>2 hr 15 min<span>twice per week</span></div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>9:30am - 10:45am</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div></div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div></div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div></div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div></div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div></div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div></div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-													<td>
-														<div>8:30am - 10:45am</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									<p>Dolores, a magni nostrum deleniti voluptatem libero at, maiores nisi rem
-										perspiciatis ipsa aliquam aspernatur. Totam mollitia perferendis veniam porro
-										eligendi rem et laborum, corporis. Asperiores temporibus delectus aliquam
-										aspernatur obcaecati laborum in officiis maxime ex, doloremque optio cumque</p>
-								</div>
-							</div>
-							<div role="tabpanel" class="tab-pane" id="messages" role="tabpanel"
-								aria-labelledby="messages-tab" tabindex="0">
-								<div class="section-title-small mb-30">
-									<h3 class="heading comment-title">
-										3 Comments on "<span>Computer Science</span>"
-									</h3>
-									<div class="comment-list">
-										<div class="comment-img">
-											<a href="#">
-												<img src="~/assets/img/comment/1.jpg" alt="" />
-											</a>
-										</div>
-										<div class="avatar-body">
-											<h5 class="avatar-name">devwplay_hastech</h5>
-											<small>March 25, 2017 at 6:11 am</small>
-										</div>
-										<div class="copy-small">
-											<p>test</p>
-											<a href="#">Reply</a>
-										</div>
-									</div>
-									<div class="comment-lists">
-										<div class="comment-img">
-											<a href="#">
-												<img src="~/assets/img/comment/1.jpg" alt="" />
-											</a>
-										</div>
-										<div class="avatar-body">
-											<h5 class="avatar-name">devwplay_hastech</h5>
-											<small>March 25, 2017 at 6:11 am</small>
-										</div>
-										<div class="copy-small">
-											<p>twst</p>
-											<a href="#">Reply</a>
-										</div>
-									</div>
-									<div class="comment-listss">
-										<div class="comment-img">
-											<a href="#">
-												<img src="~/assets/img/comment/1.jpg" alt="" />
-											</a>
-										</div>
-										<div class="avatar-body">
-											<h5 class="avatar-name">devwplay_hastech</h5>
-											<small>March 25, 2017 at 6:11 am</small>
-										</div>
-										<div class="copy-small">
-											<p>twsttts</p>
-											<a href="#">Reply</a>
-										</div>
-									</div>
-									<div class="contact-form">
-										<h3>Leave a Reply </h3>
-										<p><span>Your email address will not be published.</span> Required fields are
-											marked</p>
-										<form action="#">
-											<label>Comment</label>
-											<textarea id="comment" rows="8" cols="45" name="comment"></textarea>
-											<label>name</label>
-											<input type="text" />
-											<label>Email</label>
-											<input type="text" />
-											<label>Website</label>
-											<input type="text" />
-											<button>post comment</button>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="single-widget-item">
-						<div class="single-title">
-							<h3>Info Classes</h3>
-						</div>
-						<div class="single-widget-container">
-							<ul class="class-infos">
-								<li><i class="fa fa-calendar"></i>Start Date: March15, 2016</li>
-								<li><i class="fa fa-birthday-cake"></i>Years Old: 18-20 Years</li>
-								<li><i class="fa fa-bank"></i>Class Size: 30</li>
-								<li><i class="fa fa-clock-o"></i>Class Duration: 10:00 am - 1:00 pm</li>
-								<li><i class="fa fa-bus"></i>Transportation: Available</li>
-								<li><i class="fa fa-cutlery"></i>Morning Foods: Included</li>
-								<li><i class="fa fa-users"></i>Class Starff: 2 Teachers, 3 Caretakers</li>
-							</ul>
-						</div>
-					</div>
-					<div class="single-widget-item">
-						<div class="single-title">
-							<h3>Teachers</h3>
-						</div>
-						<div class="single-widget-img">
-							<div class="single-img">
-								<a href="#"><img src="~/assets/img/teacher/1.jpg" alt="" /></a>
-							</div>
-							<div class="widget-infos">
-								<h4><a href="course-details.html">GRAVES</a></h4>
-								<p>Professor, Harvard College</p>
-							</div>
-						</div>
-						<div class="single-widget-img">
-							<div class="single-img">
-								<a href="course-details.html"><img src="~/assets/img/teacher/2.jpg" alt="" /></a>
-							</div>
-							<div class="widget-infos">
-								<h4><a href="#">POPPY</a></h4>
-								<p>Professor, Harvard College</p>
-							</div>
-						</div>
-					</div>
-					<div class="single-widget-item mb-30">
-						<div class="single-title">
-							<h3>Register Classes</h3>
-						</div>
-						<div class="contacts-form">
-							<form action="#">
-								<input type="text" placeholder="class name">
-								<input type="text" placeholder="your name">
-								<input type="email" placeholder="your email">
-								<textarea id="message" placeholder="Write here" rows="10" cols="30"
-									name="message"></textarea>
-								<button class="send">send</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- course-details-end -->
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!--carousel-->
+                <div class="class-schedule details-schedule">
+                    <span>Duration: 18</span>
+                    <span>Sit Available: 25</span>
+                </div>
+                <div class="course-details-title">
+                    <h2>Computer Science</h2>
+                </div>
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="course-tab" role="tablist">
+                        <li role="presentation">
+                            <button type="button" class="active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#home" aria-controls="home" role="tab" aria-selected="true">
+                                <i class="fa fa-graduation-cap"></i>
+                                Overview
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button type="button" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                    aria-controls="profile" role="tab" role="tab" aria-selected="false">
+                                <i class="fa fa-calendar"></i>
+                                Week Courses Schedule
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button type="button" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages"
+                                    aria-controls="messages" role="tab" role="tab" aria-selected="false">
+                                <i class="fa fa-comments"></i>
+                                Comments ( no )
+                            </button>
+                        </li>
+                    </ul>
 
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home" role="tabpanel"
+                             aria-labelledby="home-tab" tabindex="0">
+                            <div class="single-course-details mb-30">
+                                <div class="course-story-details">
+                                    <p>
+
+                                        Lorem Ipsum is simply dummy text of the printin and typesetting industry.
+                                        Lorem Ipsum has been the industry’s standard dummy text ever since the
+                                        1500s, when an unknown printer took a galley of type and scrambled it to
+                                        make a type specimen book. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged
+
+                                    </p>
+                                    <h4>Course Description</h4>
+                                    <p>
+
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum has been the industry’s standard dummy text ever since the
+                                        1500s, when an unknown printer took a galley of type and scrambled it to
+                                        make a type specimen book. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged.
+
+                                    </p>
+                                    <h4>Certification</h4>
+                                    <p>
+
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum has been the industry’s standard dummy text ever since the
+                                        1500s, when an unknown printer took a galley of type and scrambled it to
+                                        make a type specimen book. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged.
+
+                                    </p>
+                                    <h4>Learning Outcomes</h4>
+                                    <div class="tab-info">
+                                        <span class="icon">Over 37 lectures and 55.5 hours of content!</span>
+                                        <span class="icon">
+
+                                            LIVE PROJECT End to End Software Testing Training
+                                            Included.
+
+                                        </span>
+                                        <span class="icon">
+
+                                            Learn Software Testing and Automation basics from a
+                                            professional trainer from your own desk.
+
+                                        </span>
+                                        <span class="icon">
+
+                                            Information packed practical training starting from
+                                            basics to advanced testing techniques.
+
+                                        </span>
+                                        <span class="icon">
+
+                                            Best suitable for beginners to advanced level users and
+                                            who learn faster when demonstrated.
+
+                                        </span>
+                                        <span class="icon">
+
+                                            Course content designed by considering current software
+                                            testing technology and the job market.
+
+                                        </span>
+                                        <span class="icon">Practical assignments at the end of every session.</span>
+                                        <span class="icon">
+
+                                            Practical learning experience with live project work and
+                                            examples.
+
+                                        </span>
+                                    </div>
+                                    <p>
+
+                                        Pellentesque lacus vamus lorem arcu semper duiac Cras ornare arcu avamus nda
+                                        leo. Etiam ind arcu. Morbi justo mauri segtempus pharetra interdum congue
+                                        semper purus. Lorem ipsum dolor sit amet sed consectetur adipisicing elit
+                                        sed eiusmod tempor incididunt Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile" role="tabpanel"
+                             aria-labelledby="profile-tab" tabindex="0">
+                            <div class="tab-details-area mb-30">
+                                <div class="tab-details-info">
+                                    <h3>WEEKLY COURSES SCHEDULE FOR HIGH SCHOOL</h3>
+                                    <p>
+
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum officia unde
+                                        quas dolorum inventore voluptatem fugiat neque! Sunt ad harum dolores
+                                        voluptatem libero, tempore fugit perspiciatis commodi voluptas, nesciunt
+                                        quibusdam voluptatibus, dolor minima inventore accusantium sed aliquam, sint
+                                        nihil cumque consectetur. Optio exercitationem tempora deleniti. Laborum et
+                                        distinctio voluptas, rerum.
+
+                                    </p>
+                                </div>
+                                <div class="table-content table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    <div>Mon &amp; Wed</div>
+                                                </td>
+                                                <td>
+                                                    <div>Tues &amp; Thurs</div>
+                                                </td>
+                                                <td>
+                                                    <div>Mon, Wed or Thurs</div>
+                                                </td>
+                                                <td>
+                                                    <div>Friday</div>
+                                                </td>
+                                                <td>
+                                                    <div>Friday</div>
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="sub-titles">
+                                                    <div>1 hr 15 min<span>twice per week</span></div>
+                                                </td>
+                                                <td class="sub-titles">
+                                                    <div>1 hr 30 min<span>twice per week</span></div>
+                                                </td>
+                                                <td class="sub-titles">
+                                                    <div>2 hr 15 min<span>twice per week</span></div>
+                                                </td>
+                                                <td class="sub-titles">
+                                                    <div>1 hr 15 min<span>twice per week</span></div>
+                                                </td>
+                                                <td class="sub-titles">
+                                                    <div>2 hr 15 min<span>twice per week</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>9:30am - 10:45am</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div></div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div></div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div></div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div></div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                                <td>
+                                                    <div>8:30am - 10:45am</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p>
+
+                                    Dolores, a magni nostrum deleniti voluptatem libero at, maiores nisi rem
+                                    perspiciatis ipsa aliquam aspernatur. Totam mollitia perferendis veniam porro
+                                    eligendi rem et laborum, corporis. Asperiores temporibus delectus aliquam
+                                    aspernatur obcaecati laborum in officiis maxime ex, doloremque optio cumque
+
+                                </p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages" role="tabpanel"
+                             aria-labelledby="messages-tab" tabindex="0">
+                            <div class="section-title-small mb-30">
+                                <h3 class="heading comment-title">
+                                    3 Comments on "<span>Computer Science</span>"
+                                </h3>
+                                <div class="comment-list">
+                                    <div class="comment-img">
+                                        <a href="#">
+                                            <img src="~/assets/img/comment/1.jpg" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="avatar-body">
+                                        <h5 class="avatar-name">devwplay_hastech</h5>
+                                        <small>March 25, 2017 at 6:11 am</small>
+                                    </div>
+                                    <div class="copy-small">
+                                        <p>test</p>
+                                        <a href="#">Reply</a>
+                                    </div>
+                                </div>
+                                <div class="comment-lists">
+                                    <div class="comment-img">
+                                        <a href="#">
+                                            <img src="~/assets/img/comment/1.jpg" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="avatar-body">
+                                        <h5 class="avatar-name">devwplay_hastech</h5>
+                                        <small>March 25, 2017 at 6:11 am</small>
+                                    </div>
+                                    <div class="copy-small">
+                                        <p>twst</p>
+                                        <a href="#">Reply</a>
+                                    </div>
+                                </div>
+                                <div class="comment-listss">
+                                    <div class="comment-img">
+                                        <a href="#">
+                                            <img src="~/assets/img/comment/1.jpg" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="avatar-body">
+                                        <h5 class="avatar-name">devwplay_hastech</h5>
+                                        <small>March 25, 2017 at 6:11 am</small>
+                                    </div>
+                                    <div class="copy-small">
+                                        <p>twsttts</p>
+                                        <a href="#">Reply</a>
+                                    </div>
+                                </div>
+                                <div class="contact-form">
+                                    <h3>Leave a Reply </h3>
+                                    <p>
+
+                                        <span>Your email address will not be published.</span> Required fields are
+                                        marked
+
+                                    </p>
+                                    <form action="#">
+                                        <label>Comment</label>
+                                        <textarea id="comment" rows="8" cols="45" name="comment"></textarea>
+                                        <label>name</label>
+                                        <input type="text" />
+                                        <label>Email</label>
+                                        <input type="text" />
+                                        <label>Website</label>
+                                        <input type="text" />
+                                        <button>post comment</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-widget-item">
+                    <div class="single-title">
+                        <h3>Info Classes</h3>
+                    </div>
+                    <div class="single-widget-container">
+                        <ul class="class-infos">
+                            <li><i class="fa fa-calendar"></i>Start Date: March15, 2016</li>
+                            <li><i class="fa fa-birthday-cake"></i>Years Old: 18-20 Years</li>
+                            <li><i class="fa fa-bank"></i>Class Size: 30</li>
+                            <li><i class="fa fa-clock-o"></i>Class Duration: 10:00 am - 1:00 pm</li>
+                            <li><i class="fa fa-bus"></i>Transportation: Available</li>
+                            <li><i class="fa fa-cutlery"></i>Morning Foods: Included</li>
+                            <li><i class="fa fa-users"></i>Class Starff: 2 Teachers, 3 Caretakers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="single-widget-item">
+                    <div class="single-title">
+                        <h3>Teachers</h3>
+                    </div>
+                    <div class="single-widget-img">
+                        <div class="single-img">
+                            <a href="#"><img src="~/assets/img/teacher/1.jpg" alt="" /></a>
+                        </div>
+                        <div class="widget-infos">
+                            <h4><a href="course-details.html">GRAVES</a></h4>
+                            <p>Professor, Harvard College</p>
+                        </div>
+                    </div>
+                    <div class="single-widget-img">
+                        <div class="single-img">
+                            <a href="course-details.html"><img src="~/assets/img/teacher/2.jpg" alt="" /></a>
+                        </div>
+                        <div class="widget-infos">
+                            <h4><a href="#">POPPY</a></h4>
+                            <p>Professor, Harvard College</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-widget-item mb-30">
+                    <div class="single-title">
+                        <h3>Register Classes</h3>
+                    </div>
+                    <div class="contacts-form">
+                        <form action="#">
+                            <input type="text" placeholder="class name">
+                            <input type="text" placeholder="your name">
+                            <input type="email" placeholder="your email">
+                            <textarea id="message" placeholder="Write here" rows="10" cols="30"
+                                      name="message"></textarea>
+                            <button class="send">send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- course-details-end -->
