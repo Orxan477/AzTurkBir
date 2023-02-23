@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- breadcrumb-banner-area -->
+	<div class="breadcrumb-banner-area bg-img-2 bg-opacity-2 ptb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-text">
+						<div class="breadcrumb-menu">
+							<ul>
+								<li><a asp-controller="Home" asp-action="Index">home</a></li>
+								<li><span>contact</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- breadcrumb-banner-area-end -->
+
+	<!-- service-area-start -->
+	<div class="service-area pt-80 pb-50">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>Get In Touch</h3>
+				<p>Uaerat litora, taciti quaerat dolor ligula laoreet omnis aut scelerisque ex fuga platea eveniet
+					pulvinar praesent <br> molestiae maiores, quidem cumque!</p>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-3">
+					<div class="single-service text-center mb-30">
+						<div class="service-img">
+							<img src="~/assets/img/service/1.png" alt="" />
+						</div>
+						<div class="service-text">
+							<h5>Number phone</h5>
+							<div class="excerpt">
+								<span>Phone 1: 0(1234) 567 89012</span>
+								<span>Phone 2: 0(987) 567 890</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="single-service text-center mb-30">
+						<div class="service-img">
+							<img src="~/assets/img/service/2.png" alt="" />
+						</div>
+						<div class="service-text">
+							<h5>AddressStreet</h5>
+							<div class="excerpt">
+								<span>Address : No 40 Baria Sreet 133/2 </span>
+								<span>NewYork City, NY, United States.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="single-service text-center mb-30">
+						<div class="service-img">
+							<img src="~/assets/img/service/3.png" alt="" />
+						</div>
+						<div class="service-text">
+							<h5>Telephone No.</h5>
+							<div class="excerpt">
+								<span>Fax 1: 0(1234) 567 89012</span>
+								<span>Fax 2: 0(987) 567 890</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="single-service text-center mb-30">
+						<div class="service-img">
+							<img src="~/assets/img/service/4.png" alt="" />
+						</div>
+						<div class="service-text">
+							<h5>Number phone</h5>
+							<div class="excerpt">
+								<span>info@bootexperts.com</span>
+								<span>Nameyour@bootexperts.com</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- service-area-end -->
+
+	<!-- contact-area-start -->
+	<div class="contact-area ptb-100">
+		<div class="container">
+			<form id="contact-form" action="https://htmldemo.net/univ/univ/mail.php" method="POST">
+				<div class="row">
+					<div class="col-md-6">
+						<input type="text" placeholder="name" name="name" id="name" />
+					</div>
+					<div class="col-md-6">
+						<input type="email" placeholder="email" name="email" id="email" />
+					</div>
+					<div class="col-md-6">
+						<input type="text" placeholder="tel" name="phone" id="phone" />
+					</div>
+					<div class="col-md-6">
+						<input type="text" placeholder="subject" name="subject" id="subject" />
+					</div>
+					<div class="col-12">
+						<textarea id="message" placeholder="message" rows="10" cols="30" name="message"></textarea>
+					</div>
+				</div>
+				<div class="message-button text-center">
+					<input class="message" type="submit" value="send">
+				</div>
+			</form>
+			<p class="form-messege"></p>
+		</div>
+	</div>
+	<!-- map-area -->
+	<div class="map-area">
+		<div id="map"></div>
+	</div>
+	<!-- map-end -->
+	<!-- contact-area-end -->
+

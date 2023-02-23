@@ -17,7 +17,7 @@
 		<nav class="navbar navbar-expand-lg bg-light">
 
 			<div class="container">
-				<a class="navbar-brand custom-brand-class" href="index.html"><img src="~/assets/img/logo/1.png" alt="" /></a>
+				<a class="navbar-brand custom-brand-class" asp-controller="Home" asp-action="Index"><img src="~/assets/img/logo/1.png" alt="" /></a>
 				<button class="navbar-toggler custom-nav-button" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -26,15 +26,15 @@
 				<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link" href="index.html"><strong>Ana Sayfa</strong></a>
+							<a class="nav-link" asp-controller="Home" asp-action="Index"><strong>Ana Sayfa</strong></a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="./about.html" role="button"
+							<a class="nav-link dropdown-toggle" asp-controller="About" asp-action="Index" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false">
 								<strong>Hakkımızda</strong>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="./about.html"><strong>Genel Bilgi</strong></a></li>
+								<li><a class="dropdown-item" asp-controller="About" asp-action="Index"><strong>Genel Bilgi</strong></a></li>
 								<li><a class="dropdown-item" href="#mediaarea"><strong>Amacımız</strong></a></li>
 
 								<li><a class="dropdown-item" href="#"><strong>Misyonumuz</strong></a></li>
@@ -45,13 +45,10 @@
 							<a class="nav-link" href="teacher-details.html"><strong>EKİBİMİZ</strong></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="course.html"><strong>UNİVERSİTELER</strong></a>
+							<a class="nav-link" asp-controller="University" asp-action="Index"><strong>UNİVERSİTELER</strong></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="news.html"><strong>Haberler</strong></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"><strong>FAQ</strong></a>
+							<a class="nav-link" asp-controller="News" asp-action="Index"><strong>Haberler</strong></a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -75,7 +72,7 @@
 							</ul>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="index.html"><strong>Contact</strong></a>
+							<a class="nav-link" asp-controller="Contact" asp-action="Index"><strong>Contact</strong></a>
 						</li>
 					</ul>
 				</div>
