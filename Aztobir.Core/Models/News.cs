@@ -4,5 +4,6 @@
     {
         public string Name { get; set; }
         public string Content { get; set; }
+        public IList<CommentNews> CommentNews { get; set; }
     }
 }
