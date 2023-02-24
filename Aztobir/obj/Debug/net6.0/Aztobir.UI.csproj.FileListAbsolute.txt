@@ -242,3 +242,9 @@ E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\runtimes\un
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\Aztobir.Core.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\Aztobir.Data.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\Aztobir.Core.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\Aztobir.Data.pdb

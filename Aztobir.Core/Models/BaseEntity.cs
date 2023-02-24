@@ -1,8 +1,8 @@
-﻿namespace Aztobir.UI.Models
+﻿namespace Aztobir.Core.Models
 {
     public class BaseEntity
     {
-        public int İd { get; set; }
+        public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public bool İsDeleted { get; set; }

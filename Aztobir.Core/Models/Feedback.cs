@@ -1,4 +1,4 @@
-﻿namespace Aztobir.UI.Models
+﻿namespace Aztobir.Core.Models
 {
     public class Feedback:BaseEntity
     {

@@ -1,6 +1,6 @@
-﻿namespace Aztobir.UI.Models
+﻿namespace Aztobir.Core.Models
 {
-    public class FAQ:BaseEntity
+    public class News: BaseEntity
     {
         public string Name { get; set; }
         public string Content { get; set; }

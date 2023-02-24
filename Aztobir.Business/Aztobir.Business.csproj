@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aztobir.Data\Aztobir.Data.csproj" />
+  </ItemGroup>
+
 </Project>

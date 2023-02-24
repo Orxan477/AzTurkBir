@@ -10,3 +10,8 @@ E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Debug\net6.0\Az
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Debug\net6.0\refint\Aztobir.Business.dll
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Debug\net6.0\Aztobir.Business.pdb
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Debug\net6.0\ref\Aztobir.Business.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\bin\Debug\net6.0\Aztobir.Core.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\bin\Debug\net6.0\Aztobir.Data.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\bin\Debug\net6.0\Aztobir.Data.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\bin\Debug\net6.0\Aztobir.Core.pdb
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Debug\net6.0\Aztobir.Business.csproj.CopyComplete

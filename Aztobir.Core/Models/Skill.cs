@@ -1,6 +1,6 @@
-﻿namespace Aztobir.UI.Models
+﻿namespace Aztobir.Core.Models
 {
-    public class AboutOption
+    public class Skill
     {
         public int Id { get; set; }
         public string Name { get; set; }
