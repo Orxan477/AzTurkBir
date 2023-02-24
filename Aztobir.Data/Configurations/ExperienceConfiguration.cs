@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Aztobir.UI.Configurations
+namespace Aztobir.Data.Configurations
 {
     public class ExperienceConfiguration : IEntityTypeConfiguration<Experience>
     {
