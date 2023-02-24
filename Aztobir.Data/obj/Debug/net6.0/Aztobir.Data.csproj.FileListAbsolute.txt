@@ -13,3 +13,5 @@ E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobi
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\refint\Aztobir.Data.dll
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.pdb
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\ref\Aztobir.Data.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\bin\Debug\net6.0\Aztobir.Data.runtimeconfig.json
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Data\obj\Debug\net6.0\Aztobir.Data.genruntimeconfig.cache
