@@ -17,8 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration["ConnectionStrings:Default"]);
 });
 
-builder.Services.AddScoped<IGetRepository<About>, GetRepository<About>>();
-builder.Services.AddScoped<IGetRepository<Goal>, GetRepository<Goal>>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IGoalService, GoalService>();
 builder.Services.AddAutoMapper(typeof(AboutVM));
