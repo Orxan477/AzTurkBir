@@ -1,4 +1,5 @@
 ﻿using Aztobir.Business.Interfaces.About;
+using Aztobir.Business.Interfaces.Home.University;
 
 namespace Aztobir.Business.Interfaces
 {
@@ -6,5 +7,6 @@ namespace Aztobir.Business.Interfaces
     {
         public IAboutService AboutService{ get;}
         public IGoalService GoalService{ get;}
+        public IUniversityService UniversityService{ get;}
     }
 }

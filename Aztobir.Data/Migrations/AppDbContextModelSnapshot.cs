@@ -364,6 +364,10 @@ namespace Aztobir.Data.Migrations
                     b.Property<int>("FacultyCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
