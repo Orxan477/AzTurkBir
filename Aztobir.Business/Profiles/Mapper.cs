@@ -12,6 +12,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<Goal, GoalVM>();
             CreateMap<About, AboutVM>();
             CreateMap<University, UniversityVM>().ForMember(x=>x.City,m=>m.MapFrom(o=>o.City.Name));
+            CreateMap<Faculty, FacultiesVM>();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Aztobir.Core.İnterfaces
         public IAboutGetRepository AboutGetRepository { get; }
         public IGoalGetRepository GoalGetRepository { get;  }
         public IUniversityGetRepository UniversityGetRepository { get;  }
+        public IGetFacultiesRepository GetFacultiesRepository { get;  }
         Task SaveChangesAsync();
     }
 }
