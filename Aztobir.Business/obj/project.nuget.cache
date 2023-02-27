@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5vnfWnWTKF9WCY7V6vfgtLUvgQ/JX0zO/8WWuXgYfEmxKNydkuHjvjMFRZ8WCrO3qLYshVPk8p2nOh9ubo+keA==",
+  "dgSpecHash": "2kjVwbPcRDwozUzrmTnA7RTOZL6fNDGrqXCcfOnAtIyNpgDNwT3NiwWo8KMXh9JyjxXrOBUMKRaMfd+GsFS1ng==",
   "success": true,
   "projectFilePath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Orxan477\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Orxan477\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Orxan477\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\Orxan477\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",

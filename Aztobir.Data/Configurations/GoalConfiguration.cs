@@ -9,7 +9,7 @@ namespace Aztobir.Data.Configurations
         public void Configure(EntityTypeBuilder<Goal> builder)
         {
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.Content).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.Content).HasMaxLength(200).IsRequired();
         }
     }
 }

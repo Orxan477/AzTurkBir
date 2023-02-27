@@ -1,4 +1,10 @@
+﻿using Aztobir.Business.Implementations.About;
+using Aztobir.Business.Interfaces.About;
+using Aztobir.Business.ViewModels.About;
+using Aztobir.Core.İnterfaces;
+using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
+using Aztobir.Data.Implementations;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +16,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:Default"]);
 });
+
+builder.Services.AddScoped<IGetRepository<About>, GetRepository<About>>();
+builder.Services.AddScoped<IGetRepository<Goal>, GetRepository<Goal>>();
+builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IGoalService, GoalService>();
+builder.Services.AddAutoMapper(typeof(AboutVM));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,5 +44,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
 app.Run();

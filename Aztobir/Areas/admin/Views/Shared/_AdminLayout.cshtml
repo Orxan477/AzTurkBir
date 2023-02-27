@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @await Component.InvokeAsync("AdminHead")
+</head>
+<body>
+  <div class="container-scroller">
+    
+    <!-- partial:partials/_navbar.html -->
+    @await Component.InvokeAsync("AdminNavbar")
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      @await Component.InvokeAsync("Sidebar")
+      <!-- partial -->
+      <div class="main-panel">
+        @RenderBody()
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        @await Component.InvokeAsync("AdminFooter")
+        <!-- partial -->
+      </div>  
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+ @await Component.InvokeAsync("AdminScript")
+</body>
+
+</html>
+
