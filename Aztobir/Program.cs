@@ -1,8 +1,7 @@
-﻿using Aztobir.Business.Implementations.About;
-using Aztobir.Business.Interfaces.About;
+﻿using Aztobir.Business.Implementations;
+using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Core.İnterfaces;
-using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IAboutService, AboutService>();
-builder.Services.AddScoped<IGoalService, GoalService>();
+builder.Services.AddScoped<IAztobirService, AztobirService>();
 builder.Services.AddAutoMapper(typeof(AboutVM));
 
 

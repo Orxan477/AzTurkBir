@@ -2,8 +2,6 @@
 using Aztobir.Business.Interfaces.About;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Core.İnterfaces;
-using Aztobir.Core.İnterfaces.About;
-using Aztobir.Core.Models;
 
 namespace Aztobir.Business.Implementations.About
 {

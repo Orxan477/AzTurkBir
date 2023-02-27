@@ -1,4 +1,4 @@
-﻿using Aztobir.Business.Interfaces.About;
+﻿using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.About;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,19 +6,17 @@ namespace Aztobir.UI.Controllers
 {
     public class AboutController : Controller
     {
-        private IAboutService _aboutService;
-        private IGoalService _goalService;
-        public AboutController(IAboutService aboutService, IGoalService goalService)
+        private IAztobirService _aztobirService;
+        public AboutController(IAztobirService aztobirService)
         {
-            _aboutService = aboutService;
-            _goalService = goalService;
+            _aztobirService = aztobirService;
         }
         public async Task<IActionResult> Index()
         {
             AboutViewVM about = new AboutViewVM()
             {
-                About = await _aboutService.Get(),
-                Goal = await _goalService.GetAll(),
+                About = await _aztobirService.AboutService.Get(),
+                Goal = await _aztobirService.GoalService.GetAll(),
             };
             return View(about);
         }
