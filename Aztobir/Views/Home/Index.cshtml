@@ -2,47 +2,30 @@
 @model HomeVM
 @{
     ViewData["Title"] = "Index";
+    int num = 0;
 }
 
 <!-- slider-area-start -->
 <div class="slider-area">
-    <div class="slider-active owl-carousel">
-        <div class="single-slider ptb-150 bg-opacity" style="background-image:url(/assets/img/slider/1.jpg)">
-            <div class="container">
-                <div class="slider-text">
-                    <h3>Herkes İçin Eğitim</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu
-                        condimentum massa.<br> Pellentesque mollis eros vel mattis tempor. Aliquam eu efficitur enim
-                    </p>
-                    <a href="#">Daha Fazla</a>
+    <div class="slider-active owl-carousel ">
+        @foreach (var news in Model.News)
+        {
+            @if (num <= 3)
+            {
+                <div class="single-slider ptb-150 bg-opacity" style="background-image:url(/assets/img/blog/@news.Image); background-size:cover; background-repeat:no-repeat;">
+                    <div class="container">
+                        <div class="slider-text">
+                            <h3>@news.Name</h3>
+                            <p>
+                                @(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"...")
+                            </p>
+                            <a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">Daha Fazla</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="single-slider ptb-150 bg-opacity" style="background-image:url(/assets/img/slider/2.jpg)">
-            <div class="container">
-                <div class="slider-text text-center">
-                    <h3>Education For Everyone</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu
-                        condimentum massa.<br> Pellentesque mollis eros vel mattis tempor. Aliquam eu efficitur enim
-                    </p>
-                    <a href="#">Daha Fazla</a>
-                </div>
-            </div>
-        </div>
-        <div class="single-slider ptb-150 bg-opacity" style="background-image:url(/assets/img/slider/1.jpg)">
-            <div class="container">
-                <div class="slider-text">
-                    <h3>Education For Everyone</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu
-                        condimentum massa.<br> Pellentesque mollis eros vel mattis tempor. Aliquam eu efficitur enim
-                    </p>
-                    <a href="#">Daha Fazla</a>
-                </div>
-            </div>
-        </div>
+                num++;
+            }
+        }
     </div>
 </div>
 <!-- slider-area-end -->
@@ -54,34 +37,34 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
         <div class="row">
-           @foreach (var uni in @Model.Universities)
-           {
+            @foreach (var uni in @Model.Universities)
+            {
                 <div class="col-md-6 col-lg-4">
-                <div class="single-courses mb-30">
-                    <div class="courses-img">
-                        <a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">
-                            <img src="~/assets/img/courses/@uni.Image" alt="" />
+                    <div class="single-courses mb-30">
+                        <div class="courses-img">
+                            <a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">
+                                <img src="~/assets/img/courses/@uni.Image" alt="" />
 
-                        </a>
-                    </div>
-                    <div class="courses-text">
-                        <div class="class-des">
-                            <h3><a href="course-details.html">@uni.Name</a></h3>
-                            <div class="class-schedule">
-                                <ul>
-                                    <li>Şehir: <span>@uni.City</span></li>
-                                    <li>Dil-Hazırlık eğitimi: @uni.DilHazirlikEgitimi</li>
-                                    <li>Öğrenci sayı: @uni.StudentCount</li>
-                                    <li>Fakülte sayı: @uni.FacultyCount</li>
-                                    <li>Statü: @(@uni.Status==true ? "var" : "yoxdur")</li>
-                                </ul>
+                            </a>
+                        </div>
+                        <div class="courses-text">
+                            <div class="class-des">
+                                <h3><a href="course-details.html">@uni.Name</a></h3>
+                                <div class="class-schedule">
+                                    <ul>
+                                        <li>Şehir: <span>@uni.City</span></li>
+                                        <li>Dil-Hazırlık eğitimi: @uni.DilHazirlikEgitimi</li>
+                                        <li>Öğrenci sayı: @uni.StudentCount</li>
+                                        <li>Fakülte sayı: @uni.FacultyCount</li>
+                                        <li>Statü: @(@uni.Status==true ? "var" : "yoxdur")</li>
+                                    </ul>
+                                </div>
+                                <span class="arrow"><a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">Daha Fazla</a></span>
                             </div>
-                            <span class="arrow"><a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">Daha Fazla</a></span>
                         </div>
                     </div>
                 </div>
-            </div>
-           }
+            }
         </div>
     </div>
 </div>
@@ -97,46 +80,23 @@
     </div>
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
          style="background-color: rgb(236, 236, 236);">
-        <div class="carousel-inner">
+        @foreach (var feedback in Model.Feedbacks)
+        {
+            <div class="carousel-inner">
             <div class="carousel-item active " data-bs-interval="10000">
                 <div class="col-lg-12 d-flex">
                     <div class="col-lg-6">
                         <h5 class="text-center">İştirakçı fikirləri</h5>
                         <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/courses/1.jpg" class="d-block" alt="...">
-                        <p class="text-center" style="margin:0 110px;">Some representative placeholder content for the first slide.</p>
+                        <p class="text-center" style="margin:0 110px;">@feedback.Comment</p>
                     </div>
                     <div class="col-lg-6">
-                        <img class="w-50" style="margin-top:10px;margin-left:70px;" src="~/assets/img/logo/1.png" alt="">
+                        <img class="w-50" style="margin-top:10px;margin-left:70px; margin-bottom:10px;" src="~/assets/img/courses/@feedback.Image" alt="">
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <div class="col-lg-12 d-flex">
-                    <div class="col-lg-6">
-                        <h5 class="text-center">İştirakçı fikirləri</h5>
-                        <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/courses/2.jpg" class="d-block" alt="...">
-                        <p class="text-center">Some representative placeholder content for the first slide.</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img class="w-50" style="margin-top:10px;margin-left:70px;" src="~/assets/img/logo/1.png" alt="">
-                    </div>
-                </div>
-
-            </div>
-            <div class="carousel-item">
-               <div class="col-lg-12 d-flex">
-                    <div class="col-lg-6">
-                        <h5 class="text-center">İştirakçı fikirləri</h5>
-                        <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/courses/3.jpg" class="d-block" alt="...">
-                        <p class="text-center">Some representative placeholder content for the first slide.</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img class="w-50" style="margin-top:10px;margin-left:70px;" src="~/assets/img/logo/1.png" alt="">
-                    </div>
-                </div>
-
             </div>
         </div>
+        }
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                 data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -246,19 +206,19 @@
                 @foreach (var faq in Model.FAQs)
                 {
                     <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@faq.Id" aria-expanded="true" aria-controls="collapse-@faq.Id">
-                            @faq.Name
-                        </button>
-                    </h2>
-                    <div id="collapse-@faq.Id" class="accordion-collapse collapse" aria-labelledby="heading-@faq.Id" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            @faq.Content
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@faq.Id" aria-expanded="true" aria-controls="collapse-@faq.Id">
+                                @faq.Name
+                            </button>
+                        </h2>
+                        <div id="collapse-@faq.Id" class="accordion-collapse collapse" aria-labelledby="heading-@faq.Id" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                @faq.Content
+                            </div>
                         </div>
                     </div>
-                </div>
                 }
-                
+
             </div>
         </div>
     </div>

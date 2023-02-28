@@ -20,9 +20,14 @@ namespace Aztobir.UI.Controllers
             };
             return View(news);
         }
-        public IActionResult Detail()
+        public async Task<IActionResult> Detail(int id)
         {
-            return View();
+            NewsViewVM news = new NewsViewVM()
+            {
+                News= await _aztobirService.NewsService.GetAll(),
+                NewsT = await _aztobirService.NewsService.Get(id),
+            };
+            return View(news);
         }
     }
 }

@@ -5,5 +5,6 @@ namespace Aztobir.Business.Interfaces.Home.News
     public interface INewsService
     {
         Task<List<NewsVM>> GetAll();
+        Task<NewsVM> Get(int id);
     }
 }

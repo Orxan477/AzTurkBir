@@ -1,5 +1,6 @@
 ﻿using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.İnterfaces.Home.FAQ;
+using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
 
@@ -13,6 +14,7 @@ namespace Aztobir.Core.İnterfaces
         public IGetFacultiesRepository GetFacultiesRepository { get;  }
         public IFAQGetRepository FAQGetRepository { get;  }
         public IGetNewsRepository GetNewsRepository { get;  }
+        public IFeedbackGetRepository FeedbackGetRepository { get;  }
         Task SaveChangesAsync();
     }
 }

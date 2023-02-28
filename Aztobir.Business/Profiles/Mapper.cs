@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Business.ViewModels.Home.FAQ;
+using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.News;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.Models;
@@ -17,6 +18,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<Faculty, FacultiesVM>();
             CreateMap<FAQ, FAQVM>();
             CreateMap<News, NewsVM>();
+            CreateMap<Feedback, FeedbackVM>().ForMember(x=>x.Image,m=>m.MapFrom(o=>o.University.Image));
         }
     }
 }

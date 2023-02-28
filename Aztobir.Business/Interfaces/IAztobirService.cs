@@ -1,5 +1,6 @@
 ﻿using Aztobir.Business.Interfaces.About;
 using Aztobir.Business.Interfaces.Home.FAQ;
+using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
 using Aztobir.Business.Interfaces.Home.University;
 
@@ -12,5 +13,6 @@ namespace Aztobir.Business.Interfaces
         public IUniversityService UniversityService{ get;}
         public IFAQService FAQService{ get;}
         public INewsService NewsService{ get;}
+        public IFeedbackService FeedbackService{ get;}
     }
 }

@@ -15,6 +15,14 @@ namespace Aztobir.Business.Implementations.Home.News
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+
+        public async Task<NewsVM> Get(int id)
+        {
+            var dbNews = await _unitOfWork.GetNewsRepository.Get(x => !x.IsDeleted && x.Id == id);
+            NewsVM news = _mapper.Map<NewsVM>(dbNews);
+            return news;
+        }
+
         public async Task<List<NewsVM>> GetAll()
         {
             var dbNews =await _unitOfWork.GetNewsRepository.GetAll(x => !x.IsDeleted);
