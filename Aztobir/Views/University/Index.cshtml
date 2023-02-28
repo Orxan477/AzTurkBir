@@ -1,64 +1,34 @@
-﻿@using Aztobir.Business.ViewModels.Home.University
-@model UniversityViewVM
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 
 <div class="breadcrumb-banner-area bg-img-2 bg-opacity-2 ptb-100">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="breadcrumb-text">
-						<div class="breadcrumb-menu">
-							<ul>
-								<li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
-								<li><span>Universiteler</span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- breadcrumb-banner-area-end -->
-
-	<!-- courses-area-start -->
-	<div class="courses-area pt-80 pb-70">
-		<div class="container">
-			<div class="section-title text-center">
-				<h3>Universiteler </h3>
-				<p>Our preschool program has six dedicated classes</p>
-			</div>
-			<div class="row">
-				@foreach (var uni in Model.Universities)
-				{
-					<div class="col-md-6 col-lg-4">
-                <div class="single-courses mb-30">
-                    <div class="courses-img">
-                        <a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">
-                            <img src="~/assets/img/courses/@uni.Image" alt="" />
-                        </a>
-                    </div>
-                    <div class="courses-text">
-                        <div class="class-des">
-                            <h3><a href="course-details.html">@uni.Name</a></h3>
-                            <div class="class-schedule">
-                                <ul>
-                                    <li>Şehir: <span>@uni.City</span></li>
-                                    <li>Dil-Hazırlık eğitimi: @uni.DilHazirlikEgitimi</li>
-                                    <li>Öğrenci sayı: @uni.StudentCount</li>
-                                    <li>Fakülte sayı: @uni.FacultyCount</li>
-                                    <li>Statü: @(@uni.Status==true ? "var" : "yoxdur")</li>
-                                </ul>
-                            </div>
-                            <span class="arrow"><a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">Daha Fazla</a></span>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <div class="breadcrumb-menu">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                            <li><span>Universiteler</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-				}
-			</div>
-		</div>
-	</div>
-	<!-- courses-area-start -->
-
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-banner-area-end -->
+<!-- courses-area-start -->
+<div class="courses-area pt-80 pb-70">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Universiteler </h3>
+            <p>Our preschool program has six dedicated classes</p>
+        </div>
+        <div class="row">
+            @await Component.InvokeAsync("University")
+        </div>
+    </div>
+</div>
+<!-- courses-area-start -->

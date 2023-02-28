@@ -37,34 +37,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
         <div class="row">
-            @foreach (var uni in @Model.Universities)
-            {
-                <div class="col-md-6 col-lg-4">
-                    <div class="single-courses mb-30">
-                        <div class="courses-img">
-                            <a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">
-                                <img src="~/assets/img/courses/@uni.Image" alt="" />
-
-                            </a>
-                        </div>
-                        <div class="courses-text">
-                            <div class="class-des">
-                                <h3><a href="course-details.html">@uni.Name</a></h3>
-                                <div class="class-schedule">
-                                    <ul>
-                                        <li>Şehir: <span>@uni.City</span></li>
-                                        <li>Dil-Hazırlık eğitimi: @uni.DilHazirlikEgitimi</li>
-                                        <li>Öğrenci sayı: @uni.StudentCount</li>
-                                        <li>Fakülte sayı: @uni.FacultyCount</li>
-                                        <li>Statü: @(@uni.Status==true ? "var" : "yoxdur")</li>
-                                    </ul>
-                                </div>
-                                <span class="arrow"><a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">Daha Fazla</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
+            @await Component.InvokeAsync("University")
+        </div>
         </div>
     </div>
 </div>
