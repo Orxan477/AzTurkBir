@@ -10,6 +10,7 @@ namespace Aztobir.Data.Configurations
         {
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Content).HasMaxLength(2000).IsRequired();
+            builder.Property(x => x.Image).IsRequired();
         }
     }
 }

@@ -1,99 +1,56 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 
 <!-- breadcrumb-banner-area -->
-	<div class="breadcrumb-banner-area bg-img-2 bg-opacity-2 ptb-100">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="breadcrumb-text">
-						<div class="breadcrumb-menu">
-							<ul>
-								<li><a asp-controller="Home" asp-action="Index" >Ana Sayfa</a></li>
-								<li><span>Ekibimiz</span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- breadcrumb-banner-area-end -->
-
-	<!-- teacher-area-start -->
-	<div class="teachers-area pb-70 pt-4">
-		<div class="container">
-			<div class="section-title text-center">
-				<h3>Ekibimiz</h3>
-				<p>Stay up to date with all our latest news and launches. Only the best quality makes it onto our blog!
-				</p>
-			</div>
-			<div class="space-24">
-				<div class="teachers-active owl-carousel">
-					<div class="single-teachers mb-30">
-						<div class="teachers-img">
-							<a href="teacher-details.html"><img src="~/assets/img/teacher/1.jpg" alt="" /></a>
-						</div>
-						<div class="teachers-text text-center">
-							<h4>ashim kumar</h4>
-							<span>Professor, Dhaka University</span>
-							<div class="social-link">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="single-teachers mb-30">
-						<div class="teachers-img">
-							<a href="teacher-details.html"><img src="~/assets/img/teacher/2.jpg" alt="" /></a>
-						</div>
-						<div class="teachers-text text-center">
-							<h4>Archona Bala</h4>
-							<span>Professor, Dhaka University</span>
-							<div class="social-link">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="single-teachers mb-30">
-						<div class="teachers-img">
-							<a href="teacher-details.html"><img src="~/assets/img/teacher/3.jpg" alt="" /></a>
-						</div>
-						<div class="teachers-text text-center">
-							<h4>kohinur tabassum</h4>
-							<span>Professor, Harvard College</span>
-							<div class="social-link">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="single-teachers mb-30">
-						<div class="teachers-img">
-							<a href="teacher-details.html"><img src="~/assets/img/teacher/1.jpg" alt="" /></a>
-						</div>
-						<div class="teachers-text text-center">
-							<h4>ashim kumar</h4>
-							<span>Professor, Dhaka University</span>
-							<div class="social-link">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- teacher-area-end -->
+<div class="breadcrumb-banner-area bg-img-2 bg-opacity-2 ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <div class="breadcrumb-menu">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                            <li><span>Ekibimiz</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-banner-area-end -->
+<!-- teacher-area-start -->
+<div class="teachers-area pb-70 pt-4">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Ekibimiz</h3>
+            <p>
+                Stay up to date with all our latest news and launches. Only the best quality makes it onto our blog!
+            </p>
+        </div>
+        <div class="space-24">
+            <div class="teachers-active owl-carousel">
+               @* @foreach (var item in model)
+                {*@
+                    <div class="single-teachers mb-30">
+                    <div class="teachers-img">
+                        <a href="teacher-details.html"><img src="~/assets/img/teacher/1.jpg" alt="" /></a>
+                    </div>
+                    <div class="teachers-text text-center">
+                        <h4>ashim kumar</h4>
+                        <span>Professor, Dhaka University</span>
+                        <div class="social-link">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                @*}*@
+            </div>
+        </div>
+    </div>
+</div>
+<!-- teacher-area-end -->

@@ -14,6 +14,7 @@ namespace Aztobir.Data.Configurations
             builder.Property(x => x.DilHazirlikEgitimi).HasMaxLength(10).IsRequired();
             builder.Property(x => x.FacultyCount).IsRequired();
             builder.Property(x => x.StudentCount).IsRequired();
+            builder.Property(x => x.Image).IsRequired();
         }
     }
 }

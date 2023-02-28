@@ -1,8 +1,12 @@
 ﻿using Aztobir.Core.İnterfaces;
 using Aztobir.Core.İnterfaces.About;
+using Aztobir.Core.İnterfaces.Home.FAQ;
+using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations.About;
+using Aztobir.Data.Implementations.Home.FAQ;
+using Aztobir.Data.Implementations.Home.News;
 using Aztobir.Data.Implementations.Home.University;
 
 namespace Aztobir.Data.Implementations
@@ -14,6 +18,8 @@ namespace Aztobir.Data.Implementations
         private GoalGetRepository _goalGetrepository;
         private UniversityGetRepository _universityGetRepository;
         private GetFacultiesRepository _getFacultiesRepository;
+        private FAQGetRepository _faqGetRepository;
+        private GetNewsRepository _getNewsRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -24,6 +30,10 @@ namespace Aztobir.Data.Implementations
         public IUniversityGetRepository UniversityGetRepository => _universityGetRepository ?? new UniversityGetRepository(_context);
 
         public IGetFacultiesRepository GetFacultiesRepository => _getFacultiesRepository ?? new GetFacultiesRepository(_context);
+
+        public IFAQGetRepository FAQGetRepository => _faqGetRepository ?? new FAQGetRepository(_context);
+
+        public IGetNewsRepository GetNewsRepository => _getNewsRepository ?? new GetNewsRepository(_context);
 
         public async Task SaveChangesAsync()
         {

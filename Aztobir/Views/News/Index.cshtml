@@ -1,4 +1,5 @@
-﻿
+﻿@using Aztobir.Business.ViewModels.Home.News
+@model NewsViewVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -29,168 +30,25 @@
 				<p>Latest news & event of our Student</p>
 			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-6">
+				@foreach (var news in Model.News) //count, obsi viewModele salmaq
+				{
+					<div class="col-md-4 col-sm-6">
 					<div class="single-blog mb-30">
 						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/1.jpg" alt="" /></a>
+							<a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id"><img src="~/assets/img/blog/@news.Image" alt="" /></a>
 						</div>
 						<div class="blog-text">
-							<h4><a href="news-details.html">variation of the ordinary lor</a></h4>
+							<h4><a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">@news.Name</a></h4>
 							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>Corporate</span>
+								<span><i class="fa fa-calendar"></i>@news.CreatedAt.Day/@news.CreatedAt.Month/@news.CreatedAt.Year</span>
 								<span><i class="fa fa-comment"></i>0</span>
 							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
+							<p>@(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"...")</p>
+							<a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">Read more</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/2.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="#">Publishing and graphic desi</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>library</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/3.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="news-details.html">variation of the ordinary lor</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>library</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/4.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="news-details.html">Testing is a great thing</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>Convocation</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/5.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="news-details.html">In publishing and graphic desi</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>Uncategorized</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/2.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="news-details.html">Publishing and graphic desi</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>library</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/6.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="news-details.html">Testing is a great thing</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>Convocation</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/4.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="news-details.html">In publishing and graphic desi</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>class room</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 hidden-sm">
-					<div class="single-blog mb-30">
-						<div class="bolg-img">
-							<a href="news-details.html"><img src="~/assets/img/blog/3.jpg" alt="" /></a>
-						</div>
-						<div class="blog-text">
-							<h4><a href="news-details.html">variation of the ordinary lor</a></h4>
-							<div class="blog-date">
-								<span><i class="fa fa-calendar"></i>January 7, 2017</span>
-								<span><i class="fa fa-folder-o"></i>library</span>
-								<span><i class="fa fa-comment"></i>0</span>
-							</div>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classi…</p>
-							<a href="news-details.html">Read more</a>
-						</div>
-					</div>
-				</div>
+				}
 			</div>
 		</div>
 	</div>

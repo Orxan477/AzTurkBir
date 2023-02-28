@@ -17,6 +17,7 @@ namespace Aztobir.Controllers
             HomeVM home = new HomeVM()
             {
                 Universities = await _aztobirService.UniversityService.GetAll(),
+                FAQs = await _aztobirService.FAQService.GetAll(),
             };
             return View(home);
         }
