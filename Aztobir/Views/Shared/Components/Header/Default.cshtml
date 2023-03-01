@@ -64,6 +64,24 @@
 						<li class="nav-item">
 							<a class="nav-link" asp-controller="Contact" asp-action="Index"><strong>Iletişim</strong></a>
 						</li>
+						
+						@if (User.Identity.IsAuthenticated)
+						{
+							<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<strong>Admin</strong>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item navbar-drop" asp-area="admin" asp-controller="Dashboard" asp-action="Index"><strong>Admin Panel</strong></a>
+								</li>
+								<li>
+									<a class="dropdown-item navbar-drop" asp-controller="Account" asp-action="LogOut" asp-route-ReturnUrl="@Context.Request.Path.Value"><strong>LogOut</strong></a>
+								</li>
+							</ul>
+						</li>
+						}
 					</ul>
 				</div>
 			</div>

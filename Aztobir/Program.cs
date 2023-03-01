@@ -1,10 +1,12 @@
 ﻿using Aztobir.Business.Implementations;
 using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.About;
+using Aztobir.Business.ViewModels.Account;
 using Aztobir.Core.İnterfaces;
 using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations;
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +28,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
                     .AddEntityFrameworkStores<AppDbContext>()
                     .AddDefaultTokenProviders();
 
+builder.Services.AddValidatorsFromAssemblyContaining<LoginVM>();
+
 
 var app = builder.Build();
 
@@ -42,6 +46,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

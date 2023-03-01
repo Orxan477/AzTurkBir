@@ -271,3 +271,5 @@ E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\obj\Debug\net6.0\scopedcss\A
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\AutoMapper.dll
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\FluentValidation.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
