@@ -2,8 +2,10 @@
 using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Core.İnterfaces;
+using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAztobirService, AztobirService>();
 builder.Services.AddAutoMapper(typeof(AboutVM));
+
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+                    .AddEntityFrameworkStores<AppDbContext>()
+                    .AddDefaultTokenProviders();
 
 
 var app = builder.Build();
