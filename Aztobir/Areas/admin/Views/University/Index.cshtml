@@ -1,0 +1,55 @@
+﻿@using Aztobir.Business.ViewModels.Home.University
+@model UniversityViewVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+    int num = 1;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Universiteler</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th >№</th>
+                            <th>Fotoğraf</th>
+                            <th>Ad</th>
+                            <th>Şehir</th>
+                            <th>Dil hazırlık</th>
+                            <th>Telebe sayi</th>
+                            <th>Fakulte sayi</th>
+                            <th>Mezmun</th>
+                            <th>Statü</th>
+                            <th>Ayarlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var uni in Model.Universities)
+                        {
+                            <tr>
+                                <td class="ph">@num</td>
+                                <td class="ph"><img class="php" src="~/assets/img/courses/@uni.Image" alt="" /></td>
+                                <td class="ph">@uni.Name</td>
+                                <td class="ph">@uni.City</td>
+                                <td class="ph">@(uni.EducationLanguage.Length<=5?uni.EducationLanguage:uni.EducationLanguage.Substring(0,5)+"...")</td>
+                                <td class="ph">@uni.StudentCount</td>
+                                <td class="ph">@uni.FacultyCount</td>
+                                <td class="ph">@(uni.Content.Length<=5?uni.Content:uni.Content.Substring(0,5)+"...")</td>
+                                <td class="ph">@(@uni.Status==true ? "var" : "yoxdur")</td>
+                                <td class="ph">
+                                    <a class="btn btn-primary p-2">
+                                        <i class="mdi mdi-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

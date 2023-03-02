@@ -9,7 +9,7 @@ namespace Aztobir.Business.ViewModels.Home.FAQ
     public class FAQVM
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Content { get; set; }
+        public string Question { get; set; }
+        public string Response { get; set; }
     }
 }

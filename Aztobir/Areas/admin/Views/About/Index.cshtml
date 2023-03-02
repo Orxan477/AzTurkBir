@@ -1,0 +1,40 @@
+﻿@using Aztobir.Business.ViewModels.About
+@model AboutViewVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+    int num = 1;
+}
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımızda</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Fotoğraf</th>
+                            <th>Hakkımızda</th>
+                            <th>Ayarlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ph">@num</td>
+                            <td class="ph"><img class="php" src="~/assets/img/media/@Model.About.Image" alt="" /></td>
+                            <td class="ph">@(Model.About.Content.Length<=20?Model.About.Content:Model.About.Content.Substring(0,20)+"...")</td>
+                            <td class="ph">
+                                <a class="btn btn-primary p-2">
+                                    <i class="mdi mdi-eye"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@using Aztobir.Business.ViewModels.Home
+@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+    int num=1;
+}
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">FAQ</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th >№</th>
+                            <th>Soru</th>
+                            <th>Cevap</th>
+                            <th>Ayarlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var faq in Model.FAQs)
+                        {
+                            <tr>
+                                <td class="ph">@num</td>
+                                <td class="ph">@(faq.Question.Length<=5?faq.Question:faq.Question.Substring(0,8)+"...")</td>
+                                <td class="ph">@(faq.Response.Length<=5?faq.Response:faq.Response.Substring(0,8)+"...")</td>
+                                <td class="ph">
+                                    <a class="btn btn-primary p-2">
+                                        <i class="mdi mdi-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
