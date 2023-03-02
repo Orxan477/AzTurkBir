@@ -23,12 +23,20 @@ namespace Aztobir.UI.Controllers
         }
         public async Task<IActionResult> Detail(int id)
         {
-            UniversityViewVM universityView = new UniversityViewVM()
+            try
             {
-                University = await _aztobirService.UniversityService.Get(id),
-                Faculties = await _aztobirService.UniversityService.GetFaculties(id),
-            };
-            return View(universityView);
+                UniversityViewVM universityView = new UniversityViewVM()
+                {
+                    University = await _aztobirService.UniversityService.Get(id),
+                    Faculties = await _aztobirService.UniversityService.GetFaculties(id),
+                };
+                return View(universityView);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
         }
     }
 }

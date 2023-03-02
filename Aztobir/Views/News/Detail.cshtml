@@ -13,9 +13,9 @@
                 <div class="breadcrumb-text">
                     <div class="breadcrumb-menu">
                         <ul>
-                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                            <li><a asp-controller="News" asp-action="Index">News</a></li>
-                            <li><span>@Model.NewsT.Name</span></li>
+                            <li><a asp-controller="home" asp-action="index">Home</a></li>
+                            <li><a asp-controller="news" asp-action="index">News</a></li>
+                            <li><span>@Model.NewsDetail.Name</span></li>
                         </ul>
                     </div>
                 </div>
@@ -31,33 +31,19 @@
             <div class="col-lg-9">
                 <div class="blog-story mb-30">
                     <div class="blog-img-2">
-                        <img src="~/assets/img/blog/@Model.NewsT.Image" alt="" />
+                        <img src="~/assets/img/blog/@Model.NewsDetail.Image" alt="" />
                     </div>
                     <div class="blog-heading">
-                        <h1>@Model.NewsT.Name</h1>
+                        <h1>@Model.NewsDetail.Name</h1>
                     </div>
                     <div class="story-hbtitle">
                         <p>
-                            @Model.NewsT.Content
+                            @Model.NewsDetail.Content
                         </p>
                     </div>
                     <div class="meta-info">
-                        <span class="meta-item"><i class="fa fa-clock-o"></i>@Model.NewsT.CreatedAt.Day/@Model.NewsT.CreatedAt.Month/@Model.NewsT.CreatedAt.Year</span>
-                    </div>
-                    <div class="contact-form">
-                        <h3>Leave a Reply </h3>
-                        <p>Your email address will not be published. Required fields are marked</p>
-                        <form action="#">
-                            <label>Comment</label>
-                            <textarea id="comment" rows="8" cols="45" name="comment"></textarea>
-                            <label>name</label>
-                            <input type="text" />
-                            <label>Email</label>
-                            <input type="text" />
-                            <label>Website</label>
-                            <input type="text" />
-                            <button>post comment</button>
-                        </form>
+                        @*<span class="meta-item"><i class="fa fa-clock-o"></i>@Model.NewsDetail.CreatedAt?</span>*@
+                        @*<span class="meta-item"><i class="fa fa-clock-o"></i>@Model.NewsDetail.CreatedAt.Day?/@Model.NewsDetail.CreatedAt.Month?/@Model.NewsDetail.CreatedAt.Year?</span>*@
                     </div>
                 </div>
             </div>
@@ -71,10 +57,10 @@
                             {
                                 <li class="widget-bottom">
                                     <div class="widget-img">
-                                        <a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id"><img src="~/assets/img/blog/@news.Image" alt="" /></a>
+                                        <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id"><img src="~/assets/img/blog/@news.Image" alt="" /></a>
                                     </div>
                                     <div class="widget-title">
-                                        <h4><a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">@news.Name</a></h4>
+                                        <h4><a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">@news.Name</a></h4>
                                         <span>11 Comment </span>
                                         <span class="commentsm"><i class="fa fa-calendar"></i>@news.CreatedAt.Day/@news.CreatedAt.Month/@news.CreatedAt.Year</span>
                                     </div>

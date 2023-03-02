@@ -45,9 +45,6 @@ namespace Aztobir.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -139,24 +136,6 @@ namespace Aztobir.Data.Migrations
                     b.ToTable("Cities");
                 });
 
-            modelBuilder.Entity("Aztobir.Core.Models.Experience", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Experiences");
-                });
-
             modelBuilder.Entity("Aztobir.Core.Models.Faculty", b =>
                 {
                     b.Property<int>("Id")
@@ -204,9 +183,6 @@ namespace Aztobir.Data.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -232,9 +208,6 @@ namespace Aztobir.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Status")
                         .HasColumnType("bit");
 
                     b.Property<int>("UniversityId")
@@ -278,9 +251,6 @@ namespace Aztobir.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -316,9 +286,6 @@ namespace Aztobir.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -367,9 +334,6 @@ namespace Aztobir.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("ExperienceId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Facebook")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -400,9 +364,6 @@ namespace Aztobir.Data.Migrations
                     b.Property<int>("PositionId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Twitter")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -412,8 +373,6 @@ namespace Aztobir.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ExperienceId");
 
                     b.HasIndex("PositionId");
 
@@ -632,19 +591,11 @@ namespace Aztobir.Data.Migrations
 
             modelBuilder.Entity("Aztobir.Core.Models.Team", b =>
                 {
-                    b.HasOne("Aztobir.Core.Models.Experience", "Experience")
-                        .WithMany("Teams")
-                        .HasForeignKey("ExperienceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Aztobir.Core.Models.Position", "Position")
                         .WithMany("Teams")
                         .HasForeignKey("PositionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Experience");
 
                     b.Navigation("Position");
                 });
@@ -714,11 +665,6 @@ namespace Aztobir.Data.Migrations
             modelBuilder.Entity("Aztobir.Core.Models.City", b =>
                 {
                     b.Navigation("Universities");
-                });
-
-            modelBuilder.Entity("Aztobir.Core.Models.Experience", b =>
-                {
-                    b.Navigation("Teams");
                 });
 
             modelBuilder.Entity("Aztobir.Core.Models.Position", b =>

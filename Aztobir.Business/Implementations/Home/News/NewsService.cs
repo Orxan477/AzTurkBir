@@ -19,6 +19,7 @@ namespace Aztobir.Business.Implementations.Home.News
         public async Task<NewsVM> Get(int id)
         {
             var dbNews = await _unitOfWork.GetNewsRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if(dbNews is null) throw new Exception("Not Found");
             NewsVM news = _mapper.Map<NewsVM>(dbNews);
             return news;
         }

@@ -4,6 +4,7 @@ using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
 using Aztobir.Business.Interfaces.Home.University;
+using Aztobir.Business.Interfaces.Team;
 
 namespace Aztobir.Business.Interfaces
 {
@@ -16,5 +17,6 @@ namespace Aztobir.Business.Interfaces
         public INewsService NewsService{ get;}
         public IFeedbackService FeedbackService{ get;}
         public IAccountService AccountService{ get;}
+        public ITeamService TeamService{ get;}
     }
 }

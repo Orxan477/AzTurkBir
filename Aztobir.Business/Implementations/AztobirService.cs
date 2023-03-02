@@ -5,6 +5,7 @@ using Aztobir.Business.Implementations.Home.FAQ;
 using Aztobir.Business.Implementations.Home.Feedback;
 using Aztobir.Business.Implementations.Home.News;
 using Aztobir.Business.Implementations.Home.University;
+using Aztobir.Business.Implementations.Team;
 using Aztobir.Business.Interfaces;
 using Aztobir.Business.Interfaces.About;
 using Aztobir.Business.Interfaces.Account;
@@ -12,6 +13,7 @@ using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
 using Aztobir.Business.Interfaces.Home.University;
+using Aztobir.Business.Interfaces.Team;
 using Aztobir.Core.İnterfaces;
 using Aztobir.Core.Models;
 using Microsoft.AspNetCore.Identity;
@@ -30,6 +32,7 @@ namespace Aztobir.Business.Implementations
         private NewsService _newsService;
         private FeedbackService _feedbackService;
         private AccountService _accountService;
+        private TeamService _teamService;
         public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager)
         {
             _unitOfWork = unitOfWork;
@@ -49,5 +52,7 @@ namespace Aztobir.Business.Implementations
         public IFeedbackService FeedbackService => _feedbackService ?? new FeedbackService(_unitOfWork, _mapper);
 
         public IAccountService AccountService => _accountService ?? new AccountService(_signInManager);
+
+        public ITeamService TeamService => _teamService ?? new TeamService(_unitOfWork, _mapper);
     }
 }

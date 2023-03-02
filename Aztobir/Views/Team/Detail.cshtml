@@ -1,4 +1,5 @@
-﻿
+﻿@using Aztobir.Business.ViewModels.Team
+@model TeamViewVM
 @{
     ViewData["Title"] = "Detail";
 }
@@ -11,9 +12,9 @@
 					<div class="breadcrumb-text">
 						<div class="breadcrumb-menu">
 							<ul>
-								<li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
-								<li><a asp-controller="Team" asp-action="Index">Ekibmiz</a></li>
-								<li><span>kohinur tabassum</span></li>
+								<li><a asp-controller="home" asp-action="index">Ana Sayfa</a></li>
+								<li><a asp-controller="team" asp-action="index">Ekibmiz</a></li>
+								<li><span>@Model.Team.FullName</span></li>
 							</ul>
 						</div>
 					</div>
@@ -30,21 +31,19 @@
 				<div class="col-lg-4">
 					<div class="single-teacher-details mb-30">
 						<div class="teacher-details-img">
-							<img src="~/assets/img/teacher/2.jpg" alt="" />
+							<img src="~/assets/img/teacher/@Model.Team.Image" alt="" />
 							<div class="details-link">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="@Model.Team.Facebook"><i class="fa fa-facebook"></i></a>
+								<a href="@Model.Team.Twitter"><i class="fa fa-twitter"></i></a>
+								<a href="@Model.Team.Linkedin"><i class="fa fa-linkedin"></i></a>
 							</div>
 						</div>
 						<div class="teacher-details-info">
-							<h4>kohinur tabassum</h4>
-							<p>Professor, Dhaka University</p>
+							<h4>@Model.Team.FullName</h4>
+							<p>@Model.Team.Position</p>
 							<div class="our-teacher-content">
-								<span><i class="fa fa-phone"></i>Phone: +1 (000) 234 5670 | +0800 12345</span>
-								<span><i class="fa fa-envelope"></i>Email: admin@power-boosts.com</span>
-								<span><i class="fa fa-skype"></i>Skype: hastech</span>
+								<span><i class="fa fa-phone"></i>Phone: @Model.Team.Phone</span>
+								<span><i class="fa fa-envelope"></i>Email: @Model.Team.Email</span>
 							</div>
 						</div>
 					</div>
@@ -54,22 +53,9 @@
 						<div class="single-title">
 							<h3>About</h3>
 						</div>
-						<div class="teacher-about-content">
-							<span><i class="fa fa-graduation-cap"></i>Degree: Spanish Literature Master</span>
-							<span><i class="fa fa-star"></i>Experience: 5 Years in Preschool Education</span>
-							<span><i class="fa fa-heart"></i>Hobbies: Music, Dancing and Family</span>
-							<span><i class="fa fa-edit"></i>My Courses: Paint Kiddie, Mini Kiddie</span>
-						</div>
-						<p>He works in partnership with clients, advising them how to use information technology in
-							order to meet their usiness objectives or overcome problems. Lorem ipsum dolor sit amet,
-							consectetur adipiscing elites. Nulla convallis egestas rhoncusa. Donec lorem facilisis
-							fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam Proin vestibulum leo eget
-							erat congue interdum.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elites. Nulla convallis egestas rhoncusa.
-							Donec lorem facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam Proin
-							vestibulum leo eget erat congue interdum. Nulla convallis egestas rhoncusa. Donec lorem
-							facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam Proin vestibulum
-							leo eget erat congue interdum.</p>
+						<p>
+							@Model.Team.Content
+						</p>
 					</div>
 				</div>
 			</div>

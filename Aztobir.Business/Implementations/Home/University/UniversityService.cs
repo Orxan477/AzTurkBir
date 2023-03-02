@@ -19,6 +19,7 @@ namespace Aztobir.Business.Implementations.Home.University
         public async Task<UniversityVM> Get(int id)
         {
             var dbUniversity = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id, "City");
+            if (dbUniversity is null) throw new Exception("Not Found");
             UniversityVM university = _mapper.Map<UniversityVM>(dbUniversity);
             return university;
         }
@@ -33,7 +34,7 @@ namespace Aztobir.Business.Implementations.Home.University
         public async Task<List<FacultiesVM>> GetFaculties(int id)
         {
             var dbFaculties = await _unitOfWork.GetFacultiesRepository.GetAll(x => x.UniversityId== id);
-            
+            if (dbFaculties is null) throw new Exception("Not Found");
             List<FacultiesVM> faculties = _mapper.Map<List<FacultiesVM>>(dbFaculties);
             return faculties;
         }

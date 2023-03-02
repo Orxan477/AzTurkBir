@@ -27,6 +27,11 @@ builder.Services.AddAutoMapper(typeof(AboutVM));
 builder.Services.AddIdentity<AppUser, IdentityRole>()
                     .AddEntityFrameworkStores<AppDbContext>()
                     .AddDefaultTokenProviders();
+builder.Services.Configure<IdentityOptions>(opt =>
+{
+    opt.Lockout.MaxFailedAccessAttempts = 8;
+    opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
+});
 
 builder.Services.AddValidatorsFromAssemblyContaining<LoginVM>();
 

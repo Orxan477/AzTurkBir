@@ -3,6 +3,7 @@ using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
+using Aztobir.Core.İnterfaces.Team;
 
 namespace Aztobir.Core.İnterfaces
 {
@@ -15,6 +16,7 @@ namespace Aztobir.Core.İnterfaces
         public IFAQGetRepository FAQGetRepository { get;  }
         public IGetNewsRepository GetNewsRepository { get;  }
         public IFeedbackGetRepository FeedbackGetRepository { get;  }
+        public ITeamGetRepository TeamGetRepository { get;  }
         Task SaveChangesAsync();
     }
 }

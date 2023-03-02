@@ -11,8 +11,6 @@
         public string Image { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public int ExperienceId { get; set; }
-        public Experience Experience { get; set; } 
         public string  Content { get; set; }
     }
 }

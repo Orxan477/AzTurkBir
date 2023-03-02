@@ -35,7 +35,8 @@
                             </div>
                             <h4>Welcome back!</h4>
                             <h6 class="font-weight-light">Happy to see you again!</h6>
-                            <form class="pt-3" method="post">
+                            <div asp-validation-summary="ModelOnly" class=text-danger></div>
+                            <form method="post">
                                 <div class="form-group">
                                     <label asp-for="Email"></label>
                                     <div class="input-group">

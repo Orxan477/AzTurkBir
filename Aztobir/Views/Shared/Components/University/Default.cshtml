@@ -6,7 +6,7 @@
     <div class="col-md-6 col-lg-4">
         <div class="single-courses mb-30">
             <div class="courses-img">
-                <a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">
+                <a asp-controller="university" asp-action="detail" asp-route-id="@uni.Id">
                     <img src="~/assets/img/courses/@uni.Image" alt="" />
                 </a>
             </div>
@@ -22,7 +22,7 @@
                             <li>Statü: @(@uni.Status==true ? "var" : "yoxdur")</li>
                         </ul>
                     </div>
-                    <span class="arrow"><a asp-controller="University" asp-action="Detail" asp-route-id="@uni.Id">Daha Fazla</a></span>
+                    <span class="arrow"><a asp-controller="university" asp-action="detail" asp-route-id="@uni.Id">Daha Fazla</a></span>
                 </div>
             </div>
         </div>

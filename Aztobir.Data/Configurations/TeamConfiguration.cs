@@ -10,7 +10,6 @@ namespace Aztobir.Data.Configurations
         {
             builder.Property(x => x.FullName).HasMaxLength(50).IsRequired();   
             builder.Property(x => x.PositionId).IsRequired();
-            builder.Property(x => x.ExperienceId).IsRequired();
             builder.Property(x => x.Image).IsRequired();
             builder.Property(x => x.Phone).HasMaxLength(15).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(100).IsRequired();

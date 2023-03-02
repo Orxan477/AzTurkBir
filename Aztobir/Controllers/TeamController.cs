@@ -1,16 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Aztobir.Business.Interfaces;
+using Aztobir.Business.ViewModels.Team;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Aztobir.UI.Controllers
 {
     public class TeamController : Controller
     {
-        public IActionResult Index()
+        private IAztobirService _aztobirService;
+        public TeamController(IAztobirService aztobirService)
         {
-            return View();
+            _aztobirService = aztobirService;
         }
-        public IActionResult Detail()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            TeamViewVM team = new TeamViewVM()
+            {
+                Teams = await _aztobirService.TeamService.GetAll(),
+            };
+            return View(team);
+        }
+        public async Task<IActionResult> Detail(int id)
+        {
+            try
+            {
+                TeamViewVM team = new TeamViewVM()
+                {
+                    Team = await _aztobirService.TeamService.Get(id),
+                };
+                return View(team);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
         }
     }
 }

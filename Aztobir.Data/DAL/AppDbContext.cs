@@ -10,7 +10,6 @@ namespace Aztobir.Data.DAL
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options) { }
 
         public DbSet<About> Abouts { get; set; }
-        public DbSet<Experience> Experiences { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<FAQ> FAQs{ get; set; }
@@ -25,7 +24,6 @@ namespace Aztobir.Data.DAL
         {
             modelBuilder.ApplyConfiguration(new AboutConfiguration());
             modelBuilder.ApplyConfiguration(new CityConfiguration());
-            modelBuilder.ApplyConfiguration(new ExperienceConfiguration());
             modelBuilder.ApplyConfiguration(new FacultyConfiguration());
             modelBuilder.ApplyConfiguration(new FAQConfiguration());
             modelBuilder.ApplyConfiguration(new FeedbackConfiguration());

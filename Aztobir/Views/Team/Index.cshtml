@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Aztobir.Business.ViewModels.Team
+@model TeamViewVM
+@{
     ViewData["Title"] = "Index";
 }
 
@@ -10,7 +12,7 @@
                 <div class="breadcrumb-text">
                     <div class="breadcrumb-menu">
                         <ul>
-                            <li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                            <li><a asp-controller="home" asp-action="index">Ana Sayfa</a></li>
                             <li><span>Ekibimiz</span></li>
                         </ul>
                     </div>
@@ -31,24 +33,23 @@
         </div>
         <div class="space-24">
             <div class="teachers-active owl-carousel">
-               @* @foreach (var item in model)
-                {*@
+                @foreach (var item in Model.Teams)
+                {
                     <div class="single-teachers mb-30">
                     <div class="teachers-img">
-                        <a href="teacher-details.html"><img src="~/assets/img/teacher/1.jpg" alt="" /></a>
+                        <a asp-controller="team" asp-action="detail" asp-route-id="@item.Id"><img src="~/assets/img/teacher/@item.Image" alt="" /></a>
                     </div>
                     <div class="teachers-text text-center">
-                        <h4>ashim kumar</h4>
-                        <span>Professor, Dhaka University</span>
+                        <h4>@item.FullName</h4>
+                        <span>@item.Position</span>
                         <div class="social-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="@item.Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="@item.Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="@item.Linkedin"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
-                @*}*@
+                }
             </div>
         </div>
     </div>

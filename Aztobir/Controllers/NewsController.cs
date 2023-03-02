@@ -22,12 +22,19 @@ namespace Aztobir.UI.Controllers
         }
         public async Task<IActionResult> Detail(int id)
         {
-            NewsViewVM news = new NewsViewVM()
+            try
             {
-                News= await _aztobirService.NewsService.GetAll(),
-                NewsT = await _aztobirService.NewsService.Get(id),
-            };
-            return View(news);
+                NewsViewVM news = new NewsViewVM()
+                {
+                    News = await _aztobirService.NewsService.GetAll(),
+                    NewsDetail = await _aztobirService.NewsService.Get(id),
+                };
+                return View(news);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
         }
     }
 }

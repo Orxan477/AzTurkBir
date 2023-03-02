@@ -21,7 +21,7 @@ namespace Aztobir.Business.Implementations.Account
             var result = await _signInManager.PasswordSignInAsync(user, password, false, true);
             if (result.IsLockedOut)
             {
-                return "Your Account is locked. Few minutes leter is unlocked";
+                return "Your Account is locked. 3 minutes leter is unlocked";
             }
 
             if (!result.Succeeded)

@@ -4,12 +4,14 @@ using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
+using Aztobir.Core.İnterfaces.Team;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations.About;
 using Aztobir.Data.Implementations.Home.FAQ;
 using Aztobir.Data.Implementations.Home.Feedback;
 using Aztobir.Data.Implementations.Home.News;
 using Aztobir.Data.Implementations.Home.University;
+using Aztobir.Data.Implementations.Team;
 
 namespace Aztobir.Data.Implementations
 {
@@ -23,6 +25,7 @@ namespace Aztobir.Data.Implementations
         private FAQGetRepository _faqGetRepository;
         private GetNewsRepository _getNewsRepository;
         private FeedbackGetRepository _feedbackGetRepository;
+        private TeamGetRepository _teamGetRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -39,6 +42,8 @@ namespace Aztobir.Data.Implementations
         public IGetNewsRepository GetNewsRepository => _getNewsRepository ?? new GetNewsRepository(_context);
 
         public IFeedbackGetRepository FeedbackGetRepository => _feedbackGetRepository ?? new FeedbackGetRepository(_context);
+
+        public ITeamGetRepository TeamGetRepository => _teamGetRepository ?? new TeamGetRepository(_context);
 
         public async Task SaveChangesAsync()
         {

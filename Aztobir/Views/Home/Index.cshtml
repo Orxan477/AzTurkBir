@@ -19,7 +19,7 @@
                             <p>
                                 @(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"...")
                             </p>
-                            <a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">Daha Fazla</a>
+                            <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">Daha Fazla</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,6 @@
         <div class="row">
             @await Component.InvokeAsync("University")
         </div>
-        </div>
     </div>
 </div>
 <!-- courses-area-start -->
@@ -57,19 +56,19 @@
         @foreach (var feedback in Model.Feedbacks)
         {
             <div class="carousel-inner">
-            <div class="carousel-item active " data-bs-interval="10000">
-                <div class="col-lg-12 d-flex">
-                    <div class="col-lg-6">
-                        <h5 class="text-center">İştirakçı fikirləri</h5>
-                        <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/courses/1.jpg" class="d-block" alt="...">
-                        <p class="text-center" style="margin:0 110px;">@feedback.Comment</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img class="w-50" style="margin-top:10px;margin-left:70px; margin-bottom:10px;" src="~/assets/img/courses/@feedback.Image" alt="">
+                <div class="carousel-item active " data-bs-interval="10000">
+                    <div class="col-lg-12 d-flex">
+                        <div class="col-lg-6">
+                            <h5 class="text-center">İştirakçı fikirləri</h5>
+                            <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/courses/1.jpg" class="d-block" alt="...">
+                            <p class="text-center" style="margin:0 110px;">@feedback.Comment</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <img class="w-50" style="margin-top:10px;margin-left:70px; margin-bottom:10px;" src="~/assets/img/courses/@feedback.Image" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         }
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                 data-bs-slide="prev">
@@ -89,83 +88,6 @@
 
 <!-- testimonial-area-end -->
 <!-- our-blog-area-start -->
-<!-- <div class="our-blog-area pb-70 w-75 mx-auto">
-    <div class="container">
-        <div class="section-title text-center">
-            <h3>For student</h3>
-            <p>Latest news & event of our Student</p>
-        </div>
-        <div class="space-24">
-            <div class="blog-active owl-carousel">
-                <div class="single-blog mb-30">
-                    <div class="bolg-img">
-                        <a href="news-details.html"><img src="~/assets/img//blog/1.jpg" alt="" /></a>
-                    </div>
-                    <div class="blog-text">
-                        <h4><a href="news-details.html">variation of the ordinary lor</a></h4>
-                        <div class="blog-date">
-                            <span><i class="fa fa-calendar"></i>January 7, 2017</span>
-                            <span><i class="fa fa-folder-o"></i>Corporate</span>
-                            <span><i class="fa fa-comment"></i>0</span>
-                        </div>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classi…</p>
-                        <a href="news-details.html">Read more</a>
-                    </div>
-                </div>
-                <div class="single-blog mb-30">
-                    <div class="bolg-img">
-                        <a href="news-details.html"><img src="~/assets/img//blog/2.jpg" alt="" /></a>
-                    </div>
-                    <div class="blog-text">
-                        <h4><a href="news-details.html">Publishing and graphic desi</a></h4>
-                        <div class="blog-date">
-                            <span><i class="fa fa-calendar"></i>January 7, 2017</span>
-                            <span><i class="fa fa-folder-o"></i>library</span>
-                            <span><i class="fa fa-comment"></i>0</span>
-                        </div>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classi…</p>
-                        <a href="news-details.html">Read more</a>
-                    </div>
-                </div>
-                <div class="single-blog mb-30">
-                    <div class="bolg-img">
-                        <a href="news-details.html"><img src="~/assets/img//blog/3.jpg" alt="" /></a>
-                    </div>
-                    <div class="blog-text">
-                        <h4><a href="news-details.html">variation of the ordinary lor</a></h4>
-                        <div class="blog-date">
-                            <span><i class="fa fa-calendar"></i>January 7, 2017</span>
-                            <span><i class="fa fa-folder-o"></i>library</span>
-                            <span><i class="fa fa-comment"></i>0</span>
-                        </div>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classi…</p>
-                        <a href="news-details.html">Read more</a>
-                    </div>
-                </div>
-                <div class="single-blog mb-30">
-                    <div class="bolg-img">
-                        <a href="news-details.html"><img src="~/assets/img//blog/4.jpg" alt="" /></a>
-                    </div>
-                    <div class="blog-text">
-                        <h4><a href="news-details.html">Testing is a great thing</a></h4>
-                        <div class="blog-date">
-                            <span><i class="fa fa-calendar"></i>January 7, 2017</span>
-                            <span><i class="fa fa-folder-o"></i>Convocation</span>
-                            <span><i class="fa fa-comment"></i>0</span>
-                        </div>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classi…</p>
-                        <a href="news-details.html">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- our-blog-area-end -->
 <!--FAQ Start-->
 <div class="container">
     <div class="section-title text-center">

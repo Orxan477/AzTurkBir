@@ -12,7 +12,7 @@
 					<div class="breadcrumb-text">
 						<div class="breadcrumb-menu">
 							<ul>
-								<li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+								<li><a asp-controller="home" asp-action="index">Ana Sayfa</a></li>
 								<li><span>Haberler</span></li>
 							</ul>
 						</div>
@@ -35,16 +35,16 @@
 					<div class="col-md-4 col-sm-6">
 					<div class="single-blog mb-30">
 						<div class="bolg-img">
-							<a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id"><img src="~/assets/img/blog/@news.Image" alt="" /></a>
+							<a asp-controller="news" asp-action="detail" asp-route-id="@news.Id"><img src="~/assets/img/blog/@news.Image" alt="" /></a>
 						</div>
 						<div class="blog-text">
-							<h4><a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">@news.Name</a></h4>
+							<h4><a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">@news.Name</a></h4>
 							<div class="blog-date">
 								<span><i class="fa fa-calendar"></i>@news.CreatedAt.Day/@news.CreatedAt.Month/@news.CreatedAt.Year</span>
 								<span><i class="fa fa-comment"></i>0</span>
 							</div>
 							<p>@(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"...")</p>
-							<a asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">Read more</a>
+							<a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">Read more</a>
 						</div>
 					</div>
 				</div>
