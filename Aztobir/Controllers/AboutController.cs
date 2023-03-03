@@ -16,7 +16,7 @@ namespace Aztobir.UI.Controllers
             AboutViewVM about = new AboutViewVM()
             {
                 About = await _aztobirService.AboutService.Get(),
-                Goal = await _aztobirService.GoalService.GetAll(),
+                Goals = await _aztobirService.GoalService.GetAll(),
             };
             return View(about);
         }

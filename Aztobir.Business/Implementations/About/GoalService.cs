@@ -15,6 +15,14 @@ namespace Aztobir.Business.Implementations.About
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
+
+        public async Task<GoalVM> Get(int id)
+        {
+            var goal = await _unitOfWork.GoalGetRepository.Get(x => !x.IsDeleted && x.Id==id);
+            GoalVM goalVM = _mapper.Map<GoalVM>(goal);
+            return goalVM;
+        }
+
         public async Task<List<GoalVM>> GetAll()
         {
            var goal= await _unitOfWork.GoalGetRepository.GetAll(x => !x.IsDeleted);

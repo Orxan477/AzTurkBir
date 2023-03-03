@@ -25,5 +25,22 @@ namespace Aztobir.UI.Areas.admin.Controllers
             };
             return View(news);
         }
+        [Route("/admin/news/detail/{id}")]
+        public async Task<IActionResult> Detail(int id)
+        {
+            try
+            {
+                NewsViewVM news = new NewsViewVM()
+                {
+                    News = await _aztobirService.NewsService.GetAll(),
+                    NewsDetail = await _aztobirService.NewsService.Get(id),
+                };
+                return View(news);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+        }
     }
 }
