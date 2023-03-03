@@ -15,6 +15,14 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+
+        public async Task<FAQVM> Get(int id)
+        {
+            var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id==id);
+            FAQVM faq = _mapper.Map<FAQVM>(dbFAQ);
+            return faq;
+        }
+
         public async Task<List<FAQVM>> GetAll()
         {
             var dbFAQ = await _unitOfWork.FAQGetRepository.GetAll(x => !x.IsDeleted);
