@@ -12,5 +12,6 @@ namespace Aztobir.Business.ViewModels.Home.Feedback
         public string Comment { get; set; }
         public string Image { get; set; }
         public string University { get; set; }
+        public string ImageView { get; set; }
     }
 }

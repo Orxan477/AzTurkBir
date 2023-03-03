@@ -21,7 +21,15 @@ namespace Aztobir.UI.Areas.admin.Controllers
             AboutViewVM about = new AboutViewVM()
             {
                 About = await _aztobirService.AboutService.Get(),
-                //Goal = await _aztobirService.GoalService.GetAll(),
+            };
+            return View(about);
+        }
+        [Route("/admin/about/detail")]
+        public async Task<IActionResult> Detail()
+        {
+            AboutViewVM about = new AboutViewVM()
+            {
+                About = await _aztobirService.AboutService.Get(),
             };
             return View(about);
         }

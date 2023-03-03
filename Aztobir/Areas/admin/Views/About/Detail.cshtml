@@ -1,0 +1,44 @@
+﻿@using Aztobir.Business.ViewModels.About
+@model AboutViewVM
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-10 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="d-inline">
+                <a asp-action="Index" class="mr-2 text-white d-flex">
+                    <i style="color:black;" class="mdi mdi-menu-left"></i>
+                    <h3 style="margin-bottom:0px; margin-top:6px;" class="d-inline card-title">Hakkımızda</h3>
+                </a>
+            </h3>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Image</th>
+                            <th><img style="width:160px;" src="~/assets/img/media/@Model.About.Image" /></th>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>@Model.About.Content</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Settings
+                            </td>
+                            <td>
+                                <a asp-action="Update" class="btn btn-warning" asp-route-id="@Model.About.Id"><i class="mdi mdi-table-edit"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

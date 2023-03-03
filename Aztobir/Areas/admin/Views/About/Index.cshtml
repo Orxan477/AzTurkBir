@@ -26,7 +26,7 @@
                             <td class="ph"><img class="php" src="~/assets/img/media/@Model.About.Image" alt="" /></td>
                             <td class="ph">@(Model.About.Content.Length<=20?Model.About.Content:Model.About.Content.Substring(0,20)+"...")</td>
                             <td class="ph">
-                                <a class="btn btn-primary p-2">
+                                <a class="btn btn-primary p-2" asp-area="admin" asp-controller="about" asp-action="detail">
                                     <i class="mdi mdi-eye"></i>
                                 </a>
                             </td>
