@@ -24,10 +24,22 @@ namespace Aztobir.UI.Areas.admin.Controllers
             };
             return View(team);
         }
-        [Route("/admin/team/create")]
-        public IActionResult Create()
+        [Route("/admin/team/Detail/{id}")]
+        public async Task<IActionResult> Detail(int id)
         {
-            return View();
+            try
+            {
+                TeamViewVM team = new TeamViewVM()
+                {
+                    Team = await _aztobirService.TeamService.Get(id),
+                };
+                return View(team);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
         }
     }
 }

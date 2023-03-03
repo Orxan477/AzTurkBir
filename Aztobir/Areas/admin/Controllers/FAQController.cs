@@ -28,11 +28,19 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/faq/detail/{id}")]
         public async Task<IActionResult> Detail(int id)
         {
-            HomeVM home = new HomeVM()
+            try
             {
-                FAQ = await _aztobirService.FAQService.Get(id),
-            };
-            return View(home);
+                HomeVM home = new HomeVM()
+                {
+                    FAQ = await _aztobirService.FAQService.Get(id),
+                };
+                return View(home);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
         }
     }
 }

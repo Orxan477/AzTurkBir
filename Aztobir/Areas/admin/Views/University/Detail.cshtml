@@ -1,0 +1,69 @@
+﻿@using Aztobir.Business.ViewModels.Home.University
+@model UniversityViewVM
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-10 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="d-inline">
+                <a asp-action="Index" class="mr-2 text-white d-flex">
+                    <i style="color:black;" class="mdi mdi-menu-left"></i>
+                    <h3 style="margin-bottom:0px; margin-top:6px;" class="d-inline card-title">Universite</h3>
+                </a>
+            </h3>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Logo</th>
+                            <th><img style="width:160px;" src="~/assets/img/courses/@Model.University.Image" /></th>
+                        </tr>
+                        <tr>
+                            <td>Ad</td>
+                            <td>@Model.University.Name</td>
+                        </tr>
+                        <tr>
+                            <td>Şehir</td>
+                            <td>@Model.University.City</td>
+                        </tr>
+                        <tr>
+                            <td>Dil Hazırlık Eğitimi</td>
+                            <td>@Model.University.EducationLanguage</td>
+                        </tr>
+                        <tr>
+                            <td>Oğrenci sayı</td>
+                            <td>@Model.University.StudentCount</td>
+                        </tr>
+                        <tr>
+                            <td>Fakulte sayı</td>
+                            <td>@Model.University.FacultyCount</td>
+                        </tr>
+                        <tr>
+                            <td>Statü</td>
+                            <td>@(@Model.University.Status==true ? "var" : "yoxdur")</td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>@Model.University.Content</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Settings
+                            </td>
+                            <td style="padding: 0 0 0 17px;">
+                                <a style="padding:5px;" asp-action="Update" class="btn btn-warning" asp-route-id="@Model.University.Id"><i class="mdi mdi-table-edit"></i></a>
+                                <a style="padding:5px;" asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.University.Id"><i class="mdi mdi-comment-remove-outline"></i></a>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

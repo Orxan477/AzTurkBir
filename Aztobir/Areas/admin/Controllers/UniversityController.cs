@@ -24,10 +24,23 @@ namespace Aztobir.UI.Areas.admin.Controllers
             };
             return View(universityView);
         }
-        [Route("/admin/university/create")]
-        public IActionResult Create()
+        [Route("/admin/university/detail/{id}")]
+        public async Task<IActionResult> Detail(int id)
         {
-            return Json("create");
+            try
+            {
+                UniversityViewVM universityView = new UniversityViewVM()
+                {
+                    University = await _aztobirService.UniversityService.Get(id),
+                    Faculties = await _aztobirService.UniversityService.GetFaculties(id),
+                };
+                return View(universityView);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
         }
     }
 }
