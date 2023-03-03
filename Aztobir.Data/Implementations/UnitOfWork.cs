@@ -3,6 +3,7 @@ using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
+using Aztobir.Core.Interfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.İnterfaces.Team;
 using Aztobir.Data.DAL;
@@ -26,6 +27,7 @@ namespace Aztobir.Data.Implementations
         private GetNewsRepository _getNewsRepository;
         private FeedbackGetRepository _feedbackGetRepository;
         private TeamGetRepository _teamGetRepository;
+        private CRUDNewsRepository _crudNewsRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -44,6 +46,8 @@ namespace Aztobir.Data.Implementations
         public IFeedbackGetRepository FeedbackGetRepository => _feedbackGetRepository ?? new FeedbackGetRepository(_context);
 
         public ITeamGetRepository TeamGetRepository => _teamGetRepository ?? new TeamGetRepository(_context);
+
+        public ICRUDNewsRepository CRUDNewsRepository =>  _crudNewsRepository ?? new CRUDNewsRepository(_context);
 
         public async Task SaveChangesAsync()
         {

@@ -24,5 +24,14 @@ namespace Aztobir.UI.Areas.admin.Controllers
             };
             return View(home);
         }
+        [Route("/admin/feedback/detail/{id}")]
+        public async Task<IActionResult> Detail(int id)
+        {
+            HomeVM home = new HomeVM()
+            {
+                Feedback = await _aztobirService.FeedbackService.Get(id),
+            };
+            return View(home);
+        }
     }
 }

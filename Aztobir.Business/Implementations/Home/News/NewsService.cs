@@ -16,6 +16,15 @@ namespace Aztobir.Business.Implementations.Home.News
             _mapper = mapper;
         }
 
+        public async Task Delete(int id)
+        {
+            var dbNews = Get(id);
+            var news = _mapper.Map<Core.Models.News>(dbNews);
+            news.IsDeleted = true;
+            //_unitOfWork.CRUDNewsRepository.Delete(news);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<NewsVM> Get(int id)
         {
             var dbNews = await _unitOfWork.GetNewsRepository.Get(x => !x.IsDeleted && x.Id == id);

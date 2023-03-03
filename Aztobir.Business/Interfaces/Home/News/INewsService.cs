@@ -6,5 +6,6 @@ namespace Aztobir.Business.Interfaces.Home.News
     {
         Task<List<NewsVM>> GetAll();
         Task<NewsVM> Get(int id);
+        Task Delete(int id);
     }
 }

@@ -5,5 +5,6 @@ namespace Aztobir.Business.Interfaces.Home.Feedback
     public interface IFeedbackService
     {
         Task<List<FeedbackVM>> GetAll();
+        Task<FeedbackVM> Get(int id);
     }
 }

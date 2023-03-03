@@ -8,6 +8,7 @@ namespace Aztobir.Business.ViewModels.Home.Feedback
 {
     public class FeedbackVM
     {
+        public int Id { get; set; }
         public string FullName { get; set; }
         public string Comment { get; set; }
         public string Image { get; set; }

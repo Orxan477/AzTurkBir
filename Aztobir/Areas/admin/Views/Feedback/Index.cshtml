@@ -32,7 +32,7 @@
                                 <td class="ph">@feedback.University</td>
                                 <td class="ph">@(feedback.Comment.Length<=5?feedback.Comment:feedback.Comment.Substring(0,5)+"...")</td>
                                 <td class="ph">
-                                    <a class="btn btn-primary p-2">
+                                    <a class="btn btn-primary p-2" asp-action="Detail" asp-route-id="@feedback.Id">
                                         <i class="mdi mdi-eye"></i>
                                     </a>
                                 </td>

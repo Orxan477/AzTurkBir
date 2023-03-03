@@ -14,6 +14,14 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+
+        public async Task<FeedbackVM> Get(int id)
+        {
+            var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id==id, "University");
+            FeedbackVM feedback = _mapper.Map<FeedbackVM>(dbFeedback);
+            return feedback;
+        }
+
         public async Task<List<FeedbackVM>> GetAll()
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.GetAll(x => !x.IsDeleted, "University");

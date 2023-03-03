@@ -13,5 +13,6 @@ namespace Aztobir.Business.ViewModels.Home
         public FAQVM FAQ{ get; set; }
         public List<NewsVM> News{ get; set; }
         public List<FeedbackVM> Feedbacks{ get; set; }
+        public FeedbackVM Feedback{ get; set; }
     }
 }
