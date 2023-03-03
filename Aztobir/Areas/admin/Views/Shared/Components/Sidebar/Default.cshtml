@@ -7,7 +7,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#uni" aria-expanded="false" aria-controls="uni">
+            <a class="nav-link collapsed" data-bs-toggle="collapse" href="#uni" aria-expanded="false" aria-controls="uni">
               <i class="mdi mdi-bank menu-icon"></i>
               <span class="menu-title">Universiteler</span>
               <i class="menu-arrow"></i>
@@ -68,6 +68,32 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="goal" asp-action="index">Siyahı</a></li>
                 <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="goal" asp-action="create">Əlavə et</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#news" aria-expanded="false" aria-controls="news">
+              <i class="mdi mdi-newspaper menu-icon"></i>
+              <span class="menu-title">Haberler</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="news">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="news" asp-action="index">Siyahı</a></li>
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="news" asp-action="create">Əlavə et</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#feedback" aria-expanded="false" aria-controls="feedback">
+              <i class="mdi mdi-comment-account menu-icon"></i>
+              <span class="menu-title">Feedback</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="feedback">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="feedback" asp-action="index">Siyahı</a></li>
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="feedback" asp-action="create">Əlavə et</a></li>
               </ul>
             </div>
           </li>

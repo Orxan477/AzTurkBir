@@ -1,0 +1,46 @@
+﻿@using Aztobir.Business.ViewModels.Home.News
+@model NewsViewVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+    int num = 1;
+}
+
+<div class="col-lg-8 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Haberler</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Image</th>
+                            <th>Ad</th>
+                            <th>Mezmun</th>
+                            <th>Ayarlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var news in Model.News)
+                        {
+                            <tr>
+                                <td class="ph">@num</td>
+                                <td class="ph"><img class="php" src="~/assets/img/blog/@news.Image" alt="" /></td>
+                                <td class="ph">@news.Name</td>
+                                <td class="ph">@(news.Content.Length<=5?news.Content:news.Content.Substring(0,5)+"...")</td>
+                                <td class="ph">
+                                    <a class="btn btn-primary p-2">
+                                        <i class="mdi mdi-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            num++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
