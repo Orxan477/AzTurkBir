@@ -1,7 +1,12 @@
-﻿using Aztobir.Business.Interfaces;
+﻿using AutoMapper;
+using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.Home.News;
+using Aztobir.Core.İnterfaces;
+using Aztobir.Core.Models;
+using Aztobir.Data.DAL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Aztobir.UI.Areas.admin.Controllers
 {
@@ -9,7 +14,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
     [Authorize(Roles = "Admin")]
     public class NewsController : Controller
     {
-
         private IAztobirService _aztobirService;
 
         public NewsController(IAztobirService aztobirService)
@@ -41,6 +45,22 @@ namespace Aztobir.UI.Areas.admin.Controllers
             {
                 return Json(ex.Message);
             }
+        }
+        [Route("/admin/news/delete/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _aztobirService.NewsService.Delete(id);
+                return RedirectToAction("Index", "News", new { area = "admin" });
+            }
+            catch (Exception ex)
+            {
+                return View(ex.Message);
+            }
+
         }
     }
 }

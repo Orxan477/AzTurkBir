@@ -18,10 +18,10 @@ namespace Aztobir.Business.Implementations.Home.News
 
         public async Task Delete(int id)
         {
-            var dbNews = Get(id);
+            var dbNews =await Get(id);
             var news = _mapper.Map<Core.Models.News>(dbNews);
             news.IsDeleted = true;
-            //_unitOfWork.CRUDNewsRepository.Delete(news);
+            _unitOfWork.CRUDNewsRepository.DeleteAsync(news);
             await _unitOfWork.SaveChangesAsync();
         }
 
