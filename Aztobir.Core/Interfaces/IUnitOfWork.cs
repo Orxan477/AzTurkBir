@@ -4,6 +4,7 @@ using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
+using Aztobir.Core.Interfaces.Home.University;
 using Aztobir.Core.İnterfaces.Team;
 
 namespace Aztobir.Core.İnterfaces
@@ -19,6 +20,7 @@ namespace Aztobir.Core.İnterfaces
         public IFeedbackGetRepository FeedbackGetRepository { get;  }
         public ITeamGetRepository TeamGetRepository { get;  }
         public ICRUDNewsRepository CRUDNewsRepository { get;  }
+        public ICRUDUniversityRepository CRUDUniversityRepository { get;  }
         Task SaveChangesAsync();
     }
 }

@@ -7,5 +7,6 @@ namespace Aztobir.Business.Interfaces.Home.University
         Task<List<UniversityVM>> GetAll();
         Task<UniversityVM> Get(int id);
         Task<List<FacultiesVM>> GetFaculties(int id);
+        Task Delete(int id);
     }
 }

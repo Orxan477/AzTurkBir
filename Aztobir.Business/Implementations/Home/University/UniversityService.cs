@@ -16,6 +16,15 @@ namespace Aztobir.Business.Implementations.Home.University
             _mapper = mapper;
         }
 
+        public async Task Delete(int id)
+        {
+            var dbUniversity = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id, "City");
+            if (dbUniversity is null) throw new Exception("Not Found");
+            dbUniversity.IsDeleted = true;
+            _unitOfWork.CRUDUniversityRepository.DeleteAsync(dbUniversity);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<UniversityVM> Get(int id)
         {
             var dbUniversity = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id, "City");

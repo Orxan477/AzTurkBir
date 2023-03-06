@@ -7,9 +7,9 @@ namespace Aztobir.UI.Areas.admin.Controllers
     [Authorize(Roles = "Admin")]
     public class DashboardController : Controller
     {
-    [Route("/admin")]
+    [Route("/admin/")]
         public IActionResult Index()
-        {
+        {   
             return View();
         }
     }

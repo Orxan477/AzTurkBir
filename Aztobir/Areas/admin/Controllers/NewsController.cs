@@ -7,7 +7,7 @@ using Aztobir.Data.DAL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+ 
 namespace Aztobir.UI.Areas.admin.Controllers
 {
     [Area("admin")]
@@ -43,12 +43,12 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-                return Json(ex.Message);
+                return RedirectToAction("Index", "News", new { area = "admin" });
             }
         }
         [Route("/admin/news/delete/{id}")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             try

@@ -15,7 +15,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             _aztobirService = aztobirService;
         }
-        [Route("/admin/about/index")]
+        [Route("/admin/about/index/")]
         public async Task<IActionResult> Index()
         {
             AboutViewVM about = new AboutViewVM()
@@ -24,7 +24,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             };
             return View(about);
         }
-        [Route("/admin/about/detail")]
+        [Route("/admin/about/detail/")]
         public async Task<IActionResult> Detail()
         {
             AboutViewVM about = new AboutViewVM()
