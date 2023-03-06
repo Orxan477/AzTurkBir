@@ -3,7 +3,7 @@ using Aztobir.Business.Interfaces.Home.News;
 using Aztobir.Business.ViewModels.Home.News;
 using Aztobir.Core.İnterfaces;
 
-namespace Aztobir.Business.Implementations.Home.News
+namespace Aztobir.Business.Implementations.Home.News 
 {
     public class NewsService : INewsService
     {

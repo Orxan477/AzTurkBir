@@ -6,6 +6,7 @@ using Aztobir.Core.Interfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Home.University;
 using Aztobir.Core.İnterfaces.Team;
+using Aztobir.Core.Interfaces.Team;
 
 namespace Aztobir.Core.İnterfaces
 {
@@ -21,6 +22,7 @@ namespace Aztobir.Core.İnterfaces
         public ITeamGetRepository TeamGetRepository { get;  }
         public ICRUDNewsRepository CRUDNewsRepository { get;  }
         public ICRUDUniversityRepository CRUDUniversityRepository { get;  }
+        public ITeamCRUDRepository TeamCRUDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

@@ -15,7 +15,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
     public class NewsController : Controller
     {
         private IAztobirService _aztobirService;
-
+         
         public NewsController(IAztobirService aztobirService)
         {
             _aztobirService = aztobirService;

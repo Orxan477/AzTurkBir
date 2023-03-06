@@ -15,6 +15,15 @@ namespace Aztobir.Business.Implementations.Team
             _unitOfWork = unitOfWork;
         }
 
+        public async Task Delete(int id)
+        {
+            var dbTeam = await _unitOfWork.TeamGetRepository.Get(x => !x.IsDeleted && x.Id == id, "Position");
+            if (dbTeam is null) throw new Exception("Not Found");
+            dbTeam.IsDeleted = true;
+            _unitOfWork.TeamCRUDRepository.DeleteAsync(dbTeam);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<TeamDetailVM> Get(int id)
         {
             var dbTeam = await _unitOfWork.TeamGetRepository.Get(x => !x.IsDeleted && x.Id == id, "Position");

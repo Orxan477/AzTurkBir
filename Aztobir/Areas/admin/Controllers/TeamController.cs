@@ -37,9 +37,24 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-
-                return Json(ex.Message);
+                return RedirectToAction("Index", "Team", new { area = "admin" });
             }
+        }
+        [Route("/admin/team/delete/{id}")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _aztobirService.TeamService.Delete(id);
+                return RedirectToAction("Index", "Team", new { area = "admin" });
+            }
+            catch (Exception ex)
+            {
+                return View(ex.Message);
+            }
+
         }
     }
 }
