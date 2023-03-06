@@ -59,14 +59,13 @@ namespace Aztobir.UI.Areas.admin.Controllers
             {
                 if (!ModelState.IsValid) return BadRequest();
                 await _aztobirService.FAQService.Update(id, faq);
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
 
                 return Json(ex.Message);
             }
-
-            return RedirectToAction("Index");
         }
         [Route("/admin/faq/delete/{id}")]
         public async Task<IActionResult> Delete(int id)

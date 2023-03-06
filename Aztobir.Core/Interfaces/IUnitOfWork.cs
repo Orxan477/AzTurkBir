@@ -1,4 +1,5 @@
 ﻿using Aztobir.Core.İnterfaces.About;
+using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.Interfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.Feedback;
@@ -28,6 +29,7 @@ namespace Aztobir.Core.İnterfaces
         public IFaqCRUDRepository FaqCRUDRepository { get;  }
         public IFeedbackCRUDRepository FeedbackCRUDRepository { get;  }
         public IUniversityPhotosGetRepository UniversityPhotosGetRepository { get;  }
+        public IGoalCRUDRepository GoalCRUDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

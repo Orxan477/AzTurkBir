@@ -1,4 +1,5 @@
 ﻿using Aztobir.Core.İnterfaces;
+using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.Interfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.FAQ;
@@ -6,10 +7,10 @@ using Aztobir.Core.Interfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
-using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Home.University;
-using Aztobir.Core.İnterfaces.Team;
+using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Team;
+using Aztobir.Core.İnterfaces.Team;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations.About;
 using Aztobir.Data.Implementations.Home.FAQ;
@@ -37,6 +38,7 @@ namespace Aztobir.Data.Implementations
         private FaqCRUDRepository _faqCRUDRepository;
         private FeedbackCRUDRepository _feedbackCRUDRepository;
         private UniversityPhotosGetRepository _universityPhotosGetRepository;
+        private GoalCRUDRepository _goalCRUDRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -67,6 +69,8 @@ namespace Aztobir.Data.Implementations
         public IFeedbackCRUDRepository FeedbackCRUDRepository => _feedbackCRUDRepository ?? new FeedbackCRUDRepository(_context);
 
         public IUniversityPhotosGetRepository UniversityPhotosGetRepository => _universityPhotosGetRepository ?? new UniversityPhotosGetRepository(_context);
+
+        public IGoalCRUDRepository GoalCRUDRepository => _goalCRUDRepository ?? new GoalCRUDRepository(_context);
 
         public async Task SaveChangesAsync()
         {

@@ -46,7 +46,23 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             var goal = await _aztobirService.GoalService.Get(id);
             if (goal is null) return NotFound();
-            return Json(goal);
+            return View(goal);
+        }
+        [Route("/admin/goal/update/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id,GoalVM goal)
+        {
+            try
+            {
+                if (!ModelState.IsValid) return BadRequest();
+                await _aztobirService.GoalService.Update(id, goal);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.ViewModels.Home.FAQ;
 using Aztobir.Core.İnterfaces;
-
+ 
 namespace Aztobir.Business.Implementations.Home.FAQ
 {
     public class FAQService : IFAQService
@@ -44,14 +44,15 @@ namespace Aztobir.Business.Implementations.Home.FAQ
         {
             var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFAQ is null) throw new Exception("Not Found");
-            if (dbFAQ.Question!=faq.Question)
+            if (dbFAQ.Question.Trim().ToLower() != faq.Question.Trim().ToLower())
             {
                 dbFAQ.Question = faq.Question;
             }
-            if (dbFAQ.Response != faq.Response)
+            if (dbFAQ.Response.Trim().ToLower() != faq.Response.Trim().ToLower())
             {
                 dbFAQ.Response = faq.Response;
             }
+            dbFAQ.UpdatedAt = DateTime.Now;
             _unitOfWork.FaqCRUDRepository.UpdateAsync(dbFAQ);
             await _unitOfWork.SaveChangesAsync();
         }
