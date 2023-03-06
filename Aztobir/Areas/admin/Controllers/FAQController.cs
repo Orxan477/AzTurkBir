@@ -1,5 +1,6 @@
 ﻿using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.Home;
+using Aztobir.Business.ViewModels.Home.FAQ;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,9 +43,32 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return RedirectToAction("Index", "FAQ", new { area = "admin" });
             }
         }
+        [Route("/admin/faq/update/{id}")]
+        public async Task<IActionResult> Update(int id)
+        {
+            var faq = await _aztobirService.FAQService.Get(id);
+            if (faq is null) return NotFound();
+            return View(faq);
+        }
+        [Route("/admin/faq/update/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id, FAQVM faq)
+        {
+            try
+            {
+                if (!ModelState.IsValid) return BadRequest();
+                await _aztobirService.FAQService.Update(id, faq);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
+
+            return RedirectToAction("Index");
+        }
         [Route("/admin/faq/delete/{id}")]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             try

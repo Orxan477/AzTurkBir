@@ -7,5 +7,6 @@ namespace Aztobir.Business.Interfaces.Home.FAQ
         Task<List<FAQVM>> GetAll();
         Task<FAQVM> Get(int id);
         Task Delete(int id);
+        Task Update(int id, FAQVM faq);
     }
 }

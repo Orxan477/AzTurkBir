@@ -19,6 +19,7 @@ namespace Aztobir.Data.DAL
         public DbSet<Position> Positions { get; set; }
         public DbSet<Team>Teams { get; set; }
         public DbSet<University>Universities{ get; set; }
+        public DbSet<UniversityImages> UniversityImages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +33,7 @@ namespace Aztobir.Data.DAL
             modelBuilder.ApplyConfiguration(new PositionConfiguration());
             modelBuilder.ApplyConfiguration(new TeamConfiguration());
             modelBuilder.ApplyConfiguration(new UniversityConfiguration());
+            modelBuilder.ApplyConfiguration(new UniversityImagesConfiguration());
             base.OnModelCreating(modelBuilder);
         }
 

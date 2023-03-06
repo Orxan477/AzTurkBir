@@ -17,7 +17,6 @@ namespace Aztobir.UI.Controllers
             UniversityViewVM universityView = new UniversityViewVM()
             {
                 Universities = await _aztobirService.UniversityService.GetAll(),
-                
             };
             return View(universityView);
         }
@@ -29,6 +28,8 @@ namespace Aztobir.UI.Controllers
                 {
                     University = await _aztobirService.UniversityService.Get(id),
                     Faculties = await _aztobirService.UniversityService.GetFaculties(id),
+                    Photos = await _aztobirService.UniversityService.GetPhotos(id),
+                    Feedbacks = await _aztobirService.UniversityService.GetFeedbacks(id),
                 };
                 return View(universityView);
             }

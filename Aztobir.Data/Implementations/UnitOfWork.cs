@@ -36,6 +36,7 @@ namespace Aztobir.Data.Implementations
         private TeamCRUDRepository _teamCRUDRepository;
         private FaqCRUDRepository _faqCRUDRepository;
         private FeedbackCRUDRepository _feedbackCRUDRepository;
+        private UniversityPhotosGetRepository _universityPhotosGetRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -64,6 +65,9 @@ namespace Aztobir.Data.Implementations
         public IFaqCRUDRepository FaqCRUDRepository => _faqCRUDRepository ?? new FaqCRUDRepository(_context);
 
         public IFeedbackCRUDRepository FeedbackCRUDRepository => _feedbackCRUDRepository ?? new FeedbackCRUDRepository(_context);
+
+        public IUniversityPhotosGetRepository UniversityPhotosGetRepository => _universityPhotosGetRepository ?? new UniversityPhotosGetRepository(_context);
+
         public async Task SaveChangesAsync()
         {
            await _context.SaveChangesAsync();

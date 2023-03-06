@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Home.University;
+using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.İnterfaces;
 
@@ -46,6 +47,20 @@ namespace Aztobir.Business.Implementations.Home.University
             if (dbFaculties is null) throw new Exception("Not Found");
             List<FacultiesVM> faculties = _mapper.Map<List<FacultiesVM>>(dbFaculties);
             return faculties;
+        }
+
+        public async Task<List<UniPhotosVM>> GetPhotos(int id)
+        {
+            var dbPhotos = await _unitOfWork.UniversityPhotosGetRepository.GetAll(x => x.UniversityId == id);
+            if (dbPhotos is null) throw new Exception("Not Found");
+            List<UniPhotosVM> photos = _mapper.Map<List<UniPhotosVM>>(dbPhotos);
+            return photos;
+        }
+        public async Task<List<FeedbackVM>> GetFeedbacks(int id)
+        {
+            var dbFeedback = await _unitOfWork.FeedbackGetRepository.GetAll(x=>x.Id==id,"University");
+            List<FeedbackVM> feedbacks = _mapper.Map<List<FeedbackVM>>(dbFeedback);
+            return feedbacks;
         }
     }
 }

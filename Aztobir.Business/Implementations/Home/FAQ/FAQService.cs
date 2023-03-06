@@ -39,5 +39,21 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             List<FAQVM> faq = _mapper.Map<List<FAQVM>>(dbFAQ);
             return faq;
         }
+
+        public async Task Update(int id, FAQVM faq)
+        {
+            var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbFAQ is null) throw new Exception("Not Found");
+            if (dbFAQ.Question!=faq.Question)
+            {
+                dbFAQ.Question = faq.Question;
+            }
+            if (dbFAQ.Response != faq.Response)
+            {
+                dbFAQ.Response = faq.Response;
+            }
+            _unitOfWork.FaqCRUDRepository.UpdateAsync(dbFAQ);
+            await _unitOfWork.SaveChangesAsync();
+        }
     }
 }

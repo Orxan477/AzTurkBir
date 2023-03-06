@@ -41,5 +41,12 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return Json(ex.Message);
             }
         }
+        [Route("/admin/goal/update/{id}")]
+        public async Task<IActionResult> Update(int id)
+        {
+            var goal = await _aztobirService.GoalService.Get(id);
+            if (goal is null) return NotFound();
+            return Json(goal);
+        }
     }
 }
