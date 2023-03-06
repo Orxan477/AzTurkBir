@@ -33,5 +33,13 @@ namespace Aztobir.UI.Areas.admin.Controllers
             };
             return View(about);
         }
+        [Route("/admin/about/update/")]
+        public async Task<IActionResult> Update()
+        {
+            //return Json(id);
+            var about = await _aztobirService.AboutService.Get();
+            if (about is null) return NotFound();
+            return View(about);
+        }
     }
 }

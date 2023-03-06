@@ -55,7 +55,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                if (!ModelState.IsValid) return BadRequest();
+                if (!ModelState.IsValid) return BadRequest();   
                 await _aztobirService.GoalService.Update(id, goal);
                 return RedirectToAction("Index");
             }

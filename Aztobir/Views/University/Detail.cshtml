@@ -2,6 +2,7 @@
 @model UniversityViewVM
 @{
     ViewData["Title"] = "Detail";
+    int sliderNum = 0;
 }
 
 <div class="breadcrumb-banner-area bg-img-2 bg-opacity-2 ptb-100">
@@ -32,7 +33,7 @@
                     <div class="carousel-inner">
                         @foreach (var photo in Model.Photos)
                         {
-                           <div class="carousel-item active " data-bs-interval="10000">
+                           <div class="carousel-item @(sliderNum<1 ? "active" : " ") " data-bs-interval="10000">
                             <div class="course-details-img">
                                 <img src="~/assets/img/courses/@photo.Image" alt="" class="w-100" />
                             </div>
