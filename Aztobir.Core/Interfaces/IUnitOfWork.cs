@@ -2,6 +2,7 @@
 using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.Interfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.Feedback;
+using Aztobir.Core.Interfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
@@ -25,6 +26,7 @@ namespace Aztobir.Core.İnterfaces
         public ICRUDUniversityRepository CRUDUniversityRepository { get;  }
         public ITeamCRUDRepository TeamCRUDRepository { get;  }
         public IFaqCRUDRepository FaqCRUDRepository { get;  }
+        public IFeedbackCRUDRepository FeedbackCRUDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

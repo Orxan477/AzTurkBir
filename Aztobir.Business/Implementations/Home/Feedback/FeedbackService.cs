@@ -15,6 +15,15 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             _mapper = mapper;
         }
 
+        public async Task Delete(int id)
+        {
+            var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id == id, "University");
+            if (dbFeedback is null) throw new Exception("Not Found");
+            dbFeedback.IsDeleted = true;
+            _unitOfWork.FeedbackCRUDRepository.DeleteAsync(dbFeedback);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<FeedbackVM> Get(int id)
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id==id, "University");

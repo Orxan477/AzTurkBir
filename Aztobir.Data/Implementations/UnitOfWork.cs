@@ -2,13 +2,14 @@
 using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.Interfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.FAQ;
+using Aztobir.Core.Interfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Home.University;
-using Aztobir.Core.Interfaces.Team;
 using Aztobir.Core.İnterfaces.Team;
+using Aztobir.Core.Interfaces.Team;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations.About;
 using Aztobir.Data.Implementations.Home.FAQ;
@@ -34,6 +35,7 @@ namespace Aztobir.Data.Implementations
         private CRUDUniversityRepository _crudUniversityRepository;
         private TeamCRUDRepository _teamCRUDRepository;
         private FaqCRUDRepository _faqCRUDRepository;
+        private FeedbackCRUDRepository _feedbackCRUDRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -61,6 +63,7 @@ namespace Aztobir.Data.Implementations
 
         public IFaqCRUDRepository FaqCRUDRepository => _faqCRUDRepository ?? new FaqCRUDRepository(_context);
 
+        public IFeedbackCRUDRepository FeedbackCRUDRepository => _feedbackCRUDRepository ?? new FeedbackCRUDRepository(_context);
         public async Task SaveChangesAsync()
         {
            await _context.SaveChangesAsync();

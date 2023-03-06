@@ -27,11 +27,35 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/feedback/detail/{id}")]
         public async Task<IActionResult> Detail(int id)
         {
-            HomeVM home = new HomeVM()
+            try
             {
-                Feedback = await _aztobirService.FeedbackService.Get(id),
-            };
-            return View(home);
+                HomeVM home = new HomeVM()
+                {
+                    Feedback = await _aztobirService.FeedbackService.Get(id),
+                };
+                return View(home);
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("Index", "Feedback", new { area = "admin" });
+            }
+        }
+        [Route("/admin/university/delete/{id}")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _aztobirService.FeedbackService.Delete(id);
+                return RedirectToAction("Index", "Feedback", new { area = "admin" });
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Feedback", new { area = "admin" });
+            }
+
         }
     }
 }
