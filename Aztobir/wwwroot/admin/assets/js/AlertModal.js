@@ -16,15 +16,7 @@
             if (result.isConfirmed) {
                 fetch(url).then(data => {
                     if (data.ok) {
-                        //Swal.fire(
-                        //    'Deleted!',
-                        //    'Your file has been deleted.',
-                        //    'success')
-                        //$(document).on("click", ".swal2-confirm", function () {
                             window.location.reload(true);
-                            //console.log("ds ");
-                        //})
-
                     }
                     else {
                         alert("warning");

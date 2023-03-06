@@ -11,7 +11,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
         private IMapper _mapper;
         public FeedbackService(IUnitOfWork unitOfWork,IMapper mapper)
         {
-            _unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;   
             _mapper = mapper;
         }
 
@@ -27,6 +27,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
         public async Task<FeedbackVM> Get(int id)
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id==id, "University");
+            if (dbFeedback is null) throw new Exception("Not Found");
             FeedbackVM feedback = _mapper.Map<FeedbackVM>(dbFeedback);
             return feedback;
         }

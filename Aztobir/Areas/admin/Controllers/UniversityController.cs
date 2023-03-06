@@ -57,7 +57,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", "Team", new { area = "admin" });
+                return RedirectToAction("Index", "University", new { area = "admin" });
             }
 
         }

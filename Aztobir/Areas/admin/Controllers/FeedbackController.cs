@@ -35,13 +35,12 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 };
                 return View(home);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
                 return RedirectToAction("Index", "Feedback", new { area = "admin" });
             }
         }
-        [Route("/admin/university/delete/{id}")]
+        [Route("/admin/feedback/delete/{id}")]
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
