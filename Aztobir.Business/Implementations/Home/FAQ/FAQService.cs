@@ -16,6 +16,15 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             _mapper = mapper;
         }
 
+        public async Task Delete(int id)
+        {
+            var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbFAQ is null) throw new Exception("Not Found");
+            dbFAQ.IsDeleted = true;
+            _unitOfWork.FaqCRUDRepository.DeleteAsync(dbFAQ);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<FAQVM> Get(int id)
         {
             var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id==id);

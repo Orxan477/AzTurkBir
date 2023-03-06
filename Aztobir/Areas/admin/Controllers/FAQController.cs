@@ -39,8 +39,24 @@ namespace Aztobir.UI.Areas.admin.Controllers
             catch (Exception ex)
             {
 
+                return RedirectToAction("Index", "FAQ", new { area = "admin" });
+            }
+        }
+        [Route("/admin/faq/delete/{id}")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _aztobirService.FAQService.Delete(id);
+                return RedirectToAction("Index", "FAQ", new { area = "admin" });
+            }
+            catch (Exception ex)
+            {
                 return Json(ex.Message);
             }
+
         }
     }
 }
