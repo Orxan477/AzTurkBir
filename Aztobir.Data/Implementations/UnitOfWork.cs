@@ -43,6 +43,7 @@ namespace Aztobir.Data.Implementations
         private GoalCRUDRepository _goalCRUDRepository;
         private AboutCRUDRepository _aboutCRUDRepository;
         private CityGetRepository _cityGetRepository;
+        private CityCRUDRepository _cityCRUDRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -79,6 +80,8 @@ namespace Aztobir.Data.Implementations
         public IAboutCRUDRepository AboutCRUDRepository => _aboutCRUDRepository ?? new AboutCRUDRepository(_context);
 
         public ICityGetRepository CityGetRepository => _cityGetRepository ?? new CityGetRepository(_context);
+
+        public ICityCRUDRepository CityCURDRepository => _cityCRUDRepository ?? new CityCRUDRepository(_context);
 
         public async Task SaveChangesAsync()
         {

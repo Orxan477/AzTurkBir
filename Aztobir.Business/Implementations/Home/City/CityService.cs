@@ -20,6 +20,15 @@ namespace Aztobir.Business.Implementations.Home.City
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+
+        public async Task Create(CityCreateVM city)
+        {
+            Core.Models.City dbCity = _mapper.Map<Core.Models.City>(city);
+            dbCity.CreatedAt = DateTime.Now;
+            await _unitOfWork.CityCURDRepository.CreateAsync(dbCity);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<CityVM> Get(int id)
         {
             var dbCity= await _unitOfWork.CityGetRepository.Get(x => x.Id == id&& !x.IsDeleted);
@@ -34,6 +43,13 @@ namespace Aztobir.Business.Implementations.Home.City
             if (dbCities is null) throw new Exception("Not Found");
             var cities = _mapper.Map<List<CityVM>>(dbCities);
             return cities;
+        }
+
+        public async Task Update(int id, CityVM city)
+        {
+            var dbCity = await _unitOfWork.CityGetRepository.Get(x => x.Id == id && !x.IsDeleted);
+            if (dbCity is null) throw new Exception("Not Found");
+            bool isExist=_unitOfWork.CityGetRepository.GetAll
         }
     }
 }

@@ -33,6 +33,7 @@ namespace Aztobir.Core.İnterfaces
         public IGoalCRUDRepository GoalCRUDRepository { get;  }
         public IAboutCRUDRepository AboutCRUDRepository { get;  }
         public ICityGetRepository CityGetRepository{ get;  }
+        public ICityCRUDRepository CityCURDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

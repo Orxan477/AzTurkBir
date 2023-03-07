@@ -3,6 +3,7 @@ using Aztobir.Data.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +26,11 @@ namespace Aztobir.Data.Implementations
         public void DeleteAsync(TEntity entity)
         {
              _context.Set<TEntity>().Update(entity);
+        }
+
+        public bool IsExist(Expression<Func<TEntity, bool>> exp)
+        {
+            return _context.Set<TEntity>().Any(exp);
         }
 
         public void UpdateAsync(TEntity entity)

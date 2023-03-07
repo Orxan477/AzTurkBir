@@ -2,7 +2,7 @@
 @using Aztobir.Business.ViewModels.Home.FAQ
 @model GoalVM
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = "Update"; 
     Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -35,3 +35,6 @@
     </div>
 </div>
 
+@section ScriptModal{
+    <partial name="_AdminValidationScriptsPartial" />
+}

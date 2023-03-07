@@ -11,5 +11,6 @@ namespace Aztobir.Business.ViewModels.Home.University
         public List<UniPhotosVM> Photos { get; set; }
         public List<FeedbackVM> Feedbacks { get; set; }
         public List<CityVM> Cities{ get; set; }
+        public CityVM City{ get; set; }
     }
 }
