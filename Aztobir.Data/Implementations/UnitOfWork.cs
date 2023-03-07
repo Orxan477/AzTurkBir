@@ -39,6 +39,7 @@ namespace Aztobir.Data.Implementations
         private FeedbackCRUDRepository _feedbackCRUDRepository;
         private UniversityPhotosGetRepository _universityPhotosGetRepository;
         private GoalCRUDRepository _goalCRUDRepository;
+        private AboutCRUDRepository _aboutCRUDRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -71,6 +72,8 @@ namespace Aztobir.Data.Implementations
         public IUniversityPhotosGetRepository UniversityPhotosGetRepository => _universityPhotosGetRepository ?? new UniversityPhotosGetRepository(_context);
 
         public IGoalCRUDRepository GoalCRUDRepository => _goalCRUDRepository ?? new GoalCRUDRepository(_context);
+
+        public IAboutCRUDRepository AboutCRUDRepository => _aboutCRUDRepository ?? new AboutCRUDRepository(_context);
 
         public async Task SaveChangesAsync()
         {

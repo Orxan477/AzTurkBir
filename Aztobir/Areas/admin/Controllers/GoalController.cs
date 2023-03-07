@@ -38,9 +38,25 @@ namespace Aztobir.UI.Areas.admin.Controllers
             catch (Exception ex)
             {
 
-                return Json(ex.Message);
+                return RedirectToAction("Index", "Goal", new { area = "admin" });
             }
         }
+        [Route("/admin/goal/create/")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [Route("/admin/goal/create/")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(GoalCreateVM goal)
+        {
+            if (!ModelState.IsValid) return View(goal);
+           await _aztobirService.GoalService.Create(goal);
+            return RedirectToAction("Index");
+        }
+
         [Route("/admin/goal/update/{id}")]
         public async Task<IActionResult> Update(int id)
         {
@@ -55,7 +71,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                if (!ModelState.IsValid) return BadRequest();   
+                if (!ModelState.IsValid) return View(goal);
                 await _aztobirService.GoalService.Update(id, goal);
                 return RedirectToAction("Index");
             }
@@ -63,6 +79,22 @@ namespace Aztobir.UI.Areas.admin.Controllers
             {
                 return Json(ex.Message);
             }
+        }
+        [Route("/admin/goal/delete/{id}")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _aztobirService.GoalService.Delete(id);
+                return RedirectToAction("Index", "Goal", new { area = "admin" });
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Goal", new { area = "admin" });
+            }
+
         }
     }
 }

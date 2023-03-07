@@ -1,5 +1,6 @@
 ﻿using Aztobir.Business.Implementations;
 using Aztobir.Business.Interfaces;
+using Aztobir.Business.Validators.Goal;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Business.ViewModels.Account;
 using Aztobir.Core.İnterfaces;
@@ -34,7 +35,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
 });
 
-builder.Services.AddValidatorsFromAssemblyContaining<LoginVM>();
+builder.Services.AddValidatorsFromAssemblyContaining<GoalCreateVMValidator>();
 
 
 var app = builder.Build();

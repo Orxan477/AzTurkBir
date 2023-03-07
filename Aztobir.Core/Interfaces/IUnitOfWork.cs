@@ -30,6 +30,7 @@ namespace Aztobir.Core.İnterfaces
         public IFeedbackCRUDRepository FeedbackCRUDRepository { get;  }
         public IUniversityPhotosGetRepository UniversityPhotosGetRepository { get;  }
         public IGoalCRUDRepository GoalCRUDRepository { get;  }
+        public IAboutCRUDRepository AboutCRUDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

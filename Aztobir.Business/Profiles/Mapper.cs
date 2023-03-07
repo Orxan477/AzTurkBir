@@ -14,6 +14,7 @@ namespace Aztobir.Business.Profiles
         public Mapper()
         {
             CreateMap<Goal, GoalVM>();
+            CreateMap<GoalCreateVM, Goal>();
             CreateMap<About, AboutVM>();
             CreateMap<University, UniversityVM>().ForMember(x=>x.City,m=>m.MapFrom(o=>o.City.Name));
             CreateMap<UniversityVM, University>().ForMember(x=>x.CityId,m=>m.MapFrom(o=>o.City));

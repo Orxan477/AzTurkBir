@@ -36,7 +36,7 @@
                             </td>
                             <td style="padding: 0 0 0 17px;">
                                 <a style="padding:5px;" asp-action="Update" class="btn btn-warning" asp-route-id="@Model.Goal.Id"><i class="mdi mdi-table-edit"></i></a>
-                                <a style="padding:5px;" asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.Goal.Id"><i class="mdi mdi-comment-remove-outline"></i></a>
+                                <a style="padding:5px;" asp-action="Delete" class="btn btn-danger delete-btn" asp-route-id="@Model.Goal.Id"><i class="mdi mdi-comment-remove-outline"></i></a>
                             </td>
                         </tr>
                     </tbody>
@@ -45,3 +45,7 @@
         </div>
     </div>
 </div>
+@section ScriptModal{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script src="~/admin/assets/js/AlertModal.js"></script>
+}

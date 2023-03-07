@@ -40,6 +40,11 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return RedirectToAction("Index", "Feedback", new { area = "admin" });
             }
         }
+        [Route("/admin/feedback/create/")]
+        public IActionResult Create()
+        {
+            return View();
+        }
         [Route("/admin/feedback/delete/{id}")]
         //[HttpPost]
         //[ValidateAntiForgeryToken]

@@ -2,6 +2,7 @@
 using Aztobir.Business.Interfaces.About;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Core.İnterfaces;
+using Aztobir.Core.Models;
 
 namespace Aztobir.Business.Implementations.About
 {
@@ -16,9 +17,26 @@ namespace Aztobir.Business.Implementations.About
             _unitOfWork = unitOfWork;
         }
 
+        public async Task Create(GoalCreateVM goal)
+        {
+            Goal dbGoal= _mapper.Map<Goal>(goal);
+            await _unitOfWork.GoalCRUDRepository.CreateAsync(dbGoal);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task Delete(int id)
+        {
+            var dbGoal = await _unitOfWork.GoalGetRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbGoal is null) throw new Exception("Not Found");
+            dbGoal.IsDeleted = true;
+            _unitOfWork.GoalCRUDRepository.DeleteAsync(dbGoal);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<GoalVM> Get(int id)
         {
             var goal = await _unitOfWork.GoalGetRepository.Get(x => !x.IsDeleted && x.Id==id);
+            if (goal is null) throw new Exception("Not Found");
             GoalVM goalVM = _mapper.Map<GoalVM>(goal);
             return goalVM;
         }
