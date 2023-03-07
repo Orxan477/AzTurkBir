@@ -1,8 +1,9 @@
 ﻿using Aztobir.Core.İnterfaces;
 using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.İnterfaces.About;
-using Aztobir.Core.Interfaces.Home.FAQ;
+using Aztobir.Core.Interfaces.Home.City;
 using Aztobir.Core.İnterfaces.Home.FAQ;
+using Aztobir.Core.Interfaces.Home.FAQ;
 using Aztobir.Core.Interfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
@@ -13,6 +14,7 @@ using Aztobir.Core.Interfaces.Team;
 using Aztobir.Core.İnterfaces.Team;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations.About;
+using Aztobir.Data.Implementations.Home.City;
 using Aztobir.Data.Implementations.Home.FAQ;
 using Aztobir.Data.Implementations.Home.Feedback;
 using Aztobir.Data.Implementations.Home.News;
@@ -40,6 +42,7 @@ namespace Aztobir.Data.Implementations
         private UniversityPhotosGetRepository _universityPhotosGetRepository;
         private GoalCRUDRepository _goalCRUDRepository;
         private AboutCRUDRepository _aboutCRUDRepository;
+        private CityGetRepository _cityGetRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -74,6 +77,8 @@ namespace Aztobir.Data.Implementations
         public IGoalCRUDRepository GoalCRUDRepository => _goalCRUDRepository ?? new GoalCRUDRepository(_context);
 
         public IAboutCRUDRepository AboutCRUDRepository => _aboutCRUDRepository ?? new AboutCRUDRepository(_context);
+
+        public ICityGetRepository CityGetRepository => _cityGetRepository ?? new CityGetRepository(_context);
 
         public async Task SaveChangesAsync()
         {

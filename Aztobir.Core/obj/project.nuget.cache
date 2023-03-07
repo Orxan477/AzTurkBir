@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SrGP2oVsyvVxEx6ocuoSY/r8nTgGeKbTYh9yVw3C9hrHaImpE+qmrL9e9tw4nik9z4NmvPWlklfF9BdG/xMO6Q==",
+  "dgSpecHash": "/x242HRGmNn4C9qQrcMrtZroz3BHygAhlY8wcYPbIkCJyUd6MbCTxiFl7/So0tJoZpb+yUMpbrPY6HO0dvR8PQ==",
   "success": true,
-  "projectFilePath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj",
+  "projectFilePath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Orxan477\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0\\microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.0\\microsoft.aspnetcore.cryptography.keyderivation.6.0.0.nupkg.sha512",

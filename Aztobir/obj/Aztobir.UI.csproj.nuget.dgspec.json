@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\Aztobir.UI.csproj": {}
+    "E:\\Documents\\Code Academy\\Aztobir\\Aztobir\\Aztobir.UI.csproj": {}
   },
   "projects": {
-    "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj": {
+    "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj",
+        "projectUniqueName": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj",
         "projectName": "Aztobir.Business",
-        "projectPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj",
+        "projectPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj",
         "packagesPath": "C:\\Users\\Orxan477\\.nuget\\packages\\",
-        "outputPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Business\\obj\\",
+        "outputPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj": {
-                "projectPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj"
+              "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj": {
+                "projectPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj": {
+    "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj",
+        "projectUniqueName": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj",
         "projectName": "Aztobir.Core",
-        "projectPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj",
+        "projectPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj",
         "packagesPath": "C:\\Users\\Orxan477\\.nuget\\packages\\",
-        "outputPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Core\\obj\\",
+        "outputPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -144,14 +144,14 @@
         }
       }
     },
-    "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj": {
+    "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj",
+        "projectUniqueName": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj",
         "projectName": "Aztobir.Data",
-        "projectPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj",
+        "projectPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj",
         "packagesPath": "C:\\Users\\Orxan477\\.nuget\\packages\\",
-        "outputPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Data\\obj\\",
+        "outputPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -172,8 +172,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj": {
-                "projectPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj"
+              "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj": {
+                "projectPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Core\\Aztobir.Core.csproj"
               }
             }
           }
@@ -230,14 +230,14 @@
         }
       }
     },
-    "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\Aztobir.UI.csproj": {
+    "E:\\Documents\\Code Academy\\Aztobir\\Aztobir\\Aztobir.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\Aztobir.UI.csproj",
+        "projectUniqueName": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir\\Aztobir.UI.csproj",
         "projectName": "Aztobir.UI",
-        "projectPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\Aztobir.UI.csproj",
+        "projectPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir\\Aztobir.UI.csproj",
         "packagesPath": "C:\\Users\\Orxan477\\.nuget\\packages\\",
-        "outputPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\obj\\",
+        "outputPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -258,8 +258,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj": {
-                "projectPath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj"
+              "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj": {
+                "projectPath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Business\\Aztobir.Business.csproj"
               }
             }
           }

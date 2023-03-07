@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MKnu3A4croiOXm6wJuzoQsS5TxGSL2Ss1OjjNTzWpE1LdrJ0e81cYYdLBV79SmJpBUYfhrK+xtsBnyhmwqcOzA==",
+  "dgSpecHash": "WJswSufEHn7cu/Rw26jx2p7aczJ37ztPK5LowdSRV34fdkfbApGDFevOZitnWQasUA17MymVH4pajvHWFCSLDg==",
   "success": true,
-  "projectFilePath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\Aztobir.UI.csproj",
+  "projectFilePath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir\\Aztobir.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Orxan477\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

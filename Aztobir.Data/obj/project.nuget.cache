@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MdeT1vaL4UGoAqrfyMbS3W/uHHmyzHvTKIXXAt5XBMKDEyH/dCbdbdDwRgxYgi5EW9t+4PqocvtreLnkJBxyyA==",
+  "dgSpecHash": "YQxfz0I5CmKAElz8E/GeKswDnz2K7103Wa0hWAsZMwDZiwjudRE++MtA8IZk4fiYR9RQvEjWCfeJdX0en+gaIA==",
   "success": true,
-  "projectFilePath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj",
+  "projectFilePath": "E:\\Documents\\Code Academy\\Aztobir\\Aztobir.Data\\Aztobir.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Orxan477\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

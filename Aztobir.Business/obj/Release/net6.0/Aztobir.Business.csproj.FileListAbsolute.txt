@@ -15,3 +15,20 @@ E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Release\net6.0\
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Release\net6.0\refint\Aztobir.Business.dll
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.pdb
 E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir.Business\obj\Release\net6.0\ref\Aztobir.Business.dll
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\bin\Release\net6.0\Aztobir.Business.deps.json
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\bin\Release\net6.0\Aztobir.Business.dll
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\bin\Release\net6.0\Aztobir.Business.pdb
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\bin\Release\net6.0\Aztobir.Core.dll
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\bin\Release\net6.0\Aztobir.Data.dll
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\bin\Release\net6.0\Aztobir.Data.pdb
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\bin\Release\net6.0\Aztobir.Core.pdb
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.csproj.AssemblyReference.cache
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.AssemblyInfoInputs.cache
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.AssemblyInfo.cs
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.csproj.CoreCompileInputs.cache
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.csproj.CopyComplete
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.dll
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\refint\Aztobir.Business.dll
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\Aztobir.Business.pdb
+E:\Documents\Code Academy\Aztobir\Aztobir.Business\obj\Release\net6.0\ref\Aztobir.Business.dll
