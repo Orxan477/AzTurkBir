@@ -58,9 +58,18 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/city/update/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(int id,CityVM city)
+        public async Task<IActionResult> Update(int id,CityVM city)
         {
-            return Json(city);
+            try
+            {
+               await _aztobirService.CityService.Update(id, city);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
         }
     }
 }

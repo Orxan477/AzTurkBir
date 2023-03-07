@@ -81,7 +81,7 @@ namespace Aztobir.Data.Implementations
 
         public ICityGetRepository CityGetRepository => _cityGetRepository ?? new CityGetRepository(_context);
 
-        public ICityCRUDRepository CityCURDRepository => _cityCRUDRepository ?? new CityCRUDRepository(_context);
+        public ICityCRUDRepository CityCRUDRepository => _cityCRUDRepository ?? new CityCRUDRepository(_context);
 
         public async Task SaveChangesAsync()
         {

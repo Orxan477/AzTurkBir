@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Aztobir.Data.Implementations
 {
-    public class CRUDRepository<TEntity> : ICRUDRepository<TEntity>
+    public class CRUDRepository<TEntity> : Core.Interfaces.ICRUDRepository<TEntity>
         where TEntity : class
     {
         private AppDbContext _context;
@@ -28,7 +28,7 @@ namespace Aztobir.Data.Implementations
              _context.Set<TEntity>().Update(entity);
         }
 
-        public bool IsExist(Expression<Func<TEntity, bool>> exp)
+        public bool Exist(Expression<Func<TEntity, bool>> exp)
         {
             return _context.Set<TEntity>().Any(exp);
         }

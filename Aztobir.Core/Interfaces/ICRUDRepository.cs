@@ -7,6 +7,6 @@ namespace Aztobir.Core.Interfaces
         Task CreateAsync(TEntity entity);
         void UpdateAsync(TEntity entity);
         void DeleteAsync(TEntity entity);
-        bool IsExist(Expression<Func<TEntity, bool>> exp,);
+        bool Exist(Expression<Func<TEntity, bool>> exp);
     }
 }
