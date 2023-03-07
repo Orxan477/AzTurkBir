@@ -29,6 +29,15 @@ namespace Aztobir.Business.Implementations.Home.City
             await _unitOfWork.SaveChangesAsync();
         }
 
+        public async Task Delete(int id)
+        {
+            var dbCity = await _unitOfWork.CityGetRepository.Get(x => x.Id == id && !x.IsDeleted);
+            if (dbCity is null) throw new Exception("Not Found");
+            dbCity.IsDeleted = true;
+            _unitOfWork.CityCRUDRepository.DeleteAsync(dbCity);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<CityVM> Get(int id)
         {
             var dbCity= await _unitOfWork.CityGetRepository.Get(x => x.Id == id&& !x.IsDeleted);

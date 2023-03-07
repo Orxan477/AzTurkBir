@@ -71,5 +71,19 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return Json(ex.Message);
             }
         }
+        [Route("/admin/city/delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _aztobirService.CityService.Delete(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
+        }
     }
 }
