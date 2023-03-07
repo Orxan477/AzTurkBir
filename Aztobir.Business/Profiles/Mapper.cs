@@ -23,6 +23,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<UniversityImages, UniPhotosVM>();
             CreateMap<FAQ, FAQVM>();
             CreateMap<City, CityVM>();
+            CreateMap<CreateFAQVM, FAQ>();
             CreateMap<CityCreateVM, City>();
             CreateMap<News, NewsVM>();
             CreateMap<NewsVM, News>();

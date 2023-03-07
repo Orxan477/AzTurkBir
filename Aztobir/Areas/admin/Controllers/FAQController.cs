@@ -1,6 +1,7 @@
 ﻿using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.Home;
 using Aztobir.Business.ViewModels.Home.FAQ;
+using Aztobir.Business.ViewModels.Home.Feedback;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
     [Area("admin")]
     [Authorize(Roles = "Admin")]
     public class FAQController : Controller
-        
+
     {
         private IAztobirService _aztobirService;
 
@@ -42,6 +43,19 @@ namespace Aztobir.UI.Areas.admin.Controllers
 
                 return RedirectToAction("Index", "FAQ", new { area = "admin" });
             }
+        }
+        [Route("/admin/faq/create/")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [Route("/admin/faq/create/")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateFAQVM feedback)
+        {
+            await _aztobirService.FAQService.Create(feedback);
+            return RedirectToAction("Index");
         }
         [Route("/admin/faq/update/{id}")]
         public async Task<IActionResult> Update(int id)

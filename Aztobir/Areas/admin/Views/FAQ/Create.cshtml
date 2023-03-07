@@ -1,0 +1,36 @@
+﻿@using Aztobir.Business.ViewModels.Home.FAQ
+@model CreateFAQVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="Question" style="font-weight:bolder"></label>
+                        <textarea asp-for="Question" class="form-control"></textarea>
+                        <span asp-validation-for="Question" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Response" style="font-weight:bolder"></label>
+                        <textarea asp-for="Response" class="form-control"></textarea>
+                        <span asp-validation-for="Response" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light" asp-action="Index">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section ScriptModal{
+    <partial name="_AdminValidationScriptsPartial" />
+}
+
+
+
