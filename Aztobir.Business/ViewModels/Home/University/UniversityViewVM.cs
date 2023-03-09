@@ -1,5 +1,6 @@
 ﻿using Aztobir.Business.ViewModels.Home.City;
 using Aztobir.Business.ViewModels.Home.Feedback;
+using Aztobir.Business.ViewModels.Home.Position;
 
 namespace Aztobir.Business.ViewModels.Home.University
 {
@@ -12,5 +13,6 @@ namespace Aztobir.Business.ViewModels.Home.University
         public List<FeedbackVM> Feedbacks { get; set; }
         public List<CityVM> Cities{ get; set; }
         public CityVM City{ get; set; }
+        public List<PositionVM> Positions{ get; set; }
     }
 }

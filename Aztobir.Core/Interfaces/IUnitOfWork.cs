@@ -7,6 +7,7 @@ using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.Interfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
+using Aztobir.Core.Interfaces.Home.Position;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Home.University;
 using Aztobir.Core.İnterfaces.Team;
@@ -34,6 +35,8 @@ namespace Aztobir.Core.İnterfaces
         public IAboutCRUDRepository AboutCRUDRepository { get;  }
         public ICityGetRepository CityGetRepository{ get;  }
         public ICityCRUDRepository CityCRUDRepository { get;  }
+        public IPositionCRUDRepository PositionCRUDRepository { get;  }
+        public IPositionGetRepository PositionGetRepository { get;  }
         Task SaveChangesAsync();
     }
 }

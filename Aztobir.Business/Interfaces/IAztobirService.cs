@@ -4,6 +4,7 @@ using Aztobir.Business.Interfaces.Home.City;
 using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
+using Aztobir.Business.Interfaces.Home.Position;
 using Aztobir.Business.Interfaces.Home.University;
 using Aztobir.Business.Interfaces.Team;
 
@@ -20,5 +21,6 @@ namespace Aztobir.Business.Interfaces
         public IAccountService AccountService{ get;}
         public ITeamService TeamService{ get;}
         public ICityService CityService{ get;}
+        public IPositionService PositionService{ get;}
     }
 }

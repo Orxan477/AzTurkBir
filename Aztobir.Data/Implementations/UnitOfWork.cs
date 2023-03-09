@@ -8,8 +8,9 @@ using Aztobir.Core.Interfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
-using Aztobir.Core.Interfaces.Home.University;
+using Aztobir.Core.Interfaces.Home.Position;
 using Aztobir.Core.İnterfaces.Home.University;
+using Aztobir.Core.Interfaces.Home.University;
 using Aztobir.Core.Interfaces.Team;
 using Aztobir.Core.İnterfaces.Team;
 using Aztobir.Data.DAL;
@@ -18,6 +19,7 @@ using Aztobir.Data.Implementations.Home.City;
 using Aztobir.Data.Implementations.Home.FAQ;
 using Aztobir.Data.Implementations.Home.Feedback;
 using Aztobir.Data.Implementations.Home.News;
+using Aztobir.Data.Implementations.Home.Position;
 using Aztobir.Data.Implementations.Home.University;
 using Aztobir.Data.Implementations.Team;
 
@@ -44,6 +46,8 @@ namespace Aztobir.Data.Implementations
         private AboutCRUDRepository _aboutCRUDRepository;
         private CityGetRepository _cityGetRepository;
         private CityCRUDRepository _cityCRUDRepository;
+        private PositionCRUDRepository _positionCRUDRepository;
+        private PositionGetRepository _positionGetRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -82,6 +86,10 @@ namespace Aztobir.Data.Implementations
         public ICityGetRepository CityGetRepository => _cityGetRepository ?? new CityGetRepository(_context);
 
         public ICityCRUDRepository CityCRUDRepository => _cityCRUDRepository ?? new CityCRUDRepository(_context);
+
+        public IPositionCRUDRepository PositionCRUDRepository => _positionCRUDRepository ?? new PositionCRUDRepository(_context);
+
+        public IPositionGetRepository PositionGetRepository => _positionGetRepository ?? new PositionGetRepository(_context);
 
         public async Task SaveChangesAsync()
         {

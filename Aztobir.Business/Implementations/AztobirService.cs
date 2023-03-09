@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Implementations.About;
 using Aztobir.Business.Implementations.Account;
+using Aztobir.Business.Implementations.Home;
 using Aztobir.Business.Implementations.Home.City;
 using Aztobir.Business.Implementations.Home.FAQ;
 using Aztobir.Business.Implementations.Home.Feedback;
@@ -14,6 +15,7 @@ using Aztobir.Business.Interfaces.Home.City;
 using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
+using Aztobir.Business.Interfaces.Home.Position;
 using Aztobir.Business.Interfaces.Home.University;
 using Aztobir.Business.Interfaces.Team;
 using Aztobir.Core.İnterfaces;
@@ -36,6 +38,7 @@ namespace Aztobir.Business.Implementations
         private AccountService _accountService;
         private TeamService _teamService;
         private CityService _cityService;
+        private PositionService _positionService;
         public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager)
         {
             _unitOfWork = unitOfWork;
@@ -59,5 +62,7 @@ namespace Aztobir.Business.Implementations
         public ITeamService TeamService => _teamService ?? new TeamService(_unitOfWork, _mapper);
 
         public ICityService CityService => _cityService ?? new CityService(_unitOfWork, _mapper);
+
+        public IPositionService PositionService => _positionService ?? new PositionService(_unitOfWork, _mapper);
     }
 }

@@ -99,7 +99,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
                     ModelState.AddModelError(string.Empty, model);
                     return View(news);
                 }
-                return RedirectToAction("Detail");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
@@ -120,5 +120,9 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
 
         }
+        //private async Task GetSelectedItemAsync()
+        //{
+        //    ViewBag.city = new SelectList(await _aztobirService..GetAll(), "Id", "Name");
+        //}
     }
 }

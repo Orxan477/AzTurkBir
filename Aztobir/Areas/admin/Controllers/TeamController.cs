@@ -40,9 +40,13 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return RedirectToAction("Index", "Team", new { area = "admin" });
             }
         }
+        [Route("/admin/team/create/")]
+        public IActionResult Create()
+        {
+
+            return View();
+        }
         [Route("/admin/team/delete/{id}")]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             try
