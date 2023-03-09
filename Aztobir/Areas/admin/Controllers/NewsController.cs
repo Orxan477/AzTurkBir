@@ -7,7 +7,7 @@ using Aztobir.Data.DAL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
- 
+
 namespace Aztobir.UI.Areas.admin.Controllers
 {
     [Area("admin")]
@@ -15,10 +15,12 @@ namespace Aztobir.UI.Areas.admin.Controllers
     public class NewsController : Controller
     {
         private IAztobirService _aztobirService;
-         
-        public NewsController(IAztobirService aztobirService)
+        private IWebHostEnvironment _env;
+
+        public NewsController(IAztobirService aztobirService, IWebHostEnvironment env)
         {
             _aztobirService = aztobirService;
+            _env = env;
         }
         [Route("/admin/news/index")]
         public async Task<IActionResult> Index()
@@ -51,7 +53,46 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             return View();
         }
-        [Route("/admin/news/delete/{id}")]
+        [Route("/admin/news/create/")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateNewsVM news)
+        {
+            if (!ModelState.IsValid) return View(news);
+            var saveNews = await _aztobirService.NewsService.Create(news, _env.WebRootPath);
+            if (saveNews == "ok")
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, saveNews);
+                return View(news);
+            }
+
+        }
+        [Route("/admin/news/update/{id}")]
+        public async Task<IActionResult> Update(int id)
+        {
+            var model=await _aztobirService.NewsService.Get(id);
+            return View(model);
+        }
+        [Route("/admin/news/update/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id,NewsVM news)
+        {
+            try
+            {
+                await _aztobirService.NewsService.Update(id,news, _env.WebRootPath);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+        }
+            [Route("/admin/news/delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try

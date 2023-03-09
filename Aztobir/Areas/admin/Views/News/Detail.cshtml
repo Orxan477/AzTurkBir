@@ -20,7 +20,7 @@
                     <tbody>
                         <tr>
                             <th>Image</th>
-                            <th><img style="width:80px;" src="/assets/img/blog/@Model.NewsDetail.Image" /></th>
+                            <th><img style="width:80px;" src="/assets/img/@Model.NewsDetail.Image" /></th>
                         </tr>
                         <tr>
                             <td>Name</td>
@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <td>Content</td>
-                            <td>@Model.NewsDetail.Content</td>
+                            <td>@Html.Raw(Model.NewsDetail.Content)</td>
                         </tr>
                         <tr>
                             <td>

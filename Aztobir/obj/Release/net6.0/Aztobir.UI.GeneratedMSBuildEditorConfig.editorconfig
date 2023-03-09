@@ -8,221 +8,229 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Aztobir.UI
 build_property.RootNamespace = Aztobir.UI
-build_property.ProjectDir = E:\Documents\Code Academy\Aztobir\Aztobir\
+build_property.ProjectDir = E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Documents\Code Academy\Aztobir\Aztobir
+build_property.MSBuildProjectDirectory = E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/About/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/About/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQWJvdXRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/About/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/About/Update.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/About/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQWJvdXRcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/City/Create.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/City/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ2l0eVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/City/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/City/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ2l0eVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/City/Update.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/City/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ2l0eVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Dashboard/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/FAQ/Create.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/FAQ/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRkFRXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/FAQ/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/FAQ/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRkFRXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/FAQ/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/FAQ/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRkFRXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/FAQ/Update.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/FAQ/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRkFRXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Feedback/Create.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Feedback/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRmVlZGJhY2tcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Feedback/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Feedback/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRmVlZGJhY2tcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Feedback/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Feedback/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRmVlZGJhY2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Goal/Create.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Goal/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcR29hbFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Goal/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Goal/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcR29hbFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Goal/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Goal/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcR29hbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Goal/Update.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Goal/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcR29hbFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/News/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/News/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcTmV3c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/News/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcTmV3c1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/News/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/News/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminFooter/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/News/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcTmV3c1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminFooter/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5Gb290ZXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminHead/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminHead/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5IZWFkXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminNavbar/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminNavbar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5OYXZiYXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminScript/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/AdminScript/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5TY3JpcHRcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/Sidebar/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Shared/Components/Sidebar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZWJhclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Shared/_AdminValidationScriptsPartial.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Shared/_AdminValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pblZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Team/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Team/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVGVhbVxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Team/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Team/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVGVhbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/University/Create.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/University/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVW5pdmVyc2l0eVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/University/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/University/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVW5pdmVyc2l0eVxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/University/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/University/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVW5pdmVyc2l0eVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/_ViewImports.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/_ViewStart.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/About/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Account/Login.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Contact/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Home/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/News/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/News/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/News/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/News/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Shared/Components/Footer/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Shared/Components/Footer/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Shared/Components/Header/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Shared/Components/Header/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Shared/Components/Head/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Shared/Components/Head/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Shared/Components/Script/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Shared/Components/Script/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2NyaXB0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Shared/Components/University/Default.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Shared/Components/University/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVW5pdmVyc2l0eVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Team/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Team/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Team/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Team/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/University/Detail.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/University/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdmVyc2l0eVxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/University/Index.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/University/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdmVyc2l0eVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/_ViewImports.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/_ViewStart.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Areas/admin/Views/Shared/_AdminLayout.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-ml4lxrayfn
 
-[E:/Documents/Code Academy/Aztobir/Aztobir/Views/Shared/_Layout.cshtml]
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8ij47a0oa6
