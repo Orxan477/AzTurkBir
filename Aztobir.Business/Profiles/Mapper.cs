@@ -29,6 +29,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<NewsVM, News>();
             CreateMap<CreateNewsVM, News>();
             CreateMap<Feedback, FeedbackVM>().ForMember(x=>x.ImageView,m=>m.MapFrom(o=>o.University.Image)).ForMember(x=>x.University,m=>m.MapFrom(o=>o.University.Name));
+            CreateMap<CreateFeedbackVM, Feedback    >();
             CreateMap<Team, TeamVM>().ForMember(x => x.Position, m => m.MapFrom(o => o.Position.Name));
             CreateMap<Team, TeamDetailVM>().ForMember(x => x.Position, m => m.MapFrom(o => o.Position.Name));
         }

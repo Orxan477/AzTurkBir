@@ -6,6 +6,8 @@ namespace Aztobir.Business.Interfaces.Home.Feedback
     {
         Task<List<FeedbackVM>> GetAll();
         Task<FeedbackVM> Get(int id);
+        Task<string> Create(CreateFeedbackVM feedback,string env);
+        Task Update(int id,FeedbackVM feedback,string env);
         Task Delete(int id);
     }
 }

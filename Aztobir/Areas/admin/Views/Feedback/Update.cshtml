@@ -1,0 +1,47 @@
+﻿@using Aztobir.Business.ViewModels.Home.Feedback
+@model FeedbackVM
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data" accept-charset="">
+                    <div class="form-group">
+                    <img src="~/assets/img/@Model.Image" style="width:200px;"/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FullName"></label>
+                        <input asp-for="FullName" class="form-control">
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <div class="form-group">
+                            <label asp-for="Photo"></label>
+                            <input asp-for="Photo" class="form-control tinymce">
+                            <span asp-validation-for="Photo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UniversityId">University</label>
+                            <select asp-for="UniversityId" asp-items="@ViewBag.university" class="form-control tinymce">
+                                <span class="text-danger" asp-validation-for="UniversityId"></span>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Comment"></label>
+                        <textarea asp-for="Comment" class="form-control tinymce"></textarea>
+                        <span asp-validation-for="Comment" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light" asp-action="Index">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

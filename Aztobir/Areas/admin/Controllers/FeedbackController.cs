@@ -1,7 +1,9 @@
 ﻿using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.Home;
+using Aztobir.Business.ViewModels.Home.Feedback;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Aztobir.UI.Areas.admin.Controllers
 {
@@ -10,10 +12,12 @@ namespace Aztobir.UI.Areas.admin.Controllers
     public class FeedbackController : Controller
     {
         private IAztobirService _aztobirService;
+        private IWebHostEnvironment _env;
 
-        public FeedbackController(IAztobirService aztobirService)
+        public FeedbackController(IAztobirService aztobirService, IWebHostEnvironment env)
         {
             _aztobirService = aztobirService;
+            _env = env;
         }
         [Route("/admin/feedback/index")]
         public async Task<IActionResult> Index()
@@ -41,13 +45,60 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
         }
         [Route("/admin/feedback/create/")]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await GetSelectedItemAsync();
             return View();
         }
+        [Route("/admin/feedback/create/")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateFeedbackVM feedback)
+        {
+            if (!ModelState.IsValid) 
+            { 
+                await GetSelectedItemAsync(); 
+                return View(feedback); 
+            }
+            var saveNews = await _aztobirService.FeedbackService.Create(feedback, _env.WebRootPath);
+            if (saveNews == "ok") return RedirectToAction("Index");
+            else
+            {
+                ModelState.AddModelError(string.Empty, saveNews);
+                await GetSelectedItemAsync();
+                return View(feedback);
+            }
+        }
+        [Route("/admin/feedback/update/{id}")]
+        public async Task<IActionResult> Update(int id)
+        {
+            try
+            {
+                await GetSelectedItemAsync();
+                var model = await _aztobirService.FeedbackService.Get(id);
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+        }
+        [Route("admin/feedback/update/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id,FeedbackVM feedback)
+        {
+            try
+            {
+                await _aztobirService.FeedbackService.Update(id,feedback,_env.WebRootPath);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+        }
         [Route("/admin/feedback/delete/{id}")]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -60,6 +111,10 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return RedirectToAction("Index", "Feedback", new { area = "admin" });
             }
 
+        }
+        private async Task GetSelectedItemAsync()
+        {
+            ViewBag.university = new SelectList(await _aztobirService.UniversityService.GetAll(), "Id", "Name");
         }
     }
 }

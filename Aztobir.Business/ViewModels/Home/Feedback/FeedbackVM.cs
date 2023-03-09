@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace Aztobir.Business.ViewModels.Home.Feedback
         public string Comment { get; set; }
         public string Image { get; set; }
         public string University { get; set; }
+        public int UniversityId { get; set; }
+        public IFormFile Photo{ get; set; }
         public string ImageView { get; set; }
     }
 }

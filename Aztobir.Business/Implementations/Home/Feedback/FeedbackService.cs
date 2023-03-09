@@ -1,12 +1,15 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Home.Feedback;
+using Aztobir.Business.Utilities;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Core.İnterfaces;
+using Microsoft.AspNetCore.Http;
 
 namespace Aztobir.Business.Implementations.Home.Feedback
 {
     public class FeedbackService : IFeedbackService
     {
+        private string _errorMessage;
         private IUnitOfWork _unitOfWork;
         private IMapper _mapper;
         public FeedbackService(IUnitOfWork unitOfWork,IMapper mapper)
@@ -15,6 +18,54 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             _mapper = mapper;
         }
 
+        public async Task<string> Create(CreateFeedbackVM feedback,string env)
+        {
+            var newFeedback = _mapper.Map<Core.Models.Feedback>(feedback);
+            if (!CheckImageValid(feedback.Photo, "image/", 200))
+            {
+                return _errorMessage;
+            }
+            string image = await Extension.SaveFileAsync(feedback.Photo, env, "assets/img");
+            newFeedback.Image = image;
+            newFeedback.CreatedAt = DateTime.Now;
+            await _unitOfWork.FeedbackCRUDRepository.CreateAsync(newFeedback);
+            await _unitOfWork.SaveChangesAsync();
+            return "ok";
+        }
+        public async Task Update(int id, FeedbackVM feedback, string env)
+        {
+            var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbFeedback is null) throw new Exception("Not Found");
+            if (dbFeedback.FullName.ToLower().Trim() != feedback.FullName.ToLower().Trim())
+            {
+                dbFeedback.FullName = feedback.FullName;
+            }
+            if (dbFeedback.Comment.ToLower().Trim() != feedback.Comment.ToLower().Trim())
+            {
+                dbFeedback.Comment = feedback.Comment;
+            }
+            if (feedback.Photo != null)
+            {
+                string image = await Extension.SaveFileAsync(feedback.Photo, env, "assets/img");
+                dbFeedback.Image = image;
+            }
+            _unitOfWork.FeedbackCRUDRepository.UpdateAsync(dbFeedback);
+            await _unitOfWork.SaveChangesAsync();
+        }
+        private bool CheckImageValid(IFormFile file, string type, int size)
+        {
+            if (!Extension.CheckType(file, type))
+            {
+                _errorMessage = "The type is not correct";
+                return false;
+            }
+            if (!Extension.CheckSize(file, size))
+            {
+                _errorMessage = $"The size of this photo is {size}";
+                return false;
+            }
+            return true;
+        }
         public async Task Delete(int id)
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id == id, "University");
@@ -38,5 +89,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             List<FeedbackVM> feedbacks = _mapper.Map<List<FeedbackVM>>(dbFeedback);
             return feedbacks;
         }
+
+        
     }
 }

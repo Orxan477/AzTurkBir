@@ -74,8 +74,17 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/news/update/{id}")]
         public async Task<IActionResult> Update(int id)
         {
-            var model=await _aztobirService.NewsService.Get(id);
-            return View(model);
+            try
+            {
+                var model =await _aztobirService.NewsService.Get(id);
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
+            
         }
         [Route("/admin/news/update/{id}")]
         [HttpPost]
@@ -85,7 +94,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             try
             {
                 await _aztobirService.NewsService.Update(id,news, _env.WebRootPath);
-                return RedirectToAction("Index");
+                return RedirectToAction("Detail");
             }
             catch (Exception ex)
             {
