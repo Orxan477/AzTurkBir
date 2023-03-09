@@ -10,6 +10,8 @@ namespace Aztobir.Business.Interfaces.Home.University
         Task<List<FacultiesVM>> GetFaculties(int id);
         Task<List<UniPhotosVM>> GetPhotos(int id);
         Task<List<FeedbackVM>> GetFeedbacks(int id);
+        Task<string> Create(CreateUniversityVM uni,string env);
+        Task<string> Update(int id,UniversityVM uni,string env);
         Task Delete(int id);
     }
 }

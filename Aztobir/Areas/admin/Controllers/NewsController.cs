@@ -93,7 +93,12 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                await _aztobirService.NewsService.Update(id,news, _env.WebRootPath);
+                var model = await _aztobirService.NewsService.Update(id, news, _env.WebRootPath);
+                if (model!="ok")
+                {
+                    ModelState.AddModelError(string.Empty, model);
+                    return View(news);
+                }
                 return RedirectToAction("Detail");
             }
             catch (Exception ex)
