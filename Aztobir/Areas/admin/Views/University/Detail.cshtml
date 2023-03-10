@@ -51,6 +51,13 @@
                             <td>@Model.University.Content</td>
                         </tr>
                         <tr>
+                            <td>Fotoğraflar</td>
+                            <td>
+                                 <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="create" class="btn btn-primary" asp-route-id="@Model.University.Id"><i class="mdi mdi-library-plus"></i></a>
+                                 <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="detail" class="btn btn-success" asp-route-id="@Model.University.Id"><i class="mdi mdi-folder-image"></i></a>
+                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 Settings
                             </td>

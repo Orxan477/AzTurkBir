@@ -39,6 +39,7 @@ namespace Aztobir.Business.Implementations
         private TeamService _teamService;
         private CityService _cityService;
         private PositionService _positionService;
+        private UniversityPhotoService _universityPhotoService;
         public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager)
         {
             _unitOfWork = unitOfWork;
@@ -64,5 +65,7 @@ namespace Aztobir.Business.Implementations
         public ICityService CityService => _cityService ?? new CityService(_unitOfWork, _mapper);
 
         public IPositionService PositionService => _positionService ?? new PositionService(_unitOfWork, _mapper);
+
+        public IUniversityPhotoService UniversityPhotoService => _universityPhotoService ?? new UniversityPhotoService(_unitOfWork);
     }
 }

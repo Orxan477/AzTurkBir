@@ -1,0 +1,43 @@
+﻿@using Aztobir.Business.ViewModels.Home.University
+@model UniversityViewVM
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+    int num = 1;
+}
+
+<div class="col-lg-10 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="d-inline">
+                <a asp-action="Index" class="mr-2 text-white d-flex">
+                    <i style="color:black;" class="mdi mdi-menu-left"></i>
+                    <h3 style="margin-bottom:0px; margin-top:6px;" class="d-inline card-title">Universite</h3>
+                </a>
+            </h3>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        @foreach (var photo in Model.Photos)
+                        {
+                            <tr>
+                                <th>Fotoğraf @num</th>
+                                <th><img style="width:160px;" src="~/assets/img/@photo.Image" /></th>
+                                <th>
+                                    <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="Update" class="btn btn-warning" asp-route-id="@photo.Id"><i class="mdi mdi-table-edit"></i></a>
+                                    <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="Delete" class="btn btn-danger delete-btn" asp-route-id="@photo.Id"><i class="mdi mdi-comment-remove-outline"></i></a>
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section ScriptModal{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script src="~/admin/assets/js/AlertModal.js"></script>
+}
+

@@ -37,6 +37,7 @@ namespace Aztobir.Core.İnterfaces
         public ICityCRUDRepository CityCRUDRepository { get;  }
         public IPositionCRUDRepository PositionCRUDRepository { get;  }
         public IPositionGetRepository PositionGetRepository { get;  }
+        public IUniversityPhotosCRUDRepository UniversityImagesCURDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

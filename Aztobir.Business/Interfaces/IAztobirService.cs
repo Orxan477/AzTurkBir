@@ -22,5 +22,6 @@ namespace Aztobir.Business.Interfaces
         public ITeamService TeamService{ get;}
         public ICityService CityService{ get;}
         public IPositionService PositionService{ get;}
+        public IUniversityPhotoService UniversityPhotoService { get;}
     }
 }

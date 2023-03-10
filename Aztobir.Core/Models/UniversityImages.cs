@@ -1,6 +1,6 @@
 ﻿namespace Aztobir.Core.Models
 {
-    public class UniversityImages
+    public class UniversityImages:BaseEntity
     {
         public int Id { get; set; }
         public string Image { get; set; }

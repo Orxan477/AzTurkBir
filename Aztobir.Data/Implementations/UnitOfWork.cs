@@ -48,6 +48,7 @@ namespace Aztobir.Data.Implementations
         private CityCRUDRepository _cityCRUDRepository;
         private PositionCRUDRepository _positionCRUDRepository;
         private PositionGetRepository _positionGetRepository;
+        private UniversityPhotosCRUDRepository _universityImagesCRUDRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -90,6 +91,8 @@ namespace Aztobir.Data.Implementations
         public IPositionCRUDRepository PositionCRUDRepository => _positionCRUDRepository ?? new PositionCRUDRepository(_context);
 
         public IPositionGetRepository PositionGetRepository => _positionGetRepository ?? new PositionGetRepository(_context);
+
+        public IUniversityPhotosCRUDRepository UniversityImagesCURDRepository => _universityImagesCRUDRepository ?? new UniversityPhotosCRUDRepository(_context);
 
         public async Task SaveChangesAsync()
         {
