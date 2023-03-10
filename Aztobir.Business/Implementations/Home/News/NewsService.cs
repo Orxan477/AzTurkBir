@@ -57,6 +57,7 @@ namespace Aztobir.Business.Implementations.Home.News
                     dbNews.Image = image;
                 }
             }
+            dbNews.UpdatedAt = DateTime.Now;
             _unitOfWork.CRUDNewsRepository.UpdateAsync(dbNews);
             await _unitOfWork.SaveChangesAsync();
             return "ok";

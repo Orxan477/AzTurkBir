@@ -43,7 +43,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/team/create/")]
         public IActionResult Create()
         {
-
             return View();
         }
         [Route("/admin/team/delete/{id}")]
