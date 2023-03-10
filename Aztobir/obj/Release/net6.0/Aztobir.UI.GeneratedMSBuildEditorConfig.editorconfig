@@ -167,6 +167,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVW5pdmVyc2l0eUltYWdlc1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/UniversityImages/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVW5pdmVyc2l0eUltYWdlc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Documents/Code Academy/Buta Grup/Aztobir/Aztobir/Areas/admin/Views/University/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcVW5pdmVyc2l0eVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

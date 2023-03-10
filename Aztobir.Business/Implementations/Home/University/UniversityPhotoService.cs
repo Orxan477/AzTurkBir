@@ -1,4 +1,5 @@
-﻿using Aztobir.Business.Interfaces.Home.University;
+﻿using AutoMapper;
+using Aztobir.Business.Interfaces.Home.University;
 using Aztobir.Business.Utilities;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.İnterfaces;
@@ -11,12 +12,17 @@ namespace Aztobir.Business.Implementations.Home.University
     {
         private string _errorMessage;
         private IUnitOfWork _unitOfWork;
-        public UniversityPhotoService(IUnitOfWork unitOfWork)
+        private IMapper _mapper;
+
+        public UniversityPhotoService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
         public async Task<string> Create(int id, CreateUniPhotosVM photos, string env)
         {
+            var dbPhoto = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbPhoto is null) throw new Exception("Not Found");
             foreach (var photo in photos.Photos)
             {
                 if (!CheckImageValid(photo, "image/", 200))
@@ -26,23 +32,37 @@ namespace Aztobir.Business.Implementations.Home.University
                 string image = await Extension.SaveFileAsync(photo, env, "assets/img");
                 UniversityImages uniPhoto = new UniversityImages()
                 {
-                    Image=image,
-                    UniversityId=id,
-                    CreatedAt=DateTime.Now
+                    Image = image,
+                    UniversityId = id,
+                    CreatedAt = DateTime.Now
                 };
-            await _unitOfWork.UniversityImagesCURDRepository.CreateAsync(uniPhoto);
+                await _unitOfWork.UniversityImagesCURDRepository.CreateAsync(uniPhoto);
             }
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public Task<string> Update(int id, CreateUniPhotosVM photos, string env)
+        public async Task<string> Update(int id, UpdateUniversityPhotosVM photo, string env)
         {
-            throw new NotImplementedException();
+            var dbPhoto = await _unitOfWork.UniversityPhotosGetRepository.Get(x => x.Id == id);
+            if (dbPhoto is null) throw new Exception("Not Found");
+            if (!CheckImageValid(photo.Photo, "image/", 200))
+            {
+                return _errorMessage;
+            }
+            string image = await Extension.SaveFileAsync(photo.Photo, env, "assets/img");
+            dbPhoto.Image = image;
+            _unitOfWork.UniversityImagesCURDRepository.UpdateAsync(dbPhoto);
+            await _unitOfWork.SaveChangesAsync();
+            return "ok";
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var dbPhoto = await _unitOfWork.UniversityPhotosGetRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbPhoto is null) throw new Exception("Not Found");
+            dbPhoto.IsDeleted = true;
+            _unitOfWork.UniversityImagesCURDRepository.DeleteAsync(dbPhoto);
+            await _unitOfWork.SaveChangesAsync();
         }
 
         private bool CheckImageValid(IFormFile file, string type, int size)
@@ -60,5 +80,15 @@ namespace Aztobir.Business.Implementations.Home.University
             return true;
         }
 
+        public async Task<UpdateUniversityPhotosVM> GetPhoto(int id)
+        {
+            var dbPhoto = await _unitOfWork.UniversityPhotosGetRepository.Get(x => x.Id == id);
+            if (dbPhoto is null) throw new Exception("Not Found");
+            UpdateUniversityPhotosVM photo = new UpdateUniversityPhotosVM()
+            {
+                Image = dbPhoto.Image
+            };
+            return photo;
+        }
     }
 }

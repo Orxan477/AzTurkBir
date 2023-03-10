@@ -54,7 +54,7 @@ namespace Aztobir.Business.Implementations.Home.University
 
         public async Task<List<UniPhotosVM>> GetPhotos(int id)
         {
-            var dbPhotos = await _unitOfWork.UniversityPhotosGetRepository.GetAll(x => x.UniversityId == id);
+            var dbPhotos = await _unitOfWork.UniversityPhotosGetRepository.GetAll(x => !x.IsDeleted && x.UniversityId == id);
             if (dbPhotos is null) throw new Exception("Not Found");
             List<UniPhotosVM> photos = _mapper.Map<List<UniPhotosVM>>(dbPhotos);
             return photos;

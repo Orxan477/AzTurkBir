@@ -66,6 +66,6 @@ namespace Aztobir.Business.Implementations
 
         public IPositionService PositionService => _positionService ?? new PositionService(_unitOfWork, _mapper);
 
-        public IUniversityPhotoService UniversityPhotoService => _universityPhotoService ?? new UniversityPhotoService(_unitOfWork);
+        public IUniversityPhotoService UniversityPhotoService => _universityPhotoService ?? new UniversityPhotoService(_unitOfWork,_mapper);
     }
 }
