@@ -1,6 +1,7 @@
 ﻿using Aztobir.Core.İnterfaces;
-using Aztobir.Core.Interfaces.About;
+using Aztobir.Core.Interfaces;
 using Aztobir.Core.İnterfaces.About;
+using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.Interfaces.Home.City;
 using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.Interfaces.Home.FAQ;
@@ -9,10 +10,10 @@ using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.Position;
-using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Home.University;
-using Aztobir.Core.Interfaces.Team;
+using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.İnterfaces.Team;
+using Aztobir.Core.Interfaces.Team;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations.About;
 using Aztobir.Data.Implementations.Home.City;
@@ -49,6 +50,7 @@ namespace Aztobir.Data.Implementations
         private PositionCRUDRepository _positionCRUDRepository;
         private PositionGetRepository _positionGetRepository;
         private UniversityPhotosCRUDRepository _universityImagesCRUDRepository;
+        private SettingRepository _settingRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -93,6 +95,8 @@ namespace Aztobir.Data.Implementations
         public IPositionGetRepository PositionGetRepository => _positionGetRepository ?? new PositionGetRepository(_context);
 
         public IUniversityPhotosCRUDRepository UniversityImagesCURDRepository => _universityImagesCRUDRepository ?? new UniversityPhotosCRUDRepository(_context);
+
+        public ISettingRepository SettingRepository => _settingRepository ?? new SettingRepository(_context);
 
         public async Task SaveChangesAsync()
         {

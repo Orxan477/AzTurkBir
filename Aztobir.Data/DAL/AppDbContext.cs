@@ -20,6 +20,7 @@ namespace Aztobir.Data.DAL
         public DbSet<Team>Teams { get; set; }
         public DbSet<University>Universities{ get; set; }
         public DbSet<UniversityImages> UniversityImages { get; set; }
+        public DbSet<Setting> Settings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

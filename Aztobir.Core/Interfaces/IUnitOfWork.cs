@@ -1,4 +1,5 @@
-﻿using Aztobir.Core.İnterfaces.About;
+﻿using Aztobir.Core.Interfaces;
+using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.Interfaces.Home.City;
 using Aztobir.Core.İnterfaces.Home.FAQ;
@@ -38,6 +39,7 @@ namespace Aztobir.Core.İnterfaces
         public IPositionCRUDRepository PositionCRUDRepository { get;  }
         public IPositionGetRepository PositionGetRepository { get;  }
         public IUniversityPhotosCRUDRepository UniversityImagesCURDRepository { get;  }
+        public ISettingRepository SettingRepository { get;  }
         Task SaveChangesAsync();
     }
 }
