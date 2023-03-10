@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Aztobir.Data\Aztobir.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementations\Home\Position\" />
+  </ItemGroup>
+
 </Project>

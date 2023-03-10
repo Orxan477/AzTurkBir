@@ -7,7 +7,7 @@ namespace Aztobir.Business.Interfaces.Team
         Task<List<TeamVM>> GetAll();
         Task<TeamDetailVM> Get(int id);
         Task<string> Create(CreateTeamVM team, string env);
-        Task<string> Update(int id, TeamVM team, string env);
+        Task<string> Update(int id, TeamDetailVM team, string env);
         Task Delete(int id);
     }
 }

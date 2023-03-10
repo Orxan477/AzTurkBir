@@ -32,41 +32,41 @@ namespace Aztobir.Business.Implementations.Team
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, TeamVM team, string env)
+        public async Task<string> Update(int id, TeamDetailVM team, string env)
         {
             var dbTeam = await _unitOfWork.TeamGetRepository.Get(x => !x.IsDeleted && x.Id == id, "Position");
             if (dbTeam is null) throw new Exception("NotFound");
-            if (dbTeam.FullName.ToLower().Trim() != dbTeam.FullName.ToLower().Trim())
+            if (dbTeam.FullName.ToLower().Trim() != team.FullName.ToLower().Trim())
             {
-                dbTeam.FullName = dbTeam.FullName;
+                dbTeam.FullName = team.FullName;
             }
-            if (dbTeam.Content.ToLower().Trim() != dbTeam.Content.ToLower().Trim())
+            if (dbTeam.Content.ToLower().Trim() != team.Content.ToLower().Trim())
             {
-                dbTeam.Content = dbTeam.Content;
+                dbTeam.Content = team.Content;
             }
-            if (dbTeam.Email.ToLower().Trim() != dbTeam.Email.ToLower().Trim())
+            if (dbTeam.Email.ToLower().Trim() != team.Email.ToLower().Trim())
             {
-                dbTeam.Email = dbTeam.Email;
+                dbTeam.Email = team.Email;
             }
-            if (dbTeam.Phone.ToLower().Trim() != dbTeam.Phone.ToLower().Trim())
+            if (dbTeam.Phone.ToLower().Trim() != team.Phone.ToLower().Trim())
             {
-                dbTeam.Phone = dbTeam.Phone;
+                dbTeam.Phone = team.Phone;
             }
-            if (dbTeam.PositionId!= dbTeam.PositionId)
+            if (dbTeam.PositionId!= team.PositionId)
             {
-                dbTeam.PositionId = dbTeam.PositionId;
+                dbTeam.PositionId = team.PositionId;
             }
-            if (dbTeam.Facebook.ToLower().Trim() != dbTeam.Facebook.ToLower().Trim())
+            if (dbTeam.Facebook.ToLower().Trim() != team.Facebook.ToLower().Trim())
             {
-                dbTeam.Facebook = dbTeam.Facebook;
+                dbTeam.Facebook = team.Facebook;
             }
-            if (dbTeam.Twitter.ToLower().Trim() != dbTeam.Twitter.ToLower().Trim())
+            if (dbTeam.Twitter.ToLower().Trim() != team.Twitter.ToLower().Trim())
             {
-                dbTeam.Twitter = dbTeam.Twitter;
+                dbTeam.Twitter = team.Twitter;
             }
-            if (dbTeam.Linkedin.ToLower().Trim() != dbTeam.Linkedin.ToLower().Trim())
+            if (dbTeam.Linkedin.ToLower().Trim() != team.Linkedin.ToLower().Trim())
             {
-                dbTeam.Linkedin = dbTeam.Linkedin;
+                dbTeam.Linkedin = team.Linkedin;
             }
             if (team.Photo != null)
             {

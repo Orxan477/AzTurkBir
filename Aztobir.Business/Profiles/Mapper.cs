@@ -36,6 +36,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<CreateFeedbackVM, Feedback    >();
             CreateMap<Team, TeamVM>().ForMember(x => x.Position, m => m.MapFrom(o => o.Position.Name));
             CreateMap<Team, TeamDetailVM>().ForMember(x => x.Position, m => m.MapFrom(o => o.Position.Name));
+            CreateMap<CreateTeamVM, Team>();
         }
     }
 }

@@ -1,0 +1,119 @@
+﻿@using Aztobir.Business.ViewModels.Team
+@model CreateTeamVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Create</h4>
+                  <form class="form-sample" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="FullName"></label>
+                          <div class="col-sm-9">
+                            <input asp-for="FullName" class="form-control">
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="Email"></label>
+                          <div class="col-sm-9">
+                            <input asp-for="Email" class="form-control">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="Phone"></label>
+                          <div class="col-sm-9">
+                           <input asp-for="Phone" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                       maxlength="12"
+                                       minlength="12" >
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="Facebook"></label>
+                          <div class="col-sm-9">
+                            <input class="form-control" asp-for="Facebook">
+                            <span asp-validation-for="Facebook" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="Twitter"></label>
+                          <div class="col-sm-9">
+                             <input class="form-control" asp-for="Twitter">
+                            <span asp-validation-for="Twitter" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="Linkedin"></label>
+                          <div class="col-sm-9">
+                             <input class="form-control" asp-for="Linkedin">
+                            <span asp-validation-for="Linkedin" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="PositionId">Position</label>
+                          <div class="col-sm-9">
+                            <select asp-for="PositionId" asp-items="@ViewBag.position" class="form-control tinymce" style="margin-top:3px; height:40px;">
+                                <span class="text-danger" asp-validation-for="PositionId"></span>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="Photo"></label>
+                          <div class="col-sm-9">
+                            <input asp-for="Photo" class="form-control">
+                            <span asp-validation-for="Photo" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" asp-for="Content"></label>
+                          <div class="col-sm-12">
+                            <textarea asp-for="Content" class="form-control"></textarea>
+                             <span asp-validation-for="Content" class="text-danger"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light" asp-action="Index">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+</div>
+
+@section ScriptModal{
+    <partial name="_AdminValidationScriptsPartial" />
+}
+
