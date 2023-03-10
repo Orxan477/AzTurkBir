@@ -59,7 +59,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         public async Task<IActionResult> Create(CreateNewsVM news)
         {
             if (!ModelState.IsValid) return View(news);
-            var saveNews = await _aztobirService.NewsService.Create(news, _env.WebRootPath);
+            var saveNews = await _aztobirService.NewsService.Create(news, _env.WebRootPath,PhotoSize());
             if (saveNews == "ok")
             {
                 return RedirectToAction("Index");
@@ -93,7 +93,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                var model = await _aztobirService.NewsService.Update(id, news, _env.WebRootPath);
+                var model = await _aztobirService.NewsService.Update(id, news, _env.WebRootPath,PhotoSize());
                 if (model!="ok")
                 {
                     ModelState.AddModelError(string.Empty, model);
@@ -120,9 +120,10 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
 
         }
-        //private async Task GetSelectedItemAsync()
-        //{
-        //    ViewBag.city = new SelectList(await _aztobirService..GetAll(), "Id", "Name");
-        //}
+        private int PhotoSize()
+        {
+            string photosize = _aztobirService.SettingSerivice.GetSetting("PhotoSize");
+            return Convert.ToInt32(photosize);
+        }
     }
 }

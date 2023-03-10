@@ -60,7 +60,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 await GetSelectedItemAsync(); 
                 return View(feedback); 
             }
-            var saveNews = await _aztobirService.FeedbackService.Create(feedback, _env.WebRootPath);
+            var saveNews = await _aztobirService.FeedbackService.Create(feedback, _env.WebRootPath,PhotoSize());
             if (saveNews == "ok") return RedirectToAction("Index");
             else
             {
@@ -90,7 +90,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                await _aztobirService.FeedbackService.Update(id,feedback,_env.WebRootPath);
+                await _aztobirService.FeedbackService.Update(id,feedback,_env.WebRootPath,PhotoSize());
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -115,6 +115,11 @@ namespace Aztobir.UI.Areas.admin.Controllers
         private async Task GetSelectedItemAsync()
         {
             ViewBag.university = new SelectList(await _aztobirService.UniversityService.GetAll(), "Id", "Name");
+        }
+        private int PhotoSize()
+        {
+            string photosize = _aztobirService.SettingSerivice.GetSetting("PhotoSize");
+            return Convert.ToInt32(photosize);
         }
     }
 }

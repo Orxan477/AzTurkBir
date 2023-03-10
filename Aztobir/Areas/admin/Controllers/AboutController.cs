@@ -56,7 +56,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 //return Json(about.Photo.ContentType);
                 if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View(about);
                 //int size = int.Parse(GetSetting("PhotoSize"));
-                var db = await _aztobirService.AboutService.Update(about, _env.WebRootPath);
+                var db = await _aztobirService.AboutService.Update(about, _env.WebRootPath,PhotoSize());
                 if (db != "ok")
                 {
                     ModelState.AddModelError(string.Empty, db);
@@ -82,6 +82,11 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return false;
             }
             return true;
+        }
+        private int PhotoSize()
+        {
+            string photosize= _aztobirService.SettingSerivice.GetSetting("PhotoSize");
+            return Convert.ToInt32(photosize);
         }
     }
 }

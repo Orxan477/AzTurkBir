@@ -19,13 +19,13 @@ namespace Aztobir.Business.Implementations.Home.University
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<string> Create(int id, CreateUniPhotosVM photos, string env)
+        public async Task<string> Create(int id, CreateUniPhotosVM photos, string env,int size)
         {
             var dbPhoto = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbPhoto is null) throw new Exception("Not Found");
             foreach (var photo in photos.Photos)
             {
-                if (!CheckImageValid(photo, "image/", 200))
+                if (!CheckImageValid(photo, "image/", size))
                 {
                     return _errorMessage;
                 }
@@ -41,11 +41,11 @@ namespace Aztobir.Business.Implementations.Home.University
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, UpdateUniversityPhotosVM photo, string env)
+        public async Task<string> Update(int id, UpdateUniversityPhotosVM photo, string env,int size)
         {
             var dbPhoto = await _unitOfWork.UniversityPhotosGetRepository.Get(x => x.Id == id);
             if (dbPhoto is null) throw new Exception("Not Found");
-            if (!CheckImageValid(photo.Photo, "image/", 200))
+            if (!CheckImageValid(photo.Photo, "image/", size))
             {
                 return _errorMessage;
             }

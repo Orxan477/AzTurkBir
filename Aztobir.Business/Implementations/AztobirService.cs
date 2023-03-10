@@ -7,6 +7,7 @@ using Aztobir.Business.Implementations.Home.FAQ;
 using Aztobir.Business.Implementations.Home.Feedback;
 using Aztobir.Business.Implementations.Home.News;
 using Aztobir.Business.Implementations.Home.University;
+using Aztobir.Business.Implementations.Setting;
 using Aztobir.Business.Implementations.Team;
 using Aztobir.Business.Interfaces;
 using Aztobir.Business.Interfaces.About;
@@ -17,6 +18,7 @@ using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
 using Aztobir.Business.Interfaces.Home.Position;
 using Aztobir.Business.Interfaces.Home.University;
+using Aztobir.Business.Interfaces.Setting;
 using Aztobir.Business.Interfaces.Team;
 using Aztobir.Core.İnterfaces;
 using Aztobir.Core.Models;
@@ -40,6 +42,7 @@ namespace Aztobir.Business.Implementations
         private CityService _cityService;
         private PositionService _positionService;
         private UniversityPhotoService _universityPhotoService;
+        private SettingService _settingService;
         public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager)
         {
             _unitOfWork = unitOfWork;
@@ -67,5 +70,7 @@ namespace Aztobir.Business.Implementations
         public IPositionService PositionService => _positionService ?? new PositionService(_unitOfWork, _mapper);
 
         public IUniversityPhotoService UniversityPhotoService => _universityPhotoService ?? new UniversityPhotoService(_unitOfWork,_mapper);
+
+        public ISettingService SettingSerivice => _settingService ?? new SettingService(_unitOfWork);
     }
 }

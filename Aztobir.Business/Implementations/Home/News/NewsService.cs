@@ -19,10 +19,10 @@ namespace Aztobir.Business.Implementations.Home.News
             _mapper = mapper;
         }
 
-        public async Task<string> Create(CreateNewsVM news, string env)
+        public async Task<string> Create(CreateNewsVM news, string env,int size)
         {
             var newNews = _mapper.Map<Core.Models.News>(news);
-            if (!CheckImageValid(news.Photo, "image/", 200))
+            if (!CheckImageValid(news.Photo, "image/", size))
             {
                 return _errorMessage;
             }
@@ -33,7 +33,7 @@ namespace Aztobir.Business.Implementations.Home.News
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, NewsVM news, string env)
+        public async Task<string> Update(int id, NewsVM news, string env,int size)
         {
             var dbNews = await _unitOfWork.GetNewsRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbNews is null) throw new Exception("Not Found");
@@ -47,7 +47,7 @@ namespace Aztobir.Business.Implementations.Home.News
             }
             if (news.Photo != null)
             {
-                if (!CheckImageValid(news.Photo, "image/", 200))
+                if (!CheckImageValid(news.Photo, "image/", size))
                 {
                     return _errorMessage;
                 }

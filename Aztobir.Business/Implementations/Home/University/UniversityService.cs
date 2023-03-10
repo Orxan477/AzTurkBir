@@ -66,10 +66,10 @@ namespace Aztobir.Business.Implementations.Home.University
             return feedbacks;
         }
 
-        public async Task<string> Create(CreateUniversityVM uni, string env)
+        public async Task<string> Create(CreateUniversityVM uni, string env,int size)
         {
             var newUni = _mapper.Map<Core.Models.University>(uni);
-            if (!CheckImageValid(uni.Photo, "image/", 200))
+            if (!CheckImageValid(uni.Photo, "image/", size))
             {
                 return _errorMessage;
             }
@@ -81,7 +81,7 @@ namespace Aztobir.Business.Implementations.Home.University
             return "ok";
         }
 
-        public async Task<string> Update(int id, UniversityVM uni, string env)
+        public async Task<string> Update(int id, UniversityVM uni, string env,int size)
         {
             var dbUni = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbUni is null) throw new Exception("Not Found");
@@ -111,7 +111,7 @@ namespace Aztobir.Business.Implementations.Home.University
             }
             if (uni.Photo != null)
             {
-                if (!CheckImageValid(uni.Photo, "image/", 200))
+                if (!CheckImageValid(uni.Photo, "image/", size))
                 {
                     return _errorMessage;
                 }

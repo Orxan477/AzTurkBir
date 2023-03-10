@@ -31,7 +31,7 @@
 					pulvinar praesent <br> molestiae maiores, quidem cumque!</p>
 			</div>
 			<div class="row">
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-6 col-lg-4">
 					<div class="single-service text-center mb-30">
 						<div class="service-img">
 							<img src="~/assets/img/service/1.png" alt="" />
@@ -39,13 +39,13 @@
 						<div class="service-text">
 							<h5>Number phone</h5>
 							<div class="excerpt">
-								<span>Phone 1: 0(1234) 567 89012</span>
-								<span>Phone 2: 0(987) 567 890</span>
+								<span>@ViewBag.Phone1</span>
+								<span>@ViewBag.Phone2</span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-6 col-lg-4">
 					<div class="single-service text-center mb-30">
 						<div class="service-img">
 							<img src="~/assets/img/service/2.png" alt="" />
@@ -53,13 +53,12 @@
 						<div class="service-text">
 							<h5>AddressStreet</h5>
 							<div class="excerpt">
-								<span>Address : No 40 Baria Sreet 133/2 </span>
-								<span>NewYork City, NY, United States.</span>
+								@ViewBag.Adress
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
+				@*<div class="col-md-6 col-lg-3">
 					<div class="single-service text-center mb-30">
 						<div class="service-img">
 							<img src="~/assets/img/service/3.png" alt="" />
@@ -72,8 +71,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-6 col-lg-3">
+				</div>*@
+				<div class="col-md-6 col-lg-4">
 					<div class="single-service text-center mb-30">
 						<div class="service-img">
 							<img src="~/assets/img/service/4.png" alt="" />
@@ -81,8 +80,8 @@
 						<div class="service-text">
 							<h5>Number phone</h5>
 							<div class="excerpt">
-								<span>info@bootexperts.com</span>
-								<span>Nameyour@bootexperts.com</span>
+								<span>@ViewBag.Email1</span>
+								<span>@ViewBag.Email2</span>
 							</div>
 						</div>
 					</div>

@@ -55,7 +55,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         public async Task<IActionResult> Create(CreateTeamVM team)
         {
             if (!ModelState.IsValid) return View(team);
-            var saveNews = await _aztobirService.TeamService.Create(team, _env.WebRootPath);
+            var saveNews = await _aztobirService.TeamService.Create(team, _env.WebRootPath,PhotoSize());
             if (saveNews == "ok")
             {
                 return RedirectToAction("Index");
@@ -89,7 +89,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                var model = await _aztobirService.TeamService.Update(id, team, _env.WebRootPath);
+                var model = await _aztobirService.TeamService.Update(id, team, _env.WebRootPath,PhotoSize());
                 if (model != "ok")
                 {
                     ModelState.AddModelError(string.Empty, model);
@@ -120,6 +120,11 @@ namespace Aztobir.UI.Areas.admin.Controllers
         private async Task GetSelectedItemAsync()
         {
             ViewBag.position = new SelectList(await _aztobirService.PositionService.GetAll(), "Id", "Name");
+        }
+        private int PhotoSize()
+        {
+            string photosize = _aztobirService.SettingSerivice.GetSetting("PhotoSize");
+            return Convert.ToInt32(photosize);
         }
     }
 }

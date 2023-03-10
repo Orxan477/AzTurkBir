@@ -46,7 +46,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             try
             {
                 if (!ModelState.IsValid) return View(photo);
-                var model = await _aztobirService.UniversityPhotoService.Create(id, photo, _env.WebRootPath);
+                var model = await _aztobirService.UniversityPhotoService.Create(id, photo, _env.WebRootPath,PhotoSize());
                 if (model == "ok")
                 {
                     return RedirectToAction("Index", "University", new { area = "admin" }); ;
@@ -79,7 +79,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int id, UpdateUniversityPhotosVM photos)
         {
-            var model = await _aztobirService.UniversityPhotoService.Update(id, photos, _env.WebRootPath);
+            var model = await _aztobirService.UniversityPhotoService.Update(id, photos, _env.WebRootPath,PhotoSize());
             if (model == "ok")
             {
                 return RedirectToAction("Index", "University", new { area = "admin" }); ;
@@ -102,6 +102,11 @@ namespace Aztobir.UI.Areas.admin.Controllers
             {
                 return RedirectToAction("Index", "University", new { area = "admin" });
             }
+        }
+        private int PhotoSize()
+        {
+            string photosize = _aztobirService.SettingSerivice.GetSetting("PhotoSize");
+            return Convert.ToInt32(photosize);
         }
     }
 }

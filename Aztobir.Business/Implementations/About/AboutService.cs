@@ -28,7 +28,7 @@ namespace Aztobir.Business.Implementations.About
             return aboutVM;
         }
 
-        public async Task<string> Update(AboutVM about,string env)
+        public async Task<string> Update(AboutVM about,string env,int size)
         {
             var dbAbout = await _unitOfWork.AboutGetRepository.Get(x => !x.IsDeleted);
             if (dbAbout is null) throw new Exception("Not Found");
@@ -36,7 +36,7 @@ namespace Aztobir.Business.Implementations.About
             {
                 dbAbout.Content = about.Content;
             }
-            if (!CheckImageValid(about.Photo, "image/", 200))
+            if (!CheckImageValid(about.Photo, "image/", size))
             {
                 return _errorMessage;
             }

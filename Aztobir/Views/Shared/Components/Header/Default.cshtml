@@ -3,9 +3,10 @@
 			<div class="container-fluid">
 				<div class="row flex-nowrap">
 					<div class="col-md-3 col-3 d-flex align-items-center" style="width:122px">
-						<a href="https://instagram.com/"><i class="fa fa-instagram fa-lg text-white mx-2"></i></a>
-						<a href="https://facebook.com/"><i class="fa fa-facebook fa-lg text-white mx-2"></i></a>
-						<a href="https://vimeo.com/"><i class="fa fa-youtube-square fa-lg text-white mx-2"></i></a>
+						<a href="@ViewBag.Instagram"><i class="fa fa-instagram fa-lg text-white mx-2"></i></a>
+						<a href="@ViewBag.Facebook"><i class="fa fa-facebook fa-lg text-white mx-2"></i></a>
+						<a href="@ViewBag.Linkedin"><i class="fa fa-linkedin fa-lg text-white mx-2"></i></a>
+						<a href="@ViewBag.Twitter"><i class="fa fa-twitter fa-lg text-white mx-2"></i></a>
 					</div>
 					<div class="col-md-9 col-8 ms-auto header-text text-light">
 						<strong>Azerbaycan Üniversitesi Türkiye Cumhuriyyeti Öğrencileri Birliği</strong>
@@ -17,7 +18,7 @@
 		<nav class="navbar navbar-expand-lg bg-light">
 
 			<div class="container">
-				<a class="navbar-brand custom-brand-class" asp-controller="home" asp-action="index"><img src="~/assets/img/2.png" alt="" /></a>
+				<a class="navbar-brand custom-brand-class" asp-controller="home" asp-action="index"><img src="~/assets/img/@ViewBag.Logo" alt="" /></a>
 				<button class="navbar-toggler custom-nav-button" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					aria-expanded="false" aria-label="Toggle navigation">

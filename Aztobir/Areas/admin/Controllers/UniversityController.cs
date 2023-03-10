@@ -63,7 +63,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 await GetSelectedItemAsync();
                 return Json(uni);
             }
-            var model =await _aztobirService.UniversityService.Create(uni, _env.WebRootPath);
+            var model =await _aztobirService.UniversityService.Create(uni, _env.WebRootPath,PhotoSize());
             if(model != "ok")
             {
                 ModelState.AddModelError(string.Empty, model);
@@ -94,7 +94,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                var model = await _aztobirService.UniversityService.Update(id, uni, _env.WebRootPath);
+                var model = await _aztobirService.UniversityService.Update(id, uni, _env.WebRootPath,PhotoSize());
                 if (model != "ok")
                 {
                     ModelState.AddModelError(string.Empty, model);
@@ -126,6 +126,11 @@ namespace Aztobir.UI.Areas.admin.Controllers
         private async Task GetSelectedItemAsync()
         {
             ViewBag.city = new SelectList(await _aztobirService.CityService.GetAll(), "Id", "Name");
+        }
+        private int PhotoSize()
+        {
+            string photosize = _aztobirService.SettingSerivice.GetSetting("PhotoSize");
+            return Convert.ToInt32(photosize);
         }
     }
 }

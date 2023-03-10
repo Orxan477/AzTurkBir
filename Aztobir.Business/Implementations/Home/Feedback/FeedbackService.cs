@@ -18,10 +18,10 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             _mapper = mapper;
         }
 
-        public async Task<string> Create(CreateFeedbackVM feedback,string env)
+        public async Task<string> Create(CreateFeedbackVM feedback,string env,int size)
         {
             var newFeedback = _mapper.Map<Core.Models.Feedback>(feedback);
-            if (!CheckImageValid(feedback.Photo, "image/", 200))
+            if (!CheckImageValid(feedback.Photo, "image/", size))
             {
                 return _errorMessage;
             }
@@ -32,7 +32,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task Update(int id, FeedbackVM feedback, string env)
+        public async Task Update(int id, FeedbackVM feedback, string env,int size)
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFeedback is null) throw new Exception("Not Found");

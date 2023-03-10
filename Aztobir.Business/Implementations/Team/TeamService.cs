@@ -18,10 +18,10 @@ namespace Aztobir.Business.Implementations.Team
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<string> Create(CreateTeamVM team, string env)
+        public async Task<string> Create(CreateTeamVM team, string env,int size)
         {
             var newTeam = _mapper.Map<Core.Models.Team>(team);
-            if (!CheckImageValid(team.Photo, "image/", 200))
+            if (!CheckImageValid(team.Photo, "image/", size))
             {
                 return _errorMessage;
             }
@@ -32,7 +32,7 @@ namespace Aztobir.Business.Implementations.Team
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, TeamDetailVM team, string env)
+        public async Task<string> Update(int id, TeamDetailVM team, string env,int size)
         {
             var dbTeam = await _unitOfWork.TeamGetRepository.Get(x => !x.IsDeleted && x.Id == id, "Position");
             if (dbTeam is null) throw new Exception("NotFound");
@@ -70,7 +70,7 @@ namespace Aztobir.Business.Implementations.Team
             }
             if (team.Photo != null)
             {
-                if (!CheckImageValid(team.Photo, "image/", 200))
+                if (!CheckImageValid(team.Photo, "image/", size))
                 {
                     return _errorMessage;
                 }
