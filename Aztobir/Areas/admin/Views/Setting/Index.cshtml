@@ -1,0 +1,42 @@
+﻿@using Aztobir.Business.ViewModels.Setting
+@model IEnumerable<SettingListVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+    int num = 1;
+}
+
+<div class="col-lg-8 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Ayarlar</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Key</th>
+                            <th>Value</th>
+                            <th>Ayarlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="ph">@num</td>
+                                <td class="ph">@item.Key</td>
+                                <td class="ph">@item.Value</td>
+                                <td style="padding: 0 0 0 17px;">
+                                    <a style="padding:5px;" asp-action="Update" class="btn btn-warning" asp-route-id="@item.Id"><i class="mdi mdi-table-edit"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

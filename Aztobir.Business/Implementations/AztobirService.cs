@@ -71,6 +71,6 @@ namespace Aztobir.Business.Implementations
 
         public IUniversityPhotoService UniversityPhotoService => _universityPhotoService ?? new UniversityPhotoService(_unitOfWork,_mapper);
 
-        public ISettingService SettingSerivice => _settingService ?? new SettingService(_unitOfWork);
+        public ISettingService SettingSerivice => _settingService ?? new SettingService(_unitOfWork,_mapper);
     }
 }

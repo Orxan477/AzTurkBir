@@ -1,5 +1,4 @@
-﻿using Aztobir.Core.Interfaces;
-using Aztobir.Core.İnterfaces.About;
+﻿using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.Interfaces.Home.City;
 using Aztobir.Core.İnterfaces.Home.FAQ;
@@ -11,6 +10,7 @@ using Aztobir.Core.Interfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.Position;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Home.University;
+using Aztobir.Core.Interfaces.Setting;
 using Aztobir.Core.İnterfaces.Team;
 using Aztobir.Core.Interfaces.Team;
 
@@ -40,6 +40,7 @@ namespace Aztobir.Core.İnterfaces
         public IPositionGetRepository PositionGetRepository { get;  }
         public IUniversityPhotosCRUDRepository UniversityImagesCURDRepository { get;  }
         public ISettingRepository SettingRepository { get;  }
+        public ISettingCRUDRepository SettingCRUDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

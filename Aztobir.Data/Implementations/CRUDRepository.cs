@@ -1,4 +1,5 @@
 ﻿using Aztobir.Core.Interfaces;
+using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,9 @@ using System.Threading.Tasks;
 
 namespace Aztobir.Data.Implementations
 {
-    public class CRUDRepository<TEntity> : Core.Interfaces.ICRUDRepository<TEntity>
+
+
+    public class CRUDRepository<TEntity> : ICRUDRepository<TEntity>
         where TEntity : class
     {
         private AppDbContext _context;
@@ -35,7 +38,7 @@ namespace Aztobir.Data.Implementations
 
         public void UpdateAsync(TEntity entity)
         {
-             _context.Set<TEntity>().Update(entity);
+            _context.Set<TEntity>().Update(entity);
         }
     }
 }
