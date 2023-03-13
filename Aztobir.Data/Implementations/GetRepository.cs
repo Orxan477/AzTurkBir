@@ -1,6 +1,7 @@
 ﻿using Aztobir.Core.İnterfaces;
 using Aztobir.Data.DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Aztobir.Data.Implementations
