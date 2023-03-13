@@ -11,7 +11,7 @@ namespace Aztobir.Business.Interfaces.Home.Contact
     {
         Task<List<ContactVM>> GetAll();
         Task<ContactVM> Get(int id);
-        Task Create(CreateContactVM contact);
+        Task<string> Create(CreateContactVM contact);
         Task Delete(int id);
     }
 }

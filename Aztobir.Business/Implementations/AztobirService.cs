@@ -25,6 +25,7 @@ using Aztobir.Business.Interfaces.Team;
 using Aztobir.Core.İnterfaces;
 using Aztobir.Core.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 
 namespace Aztobir.Business.Implementations
 {
@@ -33,6 +34,7 @@ namespace Aztobir.Business.Implementations
         private IUnitOfWork _unitOfWork;
         private IMapper _mapper;
         private SignInManager<AppUser> _signInManager;
+        private IConfiguration _configure;
         private AboutService _aboutService;
         private GoalService _goalService;
         private UniversityService _universityService;
@@ -47,11 +49,13 @@ namespace Aztobir.Business.Implementations
         private SettingService _settingService;
         private UniversityFormService _universityFormService;
         private ContactService _contactService;
-        public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager)
+        
+        public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager, IConfiguration configure)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _signInManager = signInManager;
+            _configure = configure;
         }
         public IAboutService AboutService => _aboutService ?? new AboutService(_unitOfWork, _mapper);
 
@@ -77,8 +81,8 @@ namespace Aztobir.Business.Implementations
 
         public ISettingService SettingSerivice => _settingService ?? new SettingService(_unitOfWork,_mapper);
 
-        public IUniversityFormService UniversityFormService => _universityFormService ?? new UniversityFormService(_unitOfWork, _mapper);
+        public IUniversityFormService UniversityFormService => _universityFormService ?? new UniversityFormService(_unitOfWork, _mapper,_configure);
 
-        public IContactService ContactService => _contactService ?? new ContactService(_unitOfWork, _mapper);
+        public IContactService ContactService => _contactService ?? new ContactService(_unitOfWork, _mapper,_configure);
     }
 }

@@ -2,6 +2,7 @@
 using Aztobir.Business.Interfaces.Home.Contact;
 using Aztobir.Business.ViewModels.Home.Contact;
 using Aztobir.Core.İnterfaces;
+using Microsoft.Extensions.Configuration;
 
 namespace Aztobir.Business.Implementations.Home.Contact
 {
@@ -9,18 +10,37 @@ namespace Aztobir.Business.Implementations.Home.Contact
     {
         private IUnitOfWork _unitOfWork;
         private IMapper _mapper;
+        private IConfiguration _configure;
 
-        public ContactService(IUnitOfWork unitOfWork, IMapper mapper)
+        public ContactService(IUnitOfWork unitOfWork, IMapper mapper, IConfiguration configure)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _configure = configure;
         }
-        public async Task Create(CreateContactVM contact)
+        public async Task<string> Create(CreateContactVM contact)
         {
+            int count = 0;
+            TryAgain:
+            try
+            {
+                EmailService.Send(_configure.GetSection("EmailSettings:Mail").Value,
+                           _configure.GetSection("EmailSettings:Passowrd").Value, _configure.GetSection("EmailSettings:ToMail").Value, contact.Message, "Aztobir Əlaqə");
+            }
+            catch (Exception ex)
+            {
+                count++;
+                if (count!=3)
+                {
+                    goto TryAgain;
+                }
+                return "Bad Request";
+            }
             var newForm = _mapper.Map<Core.Models.Contact>(contact);
             newForm.CreatedAt = DateTime.Now;
             await _unitOfWork.ContactCRUDRepositorys.CreateAsync(newForm);
             await _unitOfWork.SaveChangesAsync();
+            return "OK";
         }
 
         public async Task Delete(int id)

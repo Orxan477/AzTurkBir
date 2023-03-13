@@ -53,7 +53,8 @@ namespace Aztobir.UI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Detail(UniversityFormVM universityForm)
         {
-            await _aztobirService.UniversityFormService.Create(universityForm);
+            var model = await _aztobirService.UniversityFormService.Create(universityForm);
+            if (model is null) return Json("Bad Request");
             return View(nameof(Index));
         }
     }

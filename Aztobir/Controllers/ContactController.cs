@@ -25,7 +25,8 @@ namespace Aztobir.UI.Controllers
         [ValidateAntiForgeryToken]
         public async  Task<IActionResult> SendContact(CreateContactVM createContact)
         {
-            await _aztobirService.ContactService.Create(createContact);
+            var model=await _aztobirService.ContactService.Create(createContact);
+            if (model is null) return Json("Bad Request");
             return RedirectToAction(nameof(Index));
         }
     }
