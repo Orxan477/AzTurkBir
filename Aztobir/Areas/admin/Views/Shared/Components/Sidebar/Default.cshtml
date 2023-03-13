@@ -123,5 +123,31 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#uniForm" aria-expanded="false" aria-controls="uniForm">
+              <i class="mdi mdi-message-reply-text menu-icon"></i>
+              <span class="menu-title">Universite Mesajları</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="uniForm">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="universityform" asp-action="index">Siyahı</a></li>
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="universityform" asp-action="create">Əlavə et</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#contactForm" aria-expanded="false" aria-controls="contactForm">
+              <i class="mdi mdi-message-alert menu-icon"></i>
+              <span class="menu-title">Əlaqə Mesajları</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="contactForm">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="contactform" asp-action="index">Siyahı</a></li>
+                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="contactform" asp-action="create">Əlavə et</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>

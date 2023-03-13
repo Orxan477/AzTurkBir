@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Business.ViewModels.Home.City;
+using Aztobir.Business.ViewModels.Home.Contact;
 using Aztobir.Business.ViewModels.Home.FAQ;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.News;
@@ -34,6 +35,8 @@ namespace Aztobir.Business.Profiles
             CreateMap<News, NewsVM>();
             CreateMap<Setting, SettingListVM>();
             CreateMap<News, NewsVM>();
+            CreateMap<CreateContactVM, Contact>();
+            CreateMap<Contact, ContactVM>();
             CreateMap<UniversityFormVM, UniversityForm>();
             CreateMap<UniversityForm, UniversityViewFormVM>();
             CreateMap<NewsVM, News>();

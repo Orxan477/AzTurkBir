@@ -3,6 +3,7 @@ using Aztobir.Business.Implementations.About;
 using Aztobir.Business.Implementations.Account;
 using Aztobir.Business.Implementations.Home;
 using Aztobir.Business.Implementations.Home.City;
+using Aztobir.Business.Implementations.Home.Contact;
 using Aztobir.Business.Implementations.Home.FAQ;
 using Aztobir.Business.Implementations.Home.Feedback;
 using Aztobir.Business.Implementations.Home.News;
@@ -13,6 +14,7 @@ using Aztobir.Business.Interfaces;
 using Aztobir.Business.Interfaces.About;
 using Aztobir.Business.Interfaces.Account;
 using Aztobir.Business.Interfaces.Home.City;
+using Aztobir.Business.Interfaces.Home.Contact;
 using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
@@ -44,6 +46,7 @@ namespace Aztobir.Business.Implementations
         private UniversityPhotoService _universityPhotoService;
         private SettingService _settingService;
         private UniversityFormService _universityFormService;
+        private ContactService _contactService;
         public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager)
         {
             _unitOfWork = unitOfWork;
@@ -75,5 +78,7 @@ namespace Aztobir.Business.Implementations
         public ISettingService SettingSerivice => _settingService ?? new SettingService(_unitOfWork,_mapper);
 
         public IUniversityFormService UniversityFormService => _universityFormService ?? new UniversityFormService(_unitOfWork, _mapper);
+
+        public IContactService ContactService => _contactService ?? new ContactService(_unitOfWork, _mapper);
     }
 }

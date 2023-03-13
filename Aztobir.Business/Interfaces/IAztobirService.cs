@@ -1,6 +1,7 @@
 ﻿using Aztobir.Business.Interfaces.About;
 using Aztobir.Business.Interfaces.Account;
 using Aztobir.Business.Interfaces.Home.City;
+using Aztobir.Business.Interfaces.Home.Contact;
 using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
@@ -26,5 +27,6 @@ namespace Aztobir.Business.Interfaces
         public IUniversityPhotoService UniversityPhotoService { get;}
         public ISettingService SettingSerivice{ get;}
         public IUniversityFormService UniversityFormService { get;}
+        public IContactService ContactService{ get;}
     }
 }

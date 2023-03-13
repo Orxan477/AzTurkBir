@@ -1,4 +1,5 @@
 ﻿using Aztobir.Business.Interfaces;
+using Aztobir.Business.ViewModels.Home.Contact;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aztobir.UI.Controllers
@@ -19,6 +20,13 @@ namespace Aztobir.UI.Controllers
             ViewBag.Email1 = _aztobirService.SettingSerivice.GetSetting("Email1");
             ViewBag.Email2 = _aztobirService.SettingSerivice.GetSetting("Email2");
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async  Task<IActionResult> SendContact(CreateContactVM createContact)
+        {
+            await _aztobirService.ContactService.Create(createContact);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

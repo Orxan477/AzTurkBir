@@ -1,6 +1,7 @@
 ﻿using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.Interfaces.Home.City;
+using Aztobir.Core.Interfaces.Home.Contact;
 using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.Interfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.Feedback;
@@ -43,6 +44,8 @@ namespace Aztobir.Core.İnterfaces
         public ISettingCRUDRepository SettingCRUDRepository { get;  }
         public IGetUniversityFormRepository GetUniversityFormRepository { get;  }
         public ICRUDUnivertsityFormRepository CRUDUniversityFormRepository { get;  }
+        public IContactGetRepository ContactGetRepositorys { get;  }
+        public IContactCRUDRepository ContactCRUDRepositorys { get;  }
         Task SaveChangesAsync();
     }
 }

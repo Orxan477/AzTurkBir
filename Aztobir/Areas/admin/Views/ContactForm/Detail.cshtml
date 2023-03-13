@@ -1,0 +1,63 @@
+﻿@using Aztobir.Business.ViewModels.Home.Contact
+@model ContactVM
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-lg-10 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="d-inline">
+                <a asp-action="Index" class="mr-2 text-white d-flex">
+                    <i style="color:black;" class="mdi mdi-menu-left"></i>
+                    <h3 style="margin-bottom:0px; margin-top:6px;" class="d-inline card-title">Mesajlar</h3>
+                </a>
+            </h3>
+                
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Ad, Soyisim</td>
+                            <td>@Model.FullName</td>
+                        </tr>
+                        <tr>
+                            <td>Subject</td>
+                            <td>@Model.Subject</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>@Model.Email</td>
+                        </tr>
+                        <tr>
+                            <td>Tarih</td>
+                            <td>@Model.Phone</td>
+                        </tr>
+                        <tr>
+                            <td>Mesaj</td>
+                            <td>@Model.Message</td>
+                        </tr>
+                        <tr>
+                            <td>Tarih</td>
+                            <td>@(Model.Message.Length<=5?Model.Message:Model.Message.Substring(0,5)+"...")</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Ayarlar
+                            </td>
+                            <td style="padding: 0 0 0 17px;">
+                                <a style="padding:5px;" asp-action="Delete" class="btn btn-danger delete-btn" asp-route-id="@Model.Id"><i class="mdi mdi-comment-remove-outline"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ScriptModal{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script src="~/admin/assets/js/AlertModal.js"></script>
+}
+
