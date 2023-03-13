@@ -21,6 +21,7 @@ namespace Aztobir.Data.DAL
         public DbSet<University>Universities{ get; set; }
         public DbSet<UniversityImages> UniversityImages { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<UniversityForm> UniversityForms{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +36,7 @@ namespace Aztobir.Data.DAL
             modelBuilder.ApplyConfiguration(new TeamConfiguration());
             modelBuilder.ApplyConfiguration(new UniversityConfiguration());
             modelBuilder.ApplyConfiguration(new UniversityImagesConfiguration());
+            modelBuilder.ApplyConfiguration(new UniversityFormConfiguration());
             base.OnModelCreating(modelBuilder);
         }
 

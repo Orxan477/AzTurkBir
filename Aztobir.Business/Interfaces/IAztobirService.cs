@@ -25,5 +25,6 @@ namespace Aztobir.Business.Interfaces
         public IPositionService PositionService{ get;}
         public IUniversityPhotoService UniversityPhotoService { get;}
         public ISettingService SettingSerivice{ get;}
+        public IUniversityFormService UniversityFormService { get;}
     }
 }

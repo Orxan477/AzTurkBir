@@ -33,11 +33,11 @@
                     <div class="carousel-inner">
                         @foreach (var photo in Model.Photos)
                         {
-                           <div class="carousel-item @(sliderNum<1 ? "active" : " ") " data-bs-interval="10000">
-                            <div class="course-details-img">
-                                <img src="~/assets/img/courses/@photo.Image" alt="" class="w-100" />
+                            <div class="carousel-item @(sliderNum<1 ? "active" : " ") " data-bs-interval="10000">
+                                <div class="course-details-img">
+                                    <img src="~/assets/img/@photo.Image" alt="" class="w-100" />
+                                </div>
                             </div>
-                        </div> 
                         }
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
@@ -119,13 +119,16 @@
                         <h3>Register Classes</h3>
                     </div>
                     <div class="contacts-form">
-                        <form action="#">
-                            <input type="text" placeholder="class name">
-                            <input type="text" placeholder="your name">
-                            <input type="email" placeholder="your email">
-                            <textarea id="message" placeholder="Write here" rows="10" cols="30"
-                                      name="message"></textarea>
-                            <button class="send">send</button>
+                        <form asp-action="sendmessage" method="post">
+                            <input type="hidden" asp-for="@Model.UniversityForm.UniversityId" value="@Model.UniversityId" placeholder="class name">
+                            <input asp-for="@Model.UniversityForm.FullName" placeholder="Your Name">
+                            <span asp-validation-for="@Model.UniversityForm.FullName" class="text-danger"></span>
+                            <input asp-for="@Model.UniversityForm.Email" placeholder="Your Email">
+                            <span asp-validation-for="@Model.UniversityForm.Email" class="text-danger"></span>
+                            <textarea asp-for="@Model.UniversityForm.Message" placeholder="Write here" rows="10" cols="30"
+                                      ></textarea>
+                            <span asp-validation-for="@Model.UniversityForm.Message" class="text-danger"></span>
+                            <button class="send" type="submit">Send</button>
                         </form>
                     </div>
                 </div>
@@ -133,4 +136,8 @@
         </div>
     </div>
 </div>
-<!-- course-details-end -->
+
+@section Validation{
+    <partial name="_ValidationScriptsPartial" />
+}
+    <!-- course-details-end -->

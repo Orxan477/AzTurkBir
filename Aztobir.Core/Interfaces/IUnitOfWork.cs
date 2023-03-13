@@ -41,6 +41,8 @@ namespace Aztobir.Core.İnterfaces
         public IUniversityPhotosCRUDRepository UniversityImagesCURDRepository { get;  }
         public ISettingRepository SettingRepository { get;  }
         public ISettingCRUDRepository SettingCRUDRepository { get;  }
+        public IGetUniversityFormRepository GetUniversityFormRepository { get;  }
+        public ICRUDUnivertsityFormRepository CRUDUniversityFormRepository { get;  }
         Task SaveChangesAsync();
     }
 }

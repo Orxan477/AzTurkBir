@@ -53,6 +53,8 @@ namespace Aztobir.Data.Implementations
         private UniversityPhotosCRUDRepository _universityImagesCRUDRepository;
         private SettingRepository _settingRepository;
         private SettingCRUDRepository _settingCRUDRepository;
+        private GetUnivertsityFormRepository _getUnivertsityFormRepository;
+        private CRUDUnivertsityFormRepository _cRUDUnivertsityFormRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -101,6 +103,10 @@ namespace Aztobir.Data.Implementations
         public ISettingRepository SettingRepository => _settingRepository ?? new SettingRepository(_context);
 
         public ISettingCRUDRepository SettingCRUDRepository => _settingCRUDRepository ?? new SettingCRUDRepository(_context);
+
+        public IGetUniversityFormRepository GetUniversityFormRepository => _getUnivertsityFormRepository ?? new GetUnivertsityFormRepository(_context);
+
+        public ICRUDUnivertsityFormRepository CRUDUniversityFormRepository => _cRUDUnivertsityFormRepository ?? new CRUDUnivertsityFormRepository(_context);
 
         public async Task SaveChangesAsync()
         {

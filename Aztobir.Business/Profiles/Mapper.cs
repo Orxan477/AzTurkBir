@@ -8,6 +8,7 @@ using Aztobir.Business.ViewModels.Home.Position;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Business.ViewModels.Setting;
 using Aztobir.Business.ViewModels.Team;
+using Aztobir.Business.ViewModels.University;
 using Aztobir.Core.Models;
 
 namespace Aztobir.Business.Profiles
@@ -33,6 +34,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<News, NewsVM>();
             CreateMap<Setting, SettingListVM>();
             CreateMap<News, NewsVM>();
+            CreateMap<UniversityFormVM, UniversityForm>();
             CreateMap<NewsVM, News>();
             CreateMap<CreateNewsVM, News>();
             CreateMap<Feedback, FeedbackVM>().ForMember(x=>x.ImageView,m=>m.MapFrom(o=>o.University.Image)).ForMember(x=>x.University,m=>m.MapFrom(o=>o.University.Name));

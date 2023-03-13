@@ -1,6 +1,10 @@
-﻿using Aztobir.Business.Interfaces;
+﻿using AutoMapper;
+using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.Home;
 using Aztobir.Business.ViewModels.Home.University;
+using Aztobir.Business.ViewModels.University;
+using Aztobir.Core.Models;
+using Aztobir.Data.DAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aztobir.UI.Controllers
@@ -8,9 +12,14 @@ namespace Aztobir.UI.Controllers
     public class UniversityController : Controller
     {
         private IAztobirService _aztobirService;
-        public UniversityController(IAztobirService aztobirService)
+        private IMapper _mapper;
+        private AppDbContext _context;
+
+        public UniversityController(IAztobirService aztobirService,IMapper mapper,AppDbContext context)
         {
             _aztobirService = aztobirService;
+            _mapper = mapper;
+            _context = context;
         }
         public async Task<IActionResult> Index()
         {
@@ -30,6 +39,7 @@ namespace Aztobir.UI.Controllers
                     Faculties = await _aztobirService.UniversityService.GetFaculties(id),
                     Photos = await _aztobirService.UniversityService.GetPhotos(id),
                     Feedbacks = await _aztobirService.UniversityService.GetFeedbacks(id),
+                    UniversityId = id,
                 };
                 return View(universityView);
             }
@@ -38,6 +48,13 @@ namespace Aztobir.UI.Controllers
 
                 return Json(ex.Message);
             }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SendMessage(UniversityFormVM universityForm)
+        {
+            await _aztobirService.UniversityFormService.Create(universityForm);
+            return RedirectToAction("Detail","University",universityForm);
         }
     }
 }

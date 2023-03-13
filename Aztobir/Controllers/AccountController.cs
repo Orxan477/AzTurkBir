@@ -41,6 +41,7 @@ namespace Aztobir.UI.Controllers
 
         public IActionResult Login()
         {
+            ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Logo");
             return View();
         }
         [HttpPost]
@@ -49,6 +50,7 @@ namespace Aztobir.UI.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Logo");
                 return View(login);
             }
             AppUser user = await _userManager.FindByEmailAsync(login.Email);
@@ -60,6 +62,7 @@ namespace Aztobir.UI.Controllers
             else
             {
                 ModelState.AddModelError(string.Empty, error);
+                ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Logo");
                 return View(login);
             }
         }
