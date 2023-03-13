@@ -9,7 +9,7 @@ namespace Aztobir.Business.Validators.University
         {
             RuleFor(x => x.FullName).NotNull().NotEmpty().MaximumLength(100);
             RuleFor(x => x.Message).NotNull().NotEmpty().MaximumLength(500);
-            RuleFor(x => x.Email).EmailAddress().NotNull().NotEmpty().MaximumLength(50);
+            RuleFor(x => x.Email).NotNull().NotEmpty().EmailAddress().MaximumLength(50);
         }
     }
 }

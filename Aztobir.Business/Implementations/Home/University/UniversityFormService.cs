@@ -32,10 +32,10 @@ namespace Aztobir.Business.Implementations.Home.University
 
         public async Task Delete(int id)
         {
-            var dbFeedback = await _unitOfWork.GetUniversityFormRepository.Get(x => !x.IsDeleted && x.Id == id, "University");
-            if (dbFeedback is null) throw new Exception("Not Found");
-            dbFeedback.IsDeleted = true;
-            _unitOfWork.CRUDUniversityFormRepository.DeleteAsync(dbFeedback);
+            var dbForm = await _unitOfWork.GetUniversityFormRepository.Get(x => !x.IsDeleted && x.Id == id, "University");
+            if (dbForm is null) throw new Exception("Not Found");
+            dbForm.IsDeleted = true;
+            _unitOfWork.CRUDUniversityFormRepository.DeleteAsync(dbForm);
             await _unitOfWork.SaveChangesAsync();
         }
 

@@ -35,6 +35,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<Setting, SettingListVM>();
             CreateMap<News, NewsVM>();
             CreateMap<UniversityFormVM, UniversityForm>();
+            CreateMap<UniversityForm, UniversityViewFormVM>();
             CreateMap<NewsVM, News>();
             CreateMap<CreateNewsVM, News>();
             CreateMap<Feedback, FeedbackVM>().ForMember(x=>x.ImageView,m=>m.MapFrom(o=>o.University.Image)).ForMember(x=>x.University,m=>m.MapFrom(o=>o.University.Name));

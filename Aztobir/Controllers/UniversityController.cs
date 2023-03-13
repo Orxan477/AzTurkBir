@@ -51,10 +51,10 @@ namespace Aztobir.UI.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SendMessage(UniversityFormVM universityForm)
+        public async Task<IActionResult> Detail(UniversityFormVM universityForm)
         {
             await _aztobirService.UniversityFormService.Create(universityForm);
-            return RedirectToAction("Detail","University",universityForm);
+            return View(nameof(Index));
         }
     }
 }

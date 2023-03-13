@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PVFvhz910iQJWbtnPfOc/z51Oee0/hANbO7UpuTG63g=",
+  "Hash": "GeyVBl+P2cLIk9yJuTRFNsFHR9F/FYIYMx7QC5e8S3M=",
   "Source": "Aztobir.UI",
   "BasePath": "_content/Aztobir.UI",
   "Mode": "Default",
@@ -30632,6 +30632,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\ajax-mail.js"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\js\\AlertModal.js",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/js/AlertModal.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\AlertModal.js"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\js\\animate.js",

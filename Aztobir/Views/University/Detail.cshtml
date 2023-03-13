@@ -119,7 +119,7 @@
                         <h3>Register Classes</h3>
                     </div>
                     <div class="contacts-form">
-                        <form asp-action="sendmessage" method="post">
+                        <form method="post">
                             <input type="hidden" asp-for="@Model.UniversityForm.UniversityId" value="@Model.UniversityId" placeholder="class name">
                             <input asp-for="@Model.UniversityForm.FullName" placeholder="Your Name">
                             <span asp-validation-for="@Model.UniversityForm.FullName" class="text-danger"></span>
@@ -128,7 +128,8 @@
                             <textarea asp-for="@Model.UniversityForm.Message" placeholder="Write here" rows="10" cols="30"
                                       ></textarea>
                             <span asp-validation-for="@Model.UniversityForm.Message" class="text-danger"></span>
-                            <button class="send" type="submit">Send</button>
+                            <button class="send sendMessage " type="submit">Send</button>
+                            <a asp-action="Detail" asp-route-id="@Model.UniversityId" class="d-none urlUniForm"></a>
                         </form>
                     </div>
                 </div>
@@ -139,5 +140,9 @@
 
 @section Validation{
     <partial name="_ValidationScriptsPartial" />
+}
+@section ScriptModal{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script src="~/assets/js/AlertModal.js"></script>
 }
     <!-- course-details-end -->

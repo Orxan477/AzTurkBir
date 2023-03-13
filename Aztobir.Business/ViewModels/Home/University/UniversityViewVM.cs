@@ -15,6 +15,8 @@ namespace Aztobir.Business.ViewModels.Home.University
         public List<CityVM> Cities{ get; set; }
         public CityVM City{ get; set; }
         public UniversityFormVM UniversityForm { get; set; }
+        public List<UniversityViewFormVM> UniversityForms { get; set; }
+        public UniversityViewFormVM UniversityFormOdd { get; set; }
         public List<PositionVM> Positions{ get; set; }
         public int UniversityId { get; set; }
     }
