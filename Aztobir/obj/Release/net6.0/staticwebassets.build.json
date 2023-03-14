@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GeyVBl+P2cLIk9yJuTRFNsFHR9F/FYIYMx7QC5e8S3M=",
+  "Hash": "esAwvWE5gYqRAW9uw9tWfnQyT9TOG/zlyZctckcVh7c=",
   "Source": "Aztobir.UI",
   "BasePath": "_content/Aztobir.UI",
   "Mode": "Default",
@@ -29920,6 +29920,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\14312322-5d53-45ed-a05f-5d7f2c6f7337_1002.jpg"
     },
     {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\1823d4e0-7e6d-4764-bced-3666407607d0_!_1_~1.jpeg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/1823d4e0-7e6d-4764-bced-3666407607d0_!_1_~1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\1823d4e0-7e6d-4764-bced-3666407607d0_!_1_~1.jpeg"
+    },
+    {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\2.jpg",
       "SourceId": "Aztobir.UI",
       "SourceType": "Discovered",
@@ -29952,6 +29969,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\2.png"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\20ea5fcf-ebc8-4b24-9d27-77fa91e45522_!_1_~1.jpeg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/20ea5fcf-ebc8-4b24-9d27-77fa91e45522_!_1_~1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\20ea5fcf-ebc8-4b24-9d27-77fa91e45522_!_1_~1.jpeg"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\23366194-ab50-4b68-9592-69a08cc8f9af_-------_-_-------.jpg",

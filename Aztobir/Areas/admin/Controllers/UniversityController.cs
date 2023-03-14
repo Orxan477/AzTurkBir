@@ -83,7 +83,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index");
+                return Json(ex.Message);
             }
             
         }

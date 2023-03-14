@@ -66,7 +66,7 @@ namespace Aztobir.Business.Implementations.Home.News
         {
             if (!Extension.CheckType(file, type))
             {
-                _errorMessage = "The type is not correct";
+                _errorMessage = "The image type is not correct";
                 return false;
             }
             if (!Extension.CheckSize(file, size))

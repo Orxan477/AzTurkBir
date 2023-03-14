@@ -66,7 +66,7 @@ namespace Aztobir.Business.Implementations.Home.University
             return feedbacks;
         }
 
-        public async Task<string> Create(CreateUniversityVM uni, string env,int size)
+        public async Task<string> Create(CreateUniversityVM uni, string env, int size)
         {
             var newUni = _mapper.Map<Core.Models.University>(uni);
             if (!CheckImageValid(uni.Photo, "image/", size))
@@ -81,17 +81,23 @@ namespace Aztobir.Business.Implementations.Home.University
             return "ok";
         }
 
-        public async Task<string> Update(int id, UniversityVM uni, string env,int size)
+        public async Task<string> Update(int id, UniversityVM uni, string env, int size)
         {
             var dbUni = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbUni is null) throw new Exception("Not Found");
-            if (dbUni.Name.ToLower().Trim() != uni.Name.ToLower().Trim())
+            if (uni.Name != null)
             {
-                dbUni.Name = uni.Name;
+                if (dbUni.Name.ToLower().Trim() != uni.Name.ToLower().Trim())
+                {
+                    dbUni.Name = uni.Name;
+                }
             }
-            if (dbUni.Content.ToLower().Trim() != uni.Content.ToLower().Trim())
+            if (uni.Content != null)
             {
-                dbUni.Content = uni.Content;
+                if (dbUni.Content.ToLower().Trim() != uni.Content.ToLower().Trim())
+                {
+                    dbUni.Content = uni.Content;
+                }
             }
             if (dbUni.StudentCount != uni.StudentCount)
             {
@@ -101,9 +107,12 @@ namespace Aztobir.Business.Implementations.Home.University
             {
                 dbUni.FacultyCount = uni.FacultyCount;
             }
-            if (dbUni.EducationLanguage.ToLower().Trim() != uni.EducationLanguage.ToLower().Trim())
+            if (dbUni.EducationLanguage != null)
             {
-                dbUni.EducationLanguage = uni.EducationLanguage;
+                if (dbUni.EducationLanguage.ToLower().Trim() != uni.EducationLanguage.ToLower().Trim())
+                {
+                    dbUni.EducationLanguage = uni.EducationLanguage;
+                }
             }
             if (dbUni.Status != uni.Status)
             {

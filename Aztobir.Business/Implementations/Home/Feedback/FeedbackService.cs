@@ -32,7 +32,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task Update(int id, FeedbackVM feedback, string env,int size)
+        public async Task<string> Update(int id, FeedbackVM feedback, string env,int size)
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFeedback is null) throw new Exception("Not Found");
@@ -46,12 +46,20 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             }
             if (feedback.Photo != null)
             {
-                string image = await Extension.SaveFileAsync(feedback.Photo, env, "assets/img");
-                dbFeedback.Image = image;
+                if (!CheckImageValid(feedback.Photo, "image/", size))
+                {
+                    return _errorMessage;
+                }
+                else
+                {
+                    string image = await Extension.SaveFileAsync(feedback.Photo, env, "assets/img");
+                    dbFeedback.Image = image;
+                }
             }
             dbFeedback.UpdatedAt = DateTime.Now;
             _unitOfWork.FeedbackCRUDRepository.UpdateAsync(dbFeedback);
             await _unitOfWork.SaveChangesAsync();
+            return "ok";
         }
         private bool CheckImageValid(IFormFile file, string type, int size)
         {
