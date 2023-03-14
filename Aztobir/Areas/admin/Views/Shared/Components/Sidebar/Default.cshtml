@@ -72,17 +72,10 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#about" aria-expanded="false" aria-controls="about">
+            <a class="nav-link" asp-area="admin" asp-controller="about" asp-action="index">
               <i class="mdi mdi-information menu-icon"></i>
               <span class="menu-title">Hakkımızda</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="about">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="about" asp-action="index">Siyahı</a></li>
-                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="about" asp-action="create">Əlavə et</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#goal" aria-expanded="false" aria-controls="goal">
@@ -93,7 +86,10 @@
             <div class="collapse" id="goal">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="goal" asp-action="index">Siyahı</a></li>
-                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="goal" asp-action="create">Əlavə et</a></li>
+                @if (Model<=2)
+               {
+                   <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="goal" asp-action="create">Əlavə et</a></li>
+               }
               </ul>
             </div>
           </li>
@@ -124,30 +120,22 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#uniForm" aria-expanded="false" aria-controls="uniForm">
+            <a class="nav-link" asp-area="admin" asp-controller="universityform" asp-action="index">
               <i class="mdi mdi-message-reply-text menu-icon"></i>
               <span class="menu-title">Universite Mesajları</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="uniForm">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="universityform" asp-action="index">Siyahı</a></li>
-                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="universityform" asp-action="create">Əlavə et</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#contactForm" aria-expanded="false" aria-controls="contactForm">
+            <a class="nav-link" asp-area="admin" asp-controller="contactform" asp-action="index">
               <i class="mdi mdi-message-alert menu-icon"></i>
               <span class="menu-title">Əlaqə Mesajları</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="contactForm">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="contactform" asp-action="index">Siyahı</a></li>
-                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="contactform" asp-action="create">Əlavə et</a></li>
-              </ul>
-            </div>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" asp-area="admin" asp-controller="Setting" asp-action="index">
+              <i class="mdi mdi-settings menu-icon"></i>
+              <span class="menu-title">Ayarlar</span>
+            </a>
           </li>
         </ul>
       </nav>
