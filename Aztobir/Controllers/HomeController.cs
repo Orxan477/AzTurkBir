@@ -18,7 +18,7 @@ namespace Aztobir.Controllers
             {
                 Universities = await _aztobirService.UniversityService.GetAll(),
                 FAQs = await _aztobirService.FAQService.GetAll(),
-                News = await _aztobirService.NewsService.GetAll(),
+                News = await _aztobirService.NewsService.GetTake(3),
                 Feedbacks = await _aztobirService.FeedbackService.GetAll(),
             };
             return View(home);

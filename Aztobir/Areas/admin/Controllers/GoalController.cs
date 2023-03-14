@@ -42,8 +42,13 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
         }
         [Route("/admin/goal/create/")]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var about = await _aztobirService.GoalService.GetAll();
+            if (about.Count()>=3)
+            {
+                return Json("Bad Request");
+            }
             return View();
         }
 
@@ -53,7 +58,12 @@ namespace Aztobir.UI.Areas.admin.Controllers
         public async Task<IActionResult> Create(GoalCreateVM goal)
         {
             if (!ModelState.IsValid) return View(goal);
-           await _aztobirService.GoalService.Create(goal);
+            var about = await _aztobirService.GoalService.GetAll();
+            if (about.Count() >= 3)
+            {
+                return Json("Bad Request");
+            }
+            await _aztobirService.GoalService.Create(goal);
             return RedirectToAction("Index");
         }
 

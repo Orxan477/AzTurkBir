@@ -10,5 +10,6 @@ namespace Aztobir.Business.ViewModels.Home.News
     {
         public List<NewsVM> News { get; set; }
         public NewsVM NewsDetail { get; set; }
+        public List<NewsVM> RecentNews { get; set; }
     }
 }

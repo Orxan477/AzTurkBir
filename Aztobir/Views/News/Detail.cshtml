@@ -37,7 +37,7 @@
                         <h1>@Model.NewsDetail.Name</h1>
                     </div>
                     <div class="story-hbtitle" style="color:black;">
-                            @Html.Raw(Model.NewsDetail.Content)
+                        @Html.Raw(Model.NewsDetail.Content)
                     </div>
                     <div class="meta-info">
                         @*<span class="meta-item"><i class="fa fa-clock-o"></i>@Model.NewsDetail.CreatedAt?</span>*@
@@ -49,21 +49,18 @@
                 <div class="sidebar-widget">
                     <h5 class="sidebar-title">Recent Posts</h5>
                     <ul class="widget">
-                        @foreach (var news in Model.News)
+                        @foreach (var news in Model.RecentNews)
                         {
-                            @if (num <= 3)
-                            {
-                                <li class="widget-bottom">
-                                    <div class="widget-img">
-                                        <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id"><img src="~/assets/img/@news.Image" alt="" /></a>
-                                    </div>
-                                    <div class="widget-title">
-                                        <h4><a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">@news.Name</a></h4>
-                                        <span class="commentsm"><i class="fa fa-calendar"></i>@news.CreatedAt.Day/@news.CreatedAt.Month/@news.CreatedAt.Year</span>
-                                    </div>
-                                </li>
-                                num++;
-                            }
+                            <li class="widget-bottom">
+                                <div class="widget-img">
+                                    <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id"><img src="~/assets/img/@news.Image" alt="" /></a>
+                                </div>
+                                <div class="widget-title">
+                                    <h4><a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">@news.Name</a></h4>
+                                    <span class="commentsm"><i class="fa fa-calendar"></i>@news.CreatedAt.Day/@news.CreatedAt.Month/@news.CreatedAt.Year</span>
+                                </div>
+                            </li>
+                            num++;
                         }
                     </ul>
                 </div>

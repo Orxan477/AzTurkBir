@@ -23,12 +23,19 @@ namespace Aztobir.Data.Implementations
 
         public async Task<List<TEntity>> GetAll(Expression<Func<TEntity, bool>> exp, params string[] includes)
         {
-            //int takeCount= Convert.ToInt32(take);
             
             var query = GetQuery(includes);
             return exp is null
                 ? await query.ToListAsync()
                 : await query.Where(exp).ToListAsync();
+        }
+        public async Task<List<TEntity>> GetTake(Expression<Func<TEntity, bool>> exp,int count, params string[] includes)
+        {
+
+            var query = GetQuery(includes);
+            return exp is null
+                ? await query.Take(count).ToListAsync()
+                : await query.Where(exp).Take(count).ToListAsync();
         }
         public async Task<List<TEntity>> GetAllAdmin(Expression<Func<TEntity, bool>> date, params string[] includes)
         {
@@ -47,7 +54,6 @@ namespace Aztobir.Data.Implementations
                     query = query.Include(include);
                 }
             }
-
             return query;
         }
     }

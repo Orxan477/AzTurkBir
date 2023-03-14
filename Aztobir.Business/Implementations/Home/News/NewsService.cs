@@ -100,5 +100,12 @@ namespace Aztobir.Business.Implementations.Home.News
             List<NewsVM> news = _mapper.Map<List<NewsVM>>(dbNews);
             return news;
         }
+
+        public async Task<List<NewsVM>> GetTake(int count)
+        {
+            var dbNews = await _unitOfWork.GetNewsRepository.GetTake(x => !x.IsDeleted,count);
+            List<NewsVM> news = _mapper.Map<List<NewsVM>>(dbNews);
+            return news;
+        }
     }
 }

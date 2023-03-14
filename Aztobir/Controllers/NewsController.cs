@@ -27,6 +27,7 @@ namespace Aztobir.UI.Controllers
                 {
                     News = await _aztobirService.NewsService.GetAll(),
                     NewsDetail = await _aztobirService.NewsService.Get(id),
+                    RecentNews= await _aztobirService.NewsService.GetTake(3),
                 };
                 return View(news);
             }
