@@ -28,7 +28,7 @@
                                 <td class="ph">@num</td>
                                 <td class="ph"><img class="php" src="~/assets/img/@news.Image" alt="" /></td>
                                 <td class="ph">@news.Name</td>
-                                <td class="ph">@Html.Raw((news.Content.Length<=5?news.Content:news.Content.Substring(0,5)+"..."))</td>
+                                <td class="ph">@Html.Raw((news.Content.Length<=15?news.Content:news.Content.Substring(0,15)+"..."))</td>
                                 <td class="ph">
                                     <a class="btn btn-primary p-2" asp-action="Detail" asp-route-id="@news.Id">
                                         <i class="mdi mdi-eye"></i>

@@ -28,7 +28,7 @@
                                 <td class="ph">@num</td>
                                 <td class="ph">@team.Logo</td>
                                 <td class="ph">@team.Name</td>
-                                <td class="ph">@team.Content</td>
+                                <td class="ph">@(Html.Raw(team.Content))</td>
                                 <td class="ph">
                                     <a class="btn btn-primary p-2" asp-action="Detail" asp-route-id="@team.Id">
                                         <i class="mdi mdi-eye"></i>

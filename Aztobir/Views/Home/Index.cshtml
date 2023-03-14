@@ -14,11 +14,9 @@
             {
                 <div class="single-slider ptb-150 bg-opacity" style="background-image:url(/assets/img/@news.Image); background-size:cover; background-repeat:no-repeat;">
                     <div class="container">
-                        <div class="slider-text">
+                        <div class="slider-text" style="color:white">
                             <h3>@news.Name</h3>
-                            <p>
-                                @(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"...")
-                            </p>
+                                @(Html.Raw(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"..."))
                             <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">Daha Fazla</a>
                         </div>
                     </div>
@@ -60,11 +58,11 @@
                     <div class="col-lg-12 d-flex">
                         <div class="col-lg-6">
                             <h5 class="text-center">İştirakçı fikirləri</h5>
-                            <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/courses/@feedback.Image" class="d-block" alt="...">
-                            <p class="text-center" style="margin:0 110px;">@feedback.Comment</p>
+                            <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/@feedback.Image" class="d-block" alt="...">
+                            <div class="text-center" style="margin:0 110px;">@(Html.Raw(feedback.Comment))</div>
                         </div>
                         <div class="col-lg-6">
-                            <img class="w-50" style="margin-top:10px;margin-left:70px; margin-bottom:10px;" src="~/assets/img/courses/@feedback.ImageView" alt="">
+                            <img class="w-50" style="margin-top:10px;margin-left:70px; margin-bottom:10px;" src="~/assets/img/@feedback.ImageView" alt="">
                         </div>
                     </div>
                 </div>
@@ -104,12 +102,12 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@faq.Id" aria-expanded="true" aria-controls="collapse-@faq.Id">
-                                @faq.Question
+                                @(Html.Raw(faq.Question))
                             </button>
                         </h2>
                         <div id="collapse-@faq.Id" class="accordion-collapse collapse" aria-labelledby="heading-@faq.Id" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                @faq.Response
+                               @(Html.Raw(faq.Response))
                             </div>
                         </div>
                     </div>

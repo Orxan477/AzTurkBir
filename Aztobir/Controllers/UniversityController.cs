@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using AutoMapper; 
 using Aztobir.Business.Interfaces;
 using Aztobir.Business.ViewModels.Home;
 using Aztobir.Business.ViewModels.Home.University;

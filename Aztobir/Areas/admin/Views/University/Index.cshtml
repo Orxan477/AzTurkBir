@@ -37,7 +37,7 @@
                                 <td class="ph">@(uni.EducationLanguage.Length<=5?uni.EducationLanguage:uni.EducationLanguage.Substring(0,5)+"...")</td>
                                 <td class="ph">@uni.StudentCount</td>
                                 <td class="ph">@uni.FacultyCount</td>
-                                <td class="ph">@(uni.Content.Length<=5?uni.Content:uni.Content.Substring(0,5)+"...")</td>
+                                <td class="ph">@Html.Raw((uni.Content.Length<=5?uni.Content:uni.Content.Substring(0,5)+"..."))</td>
                                 <td class="ph">@(@uni.Status==true ? "var" : "yoxdur")</td>
                                 <td class="ph">
                                     <a class="btn btn-primary p-2" asp-action="Detail" asp-route-id="@uni.Id">

@@ -33,9 +33,7 @@
             <div class="col-lg-6">
                 <div class="single-media">
                     <div class="media-text">
-                        <p>
                             @Html.Raw(@Model.About.Content)
-                        </p>
                     </div>
                 </div>
             </div>
@@ -60,9 +58,7 @@
                         @Html.Raw(goal.Logo)
                     </div>
                     <h5>@goal.Name</h5>
-                    <p>
-                        @goal.Content
-                    </p>
+                        @(Html.Raw(goal.Content))
                 </div>
             </div>
             }

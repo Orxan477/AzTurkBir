@@ -83,9 +83,7 @@
                              aria-labelledby="home-tab" tabindex="0">
                             <div class="single-course-details mb-30">
                                 <div class="course-story-details">
-                                    <p>
-                                        @Model.University.Content
-                                    </p>
+                                        @Html.Raw(@Model.University.Content);
                                 </div>
                             </div>
                         </div>

@@ -31,15 +31,13 @@
             <div class="col-lg-9">
                 <div class="blog-story mb-30">
                     <div class="blog-img-2">
-                        <img src="~/assets/img/blog/@Model.NewsDetail.Image" alt="" />
+                        <img style="width:50%;" src="~/assets/img/@Model.NewsDetail.Image" alt="" />
                     </div>
                     <div class="blog-heading">
                         <h1>@Model.NewsDetail.Name</h1>
                     </div>
-                    <div class="story-hbtitle">
-                        <p>
-                            @Model.NewsDetail.Content
-                        </p>
+                    <div class="story-hbtitle" style="color:black;">
+                            @Html.Raw(Model.NewsDetail.Content)
                     </div>
                     <div class="meta-info">
                         @*<span class="meta-item"><i class="fa fa-clock-o"></i>@Model.NewsDetail.CreatedAt?</span>*@
@@ -57,7 +55,7 @@
                             {
                                 <li class="widget-bottom">
                                     <div class="widget-img">
-                                        <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id"><img src="~/assets/img/blog/@news.Image" alt="" /></a>
+                                        <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id"><img src="~/assets/img/@news.Image" alt="" /></a>
                                     </div>
                                     <div class="widget-title">
                                         <h4><a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">@news.Name</a></h4>

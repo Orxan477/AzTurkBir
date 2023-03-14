@@ -20,11 +20,11 @@
                     <tbody>
                         <tr>
                             <th>Question</th>
-                            <th>@Model.FAQ.Question</th>
+                            <th>@(Html.Raw(Model.FAQ.Question))</th>
                         </tr>
                         <tr>
                             <td>Response</td>
-                            <td>@Model.FAQ.Response</td>
+                            <td>@(Html.Raw(Model.FAQ.Response))</td>
                         </tr>
                         <tr>
                             <td>
