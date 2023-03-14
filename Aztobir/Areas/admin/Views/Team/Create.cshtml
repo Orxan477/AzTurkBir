@@ -39,7 +39,7 @@
                           <div class="col-sm-9">
                            <input asp-for="Phone" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                        maxlength="12"
-                                       minlength="12" >
+                                       minlength="12" placeholder="Example: 994...">
                             <span asp-validation-for="Phone" class="text-danger"></span>
                           </div>
                         </div>
