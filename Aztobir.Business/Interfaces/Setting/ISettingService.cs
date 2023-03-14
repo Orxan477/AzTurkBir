@@ -7,6 +7,6 @@ namespace Aztobir.Business.Interfaces.Setting
         string GetSetting(string key);
         Task<List<SettingListVM>> SettingList();
         Task<SettingListVM> Setting(int id);
-        Task<string> Update(int id, SettingListVM setting);
+        Task<string> Update(int id, SettingListVM setting,string env,int size);
     }
 }

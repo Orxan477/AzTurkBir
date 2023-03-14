@@ -49,6 +49,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
                 string image = await Extension.SaveFileAsync(feedback.Photo, env, "assets/img");
                 dbFeedback.Image = image;
             }
+            dbFeedback.UpdatedAt = DateTime.Now;
             _unitOfWork.FeedbackCRUDRepository.UpdateAsync(dbFeedback);
             await _unitOfWork.SaveChangesAsync();
         }

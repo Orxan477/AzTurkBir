@@ -28,22 +28,29 @@ namespace Aztobir.Business.Implementations.About
             return aboutVM;
         }
 
-        public async Task<string> Update(AboutVM about,string env,int size)
+        public async Task<string> Update(AboutVM about, string env, int size)
         {
             var dbAbout = await _unitOfWork.AboutGetRepository.Get(x => !x.IsDeleted);
             if (dbAbout is null) throw new Exception("Not Found");
-            if (about.Content.ToLower().Trim()!=dbAbout.Content.ToLower().Trim())
+            if (about.Content.ToLower().Trim() != dbAbout.Content.ToLower().Trim())
             {
                 dbAbout.Content = about.Content;
             }
-            if (!CheckImageValid(about.Photo, "image/", size))
+            dbAbout.UpdatedAt = DateTime.Now;
+            if (about.Photo != null)
             {
-                return _errorMessage;
+                if (!CheckImageValid(about.Photo, "image/", size))
+                {
+                    return _errorMessage;
+                }
+                else
+                {
+                    string image = await Extension.SaveFileAsync(about.Photo, env, "assets/img");
+                    dbAbout.Image = image;
+                }
+                _unitOfWork.AboutCRUDRepository.UpdateAsync(dbAbout);
+                await _unitOfWork.SaveChangesAsync();
             }
-            string image = await Extension.SaveFileAsync(about.Photo, env, "assets/img");
-            dbAbout.Image = image;
-            _unitOfWork.AboutCRUDRepository.UpdateAsync(dbAbout);
-            await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
         private bool CheckImageValid(IFormFile file, string type, int size)

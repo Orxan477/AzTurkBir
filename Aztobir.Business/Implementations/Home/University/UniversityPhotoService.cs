@@ -51,6 +51,7 @@ namespace Aztobir.Business.Implementations.Home.University
             }
             string image = await Extension.SaveFileAsync(photo.Photo, env, "assets/img");
             dbPhoto.Image = image;
+            dbPhoto.UpdatedAt = DateTime.Now;
             _unitOfWork.UniversityImagesCURDRepository.UpdateAsync(dbPhoto);
             await _unitOfWork.SaveChangesAsync();
             return "ok";

@@ -56,6 +56,7 @@ namespace Aztobir.Business.Implementations.Home
             {
                 dbPosition.Name = position.Name;
             }
+            dbPosition.UpdatedAt = DateTime.Now;
             _unitOfWork.PositionCRUDRepository.UpdateAsync(dbPosition);
             await _unitOfWork.SaveChangesAsync();
             return "ok";
