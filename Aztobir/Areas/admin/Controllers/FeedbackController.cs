@@ -90,8 +90,10 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                await _aztobirService.FeedbackService.Update(id,feedback,_env.WebRootPath,PhotoSize());
-                return RedirectToAction("Index");
+               var model= await _aztobirService.FeedbackService.Update(id,feedback,_env.WebRootPath,PhotoSize());
+                ModelState.AddModelError(string.Empty, model);
+                await GetSelectedItemAsync();
+                return View(feedback);
             }
             catch (Exception ex)
             {

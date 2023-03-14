@@ -36,13 +36,19 @@ namespace Aztobir.Business.Implementations.Home.Feedback
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFeedback is null) throw new Exception("Not Found");
-            if (dbFeedback.FullName.ToLower().Trim() != feedback.FullName.ToLower().Trim())
+            if (feedback.FullName != null)
             {
-                dbFeedback.FullName = feedback.FullName;
+                if (dbFeedback.FullName.ToLower().Trim() != feedback.FullName.ToLower().Trim())
+                {
+                    dbFeedback.FullName = feedback.FullName;
+                }
             }
-            if (dbFeedback.Comment.ToLower().Trim() != feedback.Comment.ToLower().Trim())
+            if (feedback.Comment != null)
             {
-                dbFeedback.Comment = feedback.Comment;
+                if (dbFeedback.Comment.ToLower().Trim() != feedback.Comment.ToLower().Trim())
+                {
+                    dbFeedback.Comment = feedback.Comment;
+                }
             }
             if (feedback.Photo != null)
             {
