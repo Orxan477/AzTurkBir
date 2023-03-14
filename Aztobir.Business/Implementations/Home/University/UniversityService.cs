@@ -107,7 +107,7 @@ namespace Aztobir.Business.Implementations.Home.University
             {
                 dbUni.FacultyCount = uni.FacultyCount;
             }
-            if (dbUni.EducationLanguage != null)
+            if (uni.EducationLanguage != null)
             {
                 if (dbUni.EducationLanguage.ToLower().Trim() != uni.EducationLanguage.ToLower().Trim())
                 {

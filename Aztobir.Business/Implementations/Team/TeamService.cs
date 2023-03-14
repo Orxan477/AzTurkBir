@@ -12,13 +12,13 @@ namespace Aztobir.Business.Implementations.Team
         private string _errorMessage;
         private IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public TeamService(IUnitOfWork unitOfWork,IMapper mapper)
+        public TeamService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<string> Create(CreateTeamVM team, string env,int size)
+        public async Task<string> Create(CreateTeamVM team, string env, int size)
         {
             var newTeam = _mapper.Map<Core.Models.Team>(team);
             if (!CheckImageValid(team.Photo, "image/", size))
@@ -32,41 +32,64 @@ namespace Aztobir.Business.Implementations.Team
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, TeamDetailVM team, string env,int size)
+        public async Task<string> Update(int id, TeamDetailVM team, string env, int size)
         {
             var dbTeam = await _unitOfWork.TeamGetRepository.Get(x => !x.IsDeleted && x.Id == id, "Position");
             if (dbTeam is null) throw new Exception("NotFound");
-            if (dbTeam.FullName.ToLower().Trim() != team.FullName.ToLower().Trim())
+            if (team.FullName != null)
             {
-                dbTeam.FullName = team.FullName;
+                if (dbTeam.FullName.ToLower().Trim() != team.FullName.ToLower().Trim())
+                {
+                    dbTeam.FullName = team.FullName;
+                }
             }
-            if (dbTeam.Content.ToLower().Trim() != team.Content.ToLower().Trim())
+            if (team.Content != null)
             {
-                dbTeam.Content = team.Content;
+                if (dbTeam.Content.ToLower().Trim() != team.Content.ToLower().Trim())
+                {
+                    dbTeam.Content = team.Content;
+                }
             }
-            if (dbTeam.Email.ToLower().Trim() != team.Email.ToLower().Trim())
+            if (team.Email != null)
             {
-                dbTeam.Email = team.Email;
+
+                if (dbTeam.Email.ToLower().Trim() != team.Email.ToLower().Trim())
+                {
+                    dbTeam.Email = team.Email;
+                }
             }
-            if (dbTeam.Phone.ToLower().Trim() != team.Phone.ToLower().Trim())
+            if (team.Phone != null)
             {
-                dbTeam.Phone = team.Phone;
+
+                if (dbTeam.Phone.ToLower().Trim() != team.Phone.ToLower().Trim())
+                {
+                    dbTeam.Phone = team.Phone;
+                }
             }
-            if (dbTeam.PositionId!= team.PositionId)
+            if (dbTeam.PositionId != team.PositionId)
             {
                 dbTeam.PositionId = team.PositionId;
             }
-            if (dbTeam.Facebook.ToLower().Trim() != team.Facebook.ToLower().Trim())
+            if (team.Facebook != null)
             {
-                dbTeam.Facebook = team.Facebook;
+                if (dbTeam.Facebook.ToLower().Trim() != team.Facebook.ToLower().Trim())
+                {
+                    dbTeam.Facebook = team.Facebook;
+                }
             }
-            if (dbTeam.Twitter.ToLower().Trim() != team.Twitter.ToLower().Trim())
+            if (team.Twitter != null)
             {
-                dbTeam.Twitter = team.Twitter;
+                if (dbTeam.Twitter.ToLower().Trim() != team.Twitter.ToLower().Trim())
+                {
+                    dbTeam.Twitter = team.Twitter;
+                }
             }
-            if (dbTeam.Linkedin.ToLower().Trim() != team.Linkedin.ToLower().Trim())
+            if (team.Linkedin != null)
             {
-                dbTeam.Linkedin = team.Linkedin;
+                if (dbTeam.Linkedin.ToLower().Trim() != team.Linkedin.ToLower().Trim())
+                {
+                    dbTeam.Linkedin = team.Linkedin;
+                }
             }
             if (team.Photo != null)
             {
@@ -117,11 +140,11 @@ namespace Aztobir.Business.Implementations.Team
 
         public async Task<List<TeamVM>> GetAll()
         {
-            var dbTeam = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted,"Position");
+            var dbTeam = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted, "Position");
             List<TeamVM> teams = _mapper.Map<List<TeamVM>>(dbTeam);
             return teams;
         }
 
-       
+
     }
 }
