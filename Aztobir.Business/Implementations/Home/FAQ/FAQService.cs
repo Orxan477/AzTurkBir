@@ -2,7 +2,7 @@
 using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.ViewModels.Home.FAQ;
 using Aztobir.Core.İnterfaces;
- 
+
 namespace Aztobir.Business.Implementations.Home.FAQ
 {
     public class FAQService : IFAQService
@@ -10,7 +10,7 @@ namespace Aztobir.Business.Implementations.Home.FAQ
         private IUnitOfWork _unitOfWork;
         private IMapper _mapper;
 
-        public FAQService(IUnitOfWork unitOfWork,IMapper mapper)
+        public FAQService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -27,13 +27,21 @@ namespace Aztobir.Business.Implementations.Home.FAQ
         {
             var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFAQ is null) throw new Exception("Not Found");
-            if (dbFAQ.Question.Trim().ToLower() != faq.Question.Trim().ToLower())
+            if (faq.Question != null)
             {
-                dbFAQ.Question = faq.Question;
+
+                if (dbFAQ.Question.Trim().ToLower() != faq.Question.Trim().ToLower())
+                {
+                    dbFAQ.Question = faq.Question;
+                }
             }
-            if (dbFAQ.Response.Trim().ToLower() != faq.Response.Trim().ToLower())
+            if (faq.Response != null)
             {
-                dbFAQ.Response = faq.Response;
+
+                if (dbFAQ.Response.Trim().ToLower() != faq.Response.Trim().ToLower())
+                {
+                    dbFAQ.Response = faq.Response;
+                }
             }
             dbFAQ.UpdatedAt = DateTime.Now;
             _unitOfWork.FaqCRUDRepository.UpdateAsync(dbFAQ);
@@ -50,7 +58,7 @@ namespace Aztobir.Business.Implementations.Home.FAQ
 
         public async Task<FAQVM> Get(int id)
         {
-            var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id==id);
+            var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFAQ is null) throw new Exception("Not Found");
             FAQVM faq = _mapper.Map<FAQVM>(dbFAQ);
             return faq;
@@ -63,6 +71,6 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             return faq;
         }
 
-        
+
     }
 }

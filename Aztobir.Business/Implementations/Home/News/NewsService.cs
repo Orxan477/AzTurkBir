@@ -37,13 +37,19 @@ namespace Aztobir.Business.Implementations.Home.News
         {
             var dbNews = await _unitOfWork.GetNewsRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbNews is null) throw new Exception("Not Found");
-            if (dbNews.Name.ToLower().Trim() != news.Name.ToLower().Trim())
+            if (news.Name!= null)
             {
-                dbNews.Name = news.Name;
+                if (dbNews.Name.ToLower().Trim() != news.Name.ToLower().Trim())
+                {
+                    dbNews.Name = news.Name;
+                }
             }
-            if (dbNews.Content.ToLower().Trim() != news.Content.ToLower().Trim())
+            if(news.Content != null)
             {
-                dbNews.Content = news.Content;
+                if (dbNews.Content.ToLower().Trim() != news.Content.ToLower().Trim())
+                {
+                    dbNews.Content = news.Content;
+                }
             }
             if (news.Photo != null)
             {
