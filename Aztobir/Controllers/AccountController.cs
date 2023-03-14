@@ -57,7 +57,7 @@ namespace Aztobir.UI.Controllers
             string error = await _aztobirService.AccountService.Login(user, login.Password);
             if (error == "ok")
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Dashboard",new {area="admin"});
             }
             else
             {

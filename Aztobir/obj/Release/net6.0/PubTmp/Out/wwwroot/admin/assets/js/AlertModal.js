@@ -1,9 +1,8 @@
 ﻿$(function (e) {
     $(document).on("click", ".delete-btn", function (e) {
         e.preventDefault();
-
+        
         let url = $(this).attr("href");
-
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
