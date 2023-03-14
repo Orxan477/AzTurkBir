@@ -34,18 +34,23 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CityCreateVM city)
         {
-            await _aztobirService.CityService.Create(city);
-            return RedirectToAction("Index");
+            var model = await _aztobirService.CityService.Create(city);
+            if (model != "ok")
+            {
+                ModelState.AddModelError(string.Empty, model);
+                return View(city);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
         [Route("/admin/city/update/{id}")]
         public async Task<IActionResult> Update(int id)
         {
             try
             {
-                UniversityViewVM city = new UniversityViewVM()
-                {
-                    City = await _aztobirService.CityService.Get(id),
-                };
+                var city = await _aztobirService.CityService.Get(id);
                 return View(city);
             }
             catch (Exception ex)
@@ -53,16 +58,20 @@ namespace Aztobir.UI.Areas.admin.Controllers
 
                 return Json(ex.Message);
             }
-
         }
         [Route("/admin/city/update/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int id,CityVM city)
+        public async Task<IActionResult> Update(int id, CityVM city)
         {
             try
             {
-               await _aztobirService.CityService.Update(id, city);
+                var model = await _aztobirService.CityService.Update(id, city);
+                if (model != "ok")
+                {
+                    ModelState.AddModelError(string.Empty, model);
+                    return View(city);
+                }
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

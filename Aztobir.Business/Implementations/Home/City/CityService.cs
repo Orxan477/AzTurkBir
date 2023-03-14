@@ -15,20 +15,52 @@ namespace Aztobir.Business.Implementations.Home.City
         private IUnitOfWork _unitOfWork;
         private IMapper _mapper;
 
-        public CityService(IUnitOfWork unitOfWork,IMapper mapper)
+        public CityService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
-        public async Task Create(CityCreateVM city)
+        public async Task<string> Create(CityCreateVM city)
         {
-            Core.Models.City dbCity = _mapper.Map<Core.Models.City>(city);
-            dbCity.CreatedAt = DateTime.Now;
-            await _unitOfWork.CityCRUDRepository.CreateAsync(dbCity);
-            await _unitOfWork.SaveChangesAsync();
+            bool isExist = _unitOfWork.CityCRUDRepository.Exist(x => x.Name == city.Name);
+            if (!isExist)
+            {
+                Core.Models.City dbCity = _mapper.Map<Core.Models.City>(city);
+                dbCity.CreatedAt = DateTime.Now;
+                await _unitOfWork.CityCRUDRepository.CreateAsync(dbCity);
+                await _unitOfWork.SaveChangesAsync();
+                return "ok";
+            }
+            else
+            {
+                return "This name is exist";
+            }
         }
+        public async Task<string> Update(int id, CityVM city)
+        {
+            if (city.Name != null)
+            {
+                var dbCity = await _unitOfWork.CityGetRepository.Get(x => x.Id == id && !x.IsDeleted);
+                if (dbCity is null) throw new Exception("Not Found");
+                bool isExist = _unitOfWork.CityCRUDRepository.Exist(x => x.Name == city.Name);
+                bool currentExist = dbCity.Name.Trim().ToLower() == city.Name.Trim().ToLower();
+                if (isExist && !currentExist)
+                {
+                    return "This name is exist";
+                }
+                dbCity.Name = city.Name;
+                dbCity.UpdatedAt = DateTime.Now;
+                _unitOfWork.CityCRUDRepository.UpdateAsync(dbCity);
+                await _unitOfWork.SaveChangesAsync();
+                return "ok";
+            }
+            else
+            {
+                return "ok";
+            }
 
+        }
         public async Task Delete(int id)
         {
             var dbCity = await _unitOfWork.CityGetRepository.Get(x => x.Id == id && !x.IsDeleted);
@@ -40,7 +72,7 @@ namespace Aztobir.Business.Implementations.Home.City
 
         public async Task<CityVM> Get(int id)
         {
-            var dbCity= await _unitOfWork.CityGetRepository.Get(x => x.Id == id&& !x.IsDeleted);
+            var dbCity = await _unitOfWork.CityGetRepository.Get(x => x.Id == id && !x.IsDeleted);
             if (dbCity is null) throw new Exception("Not Found");
             var city = _mapper.Map<CityVM>(dbCity);
             return city;
@@ -54,20 +86,6 @@ namespace Aztobir.Business.Implementations.Home.City
             return cities;
         }
 
-        public async Task<string> Update(int id, CityVM city)
-        {
-            var dbCity = await _unitOfWork.CityGetRepository.Get(x => x.Id == id && !x.IsDeleted);
-            if (dbCity is null) throw new Exception("Not Found");
-            bool isExist =  _unitOfWork.CityCRUDRepository.Exist(x => x.Name == city.Name);
-            if (isExist)
-            {
-                return "This name is exist";
-            }
-            dbCity.Name = city.Name;
-            dbCity.UpdatedAt = DateTime.Now;
-            _unitOfWork.CityCRUDRepository.UpdateAsync(dbCity);
-            await _unitOfWork.SaveChangesAsync();
-            return "ok";
-        }
+
     }
 }

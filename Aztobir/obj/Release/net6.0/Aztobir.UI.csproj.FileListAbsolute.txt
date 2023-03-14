@@ -548,3 +548,5 @@ E:\Documents\Code Academy\Aztobir\Aztobir\obj\Release\net6.0\refint\Aztobir.UI.d
 E:\Documents\Code Academy\Aztobir\Aztobir\obj\Release\net6.0\Aztobir.UI.pdb
 E:\Documents\Code Academy\Aztobir\Aztobir\obj\Release\net6.0\Aztobir.UI.genruntimeconfig.cache
 E:\Documents\Code Academy\Aztobir\Aztobir\obj\Release\net6.0\ref\Aztobir.UI.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\bin\Release\net6.0\FluentValidation.AspNetCore.dll
+E:\Documents\Code Academy\Buta Grup\Aztobir\Aztobir\obj\Release\net6.0\Aztobir.UI.MvcApplicationPartsAssemblyInfo.cs

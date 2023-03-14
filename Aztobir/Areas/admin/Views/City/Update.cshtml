@@ -1,6 +1,6 @@
 ﻿@using Aztobir.Business.ViewModels.Home.City
 @using Aztobir.Business.ViewModels.Home.University
-@model UniversityViewVM
+@model CityVM
 @{
     ViewData["Title"] = "Update";
     Layout = "~/Areas/admin/Views/Shared/_AdminLayout.cshtml";
@@ -13,9 +13,9 @@
                 <h4 class="card-title">Update</h4>
                 <form class="forms-sample" method="post">
                     <div class="form-group">
-                        <label asp-for="City.Name"></label>
-                        <input asp-for="City.Name" class="form-control">
-                        <span asp-validation-for="City.Name" class="text-danger"></span>
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control">
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                     <button class="btn btn-light" asp-action="Index">Cancel</button>
@@ -25,6 +25,6 @@
     </div>
 </div>
 
-@section ScriptModal{
+@*@section ScriptModal{
     <partial name="_AdminValidationScriptsPartial" />
-}
+}*@

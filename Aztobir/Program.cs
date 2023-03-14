@@ -8,6 +8,7 @@ using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations;
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,7 +36,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
 });
 
-builder.Services.AddValidatorsFromAssemblyContaining<GoalCreateVMValidator>();
+builder.Services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<GoalCreateVMValidator>());
 
 
 var app = builder.Build();

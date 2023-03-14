@@ -41,7 +41,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/about/update/")]
         public async Task<IActionResult> Update()
         {
-            //return Json(id);
             var about = await _aztobirService.AboutService.Get();
             if (about is null) return NotFound();
             return View(about);
@@ -53,9 +52,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                //return Json(about.Photo.ContentType);
-                if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View(about);
-                //int size = int.Parse(GetSetting("PhotoSize"));
                 var db = await _aztobirService.AboutService.Update(about, _env.WebRootPath,PhotoSize());
                 if (db != "ok")
                 {
@@ -65,23 +61,8 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-
                 return Json(ex.Message);
             }
-        }
-        private bool CheckImageValid(IFormFile file, string type, int size)
-        {
-            if (!Extension.CheckType(file, type))
-            {
-                _errorMessage = "The type is not correct";
-                return false;
-            }
-            if (!Extension.CheckSize(file, size))
-            {
-                _errorMessage = $"The size of this photo is {size}";
-                return false;
-            }
-            return true;
         }
         private int PhotoSize()
         {

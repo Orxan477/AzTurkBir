@@ -34,8 +34,20 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int id,SettingListVM setting)
         {
-            await _aztobirService.SettingSerivice.Update(id, setting,_env.WebRootPath, PhotoSize());
-            return RedirectToAction("Index");
+            try
+            {
+                var model= await _aztobirService.SettingSerivice.Update(id, setting, _env.WebRootPath, PhotoSize());
+                if (model != "ok")
+                {
+                    ModelState.AddModelError(string.Empty, model);
+                    return View(setting);
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
         }
         private int PhotoSize()
         {

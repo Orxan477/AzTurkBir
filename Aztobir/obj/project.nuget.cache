@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "MKnu3A4croiOXm6wJuzoQsS5TxGSL2Ss1OjjNTzWpE1LdrJ0e81cYYdLBV79SmJpBUYfhrK+xtsBnyhmwqcOzA==",
+  "dgSpecHash": "I7JTtDD7/DY5CqIOCRdBFvmVS+qzyAU2qyiCmHFGZmDzBlxlCgztGZxoplXzReF/p4fPfOUAhxQaPVUGKmvoug==",
   "success": true,
   "projectFilePath": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\Aztobir.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Orxan477\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
-    "C:\\Users\\Orxan477\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
-    "C:\\Users\\Orxan477\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\Orxan477\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\Orxan477\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\Orxan477\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

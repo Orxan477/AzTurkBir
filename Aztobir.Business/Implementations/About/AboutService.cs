@@ -32,9 +32,12 @@ namespace Aztobir.Business.Implementations.About
         {
             var dbAbout = await _unitOfWork.AboutGetRepository.Get(x => !x.IsDeleted);
             if (dbAbout is null) throw new Exception("Not Found");
-            if (about.Content.ToLower().Trim() != dbAbout.Content.ToLower().Trim())
+            if (about.Content != null)
             {
-                dbAbout.Content = about.Content;
+                if (about.Content.ToLower().Trim() != dbAbout.Content.ToLower().Trim())
+                {
+                    dbAbout.Content = about.Content;
+                }
             }
             dbAbout.UpdatedAt = DateTime.Now;
             if (about.Photo != null)
@@ -48,9 +51,9 @@ namespace Aztobir.Business.Implementations.About
                     string image = await Extension.SaveFileAsync(about.Photo, env, "assets/img");
                     dbAbout.Image = image;
                 }
-                _unitOfWork.AboutCRUDRepository.UpdateAsync(dbAbout);
-                await _unitOfWork.SaveChangesAsync();
             }
+            _unitOfWork.AboutCRUDRepository.UpdateAsync(dbAbout);
+            await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
         private bool CheckImageValid(IFormFile file, string type, int size)

@@ -23,7 +23,22 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             await _unitOfWork.FaqCRUDRepository.CreateAsync(dbFaq);
             await _unitOfWork.SaveChangesAsync();
         }
-
+        public async Task Update(int id, FAQVM faq)
+        {
+            var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbFAQ is null) throw new Exception("Not Found");
+            if (dbFAQ.Question.Trim().ToLower() != faq.Question.Trim().ToLower())
+            {
+                dbFAQ.Question = faq.Question;
+            }
+            if (dbFAQ.Response.Trim().ToLower() != faq.Response.Trim().ToLower())
+            {
+                dbFAQ.Response = faq.Response;
+            }
+            dbFAQ.UpdatedAt = DateTime.Now;
+            _unitOfWork.FaqCRUDRepository.UpdateAsync(dbFAQ);
+            await _unitOfWork.SaveChangesAsync();
+        }
         public async Task Delete(int id)
         {
             var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
@@ -48,21 +63,6 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             return faq;
         }
 
-        public async Task Update(int id, FAQVM faq)
-        {
-            var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
-            if (dbFAQ is null) throw new Exception("Not Found");
-            if (dbFAQ.Question.Trim().ToLower() != faq.Question.Trim().ToLower())
-            {
-                dbFAQ.Question = faq.Question;
-            }
-            if (dbFAQ.Response.Trim().ToLower() != faq.Response.Trim().ToLower())
-            {
-                dbFAQ.Response = faq.Response;
-            }
-            dbFAQ.UpdatedAt = DateTime.Now;
-            _unitOfWork.FaqCRUDRepository.UpdateAsync(dbFAQ);
-            await _unitOfWork.SaveChangesAsync();
-        }
+        
     }
 }
