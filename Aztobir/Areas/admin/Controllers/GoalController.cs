@@ -77,7 +77,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/goal/update/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int id,GoalVM goal)
+        public async Task<IActionResult> Update(int id, GoalUpdateVM goal)
         {
             try
             {

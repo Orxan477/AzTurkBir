@@ -49,7 +49,7 @@ namespace Aztobir.Business.Implementations.About
             
         }
 
-        public async Task Update(int id, GoalVM goal)
+        public async Task Update(int id, GoalUpdateVM goal)
         {
             var dbGoal = await _unitOfWork.GoalGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (goal.Logo != null)
