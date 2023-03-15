@@ -99,7 +99,13 @@ namespace Aztobir.Business.Implementations.Home.News
             NewsVM news = _mapper.Map<NewsVM>(dbNews);
             return news;
         }
-
+        public async Task<UpdateNewsVM> GetUpdate(int id)
+        {
+            var dbCity = await _unitOfWork.GetNewsRepository.Get(x => x.Id == id && !x.IsDeleted);
+            if (dbCity is null) throw new Exception("Not Found");
+            var city = _mapper.Map<UpdateNewsVM>(dbCity);
+            return city;
+        }
         public async Task<List<NewsVM>> GetAll()
         {
             var dbNews = await _unitOfWork.GetNewsRepository.GetAll(x => !x.IsDeleted);

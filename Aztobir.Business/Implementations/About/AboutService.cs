@@ -56,6 +56,7 @@ namespace Aztobir.Business.Implementations.About
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
+
         private bool CheckImageValid(IFormFile file, string type, int size)
         {
             if (!Extension.CheckType(file, type))

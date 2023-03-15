@@ -36,7 +36,9 @@ namespace Aztobir.Business.Profiles
             CreateMap<City, CityUpdateVM>();
             CreateMap<Team, UpdateTeamVM>();
             CreateMap<Setting, SettingListVM>();
+            CreateMap<Goal, GoalUpdateVM>();
             CreateMap<News, NewsVM>();
+            CreateMap<News, UpdateNewsVM>();
             CreateMap<CreateContactVM, Contact>();
             CreateMap<Contact, ContactVM>();
             CreateMap<UniversityFormVM, UniversityForm>();
@@ -44,6 +46,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<NewsVM, News>();
             CreateMap<CreateNewsVM, News>();
             CreateMap<Feedback, FeedbackVM>().ForMember(x=>x.ImageView,m=>m.MapFrom(o=>o.University.Image)).ForMember(x=>x.University,m=>m.MapFrom(o=>o.University.Name));
+            CreateMap<Feedback, UpdateFeedbackVM>().ForMember(x => x.ImageView, m => m.MapFrom(o => o.University.Image));
             CreateMap<CreateFeedbackVM, Feedback    >();
             CreateMap<Team, TeamVM>().ForMember(x => x.Position, m => m.MapFrom(o => o.Position.Name));
             CreateMap<Team, TeamDetailVM>().ForMember(x => x.Position, m => m.MapFrom(o => o.Position.Name));

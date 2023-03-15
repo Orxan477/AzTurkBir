@@ -75,7 +75,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             try
             {
                 await GetSelectedItemAsync();
-                var model = await _aztobirService.FeedbackService.Get(id);
+                var model = await _aztobirService.FeedbackService.GetUpdate(id);
                 return View(model);
             }
             catch (Exception ex)
@@ -90,10 +90,14 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-               var model= await _aztobirService.FeedbackService.Update(id,feedback,_env.WebRootPath,PhotoSize());
-                ModelState.AddModelError(string.Empty, model);
-                await GetSelectedItemAsync();
-                return View(feedback);
+                var model = await _aztobirService.FeedbackService.Update(id, feedback, _env.WebRootPath, PhotoSize());
+                if (model != "ok")
+                {
+                    ModelState.AddModelError(string.Empty, model);
+                    await GetSelectedItemAsync();
+                    return View(feedback);
+                }
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {

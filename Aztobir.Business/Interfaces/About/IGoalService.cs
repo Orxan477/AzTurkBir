@@ -6,6 +6,7 @@ namespace Aztobir.Business.Interfaces.About
     {
         Task<List<GoalVM>> GetAll();
         Task<GoalVM> Get(int id);
+        Task<GoalUpdateVM> GetUpdate(int id);
         Task Create(GoalCreateVM goal);
         Task Update(int id, GoalUpdateVM goal);
         Task Delete(int id);

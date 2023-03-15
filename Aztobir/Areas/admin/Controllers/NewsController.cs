@@ -76,7 +76,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                var model =await _aztobirService.NewsService.Get(id);
+                var model =await _aztobirService.NewsService.GetUpdate(id);
                 return View(model);
             }
             catch (Exception ex)

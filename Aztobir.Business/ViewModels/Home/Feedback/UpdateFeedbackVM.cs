@@ -6,7 +6,9 @@ namespace Aztobir.Business.ViewModels.Home.Feedback
     {
         public string FullName { get; set; }
         public string Comment { get; set; }
+        public string Image { get; set; }
         public int UniversityId { get; set; }
+        public string ImageView { get; set; }
         public IFormFile Photo { get; set; }
     }
 }

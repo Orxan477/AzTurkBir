@@ -40,6 +40,13 @@ namespace Aztobir.Business.Implementations.About
             GoalVM goalVM = _mapper.Map<GoalVM>(goal);
             return goalVM;
         }
+        public async Task<GoalUpdateVM> GetUpdate(int id)
+        {
+            var dbCity = await _unitOfWork.GoalGetRepository.Get(x => x.Id == id && !x.IsDeleted);
+            if (dbCity is null) throw new Exception("Not Found");
+            var city = _mapper.Map<GoalUpdateVM>(dbCity);
+            return city;
+        }
 
         public async Task<List<GoalVM>> GetAll()
         {
