@@ -33,7 +33,7 @@ namespace Aztobir.Business.Implementations.Home.News
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, NewsVM news, string env,int size)
+        public async Task<string> Update(int id, UpdateNewsVM news, string env,int size)
         {
             var dbNews = await _unitOfWork.GetNewsRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbNews is null) throw new Exception("Not Found");
