@@ -67,7 +67,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/faq/update/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int id, FAQVM faq)
+        public async Task<IActionResult> Update(int id, UpdateFAQVM faq)
         {
             try
             {

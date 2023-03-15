@@ -23,7 +23,7 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             await _unitOfWork.FaqCRUDRepository.CreateAsync(dbFaq);
             await _unitOfWork.SaveChangesAsync();
         }
-        public async Task Update(int id, FAQVM faq)
+        public async Task Update(int id, UpdateFAQVM faq)
         {
             var dbFAQ = await _unitOfWork.FAQGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFAQ is null) throw new Exception("Not Found");
