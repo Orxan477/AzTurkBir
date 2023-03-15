@@ -81,7 +81,7 @@ namespace Aztobir.Business.Implementations.Home.University
             return "ok";
         }
 
-        public async Task<string> Update(int id, UniversityVM uni, string env, int size)
+        public async Task<string> Update(int id, UpdateUniveresityVM uni, string env, int size)
         {
             var dbUni = await _unitOfWork.UniversityGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbUni is null) throw new Exception("Not Found");

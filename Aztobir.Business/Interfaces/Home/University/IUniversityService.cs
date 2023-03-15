@@ -11,7 +11,7 @@ namespace Aztobir.Business.Interfaces.Home.University
         Task<List<UniPhotosVM>> GetPhotos(int id);
         Task<List<FeedbackVM>> GetFeedbacks(int id);
         Task<string> Create(CreateUniversityVM uni,string env,int size);
-        Task<string> Update(int id,UniversityVM uni,string env,int size);
+        Task<string> Update(int id, UpdateUniveresityVM uni,string env,int size);
         Task Delete(int id);
     }
 }
