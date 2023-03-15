@@ -33,7 +33,7 @@ namespace Aztobir.Business.Implementations.Home
                 return "This name is exist";
             }
         }
-        public async Task<string> Update(int id, PositionVM position)
+        public async Task<string> Update(int id, UpdatePositionVM position)
         {
             var dbPosition = await _unitOfWork.PositionGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbPosition is null) throw new Exception("Not Found");

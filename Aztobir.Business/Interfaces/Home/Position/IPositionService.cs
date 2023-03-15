@@ -7,7 +7,7 @@ namespace Aztobir.Business.Interfaces.Home.Position
         Task<PositionVM> Get(int id);
         Task<List<PositionVM>> GetAll();
         Task<string> Create(CreatePositionVM position);
-        Task<string> Update(int id, PositionVM position);
+        Task<string> Update(int id, UpdatePositionVM position);
         Task Delete(int id);
     }
 }
