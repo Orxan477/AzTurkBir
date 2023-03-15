@@ -1,4 +1,5 @@
 ﻿using Aztobir.Business.ViewModels.Home.Contact;
+using Aztobir.Business.ViewModels.Home.University;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Aztobir.Business.Interfaces.Home.Contact
         Task<List<ContactVM>> GetAll();
         Task<ContactVM> Get(int id);
         Task<string> Create(CreateContactVM contact);
+        Task<string> SendMessage(int id, SendMessageVM message);
         Task Delete(int id);
     }
 }

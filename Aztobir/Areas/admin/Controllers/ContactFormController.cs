@@ -1,4 +1,5 @@
 ﻿using Aztobir.Business.Interfaces;
+using Aztobir.Business.ViewModels.Home.University;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,6 +40,33 @@ namespace Aztobir.UI.Areas.admin.Controllers
             {
                 await _aztobirService.ContactService.Delete(id);
                 return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+            }
+        }
+        [Route("/admin/contact/sendmessage/{id}")]
+        public IActionResult SendMessage()
+        {
+            return View();
+        }
+        [Route("/admin/contact/sendmessage/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SendMessage(int id, SendMessageVM message)
+        {
+            try
+            {
+                var model = await _aztobirService.ContactService.SendMessage(id, message);
+                if (model != "ok")
+                {
+                    return RedirectToAction("CustomBadRequest", "Error", new { area = "null" });
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
             catch (Exception ex)
             {

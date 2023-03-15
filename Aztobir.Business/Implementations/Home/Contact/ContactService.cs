@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Home.Contact;
 using Aztobir.Business.ViewModels.Home.Contact;
+using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.İnterfaces;
 using Microsoft.Extensions.Configuration;
 
@@ -42,7 +43,31 @@ namespace Aztobir.Business.Implementations.Home.Contact
             await _unitOfWork.SaveChangesAsync();
             return "OK";
         }
+        public async Task<string> SendMessage(int id, SendMessageVM message)
+        {
 
+            var dbForm = await _unitOfWork.ContactGetRepositorys.Get(x => !x.IsDeleted && x.Id == id);
+            if (dbForm is null) throw new Exception("Not Found");
+
+            int count = 0;
+        TryAgain:
+            try
+            {
+                EmailService.Send(_configure.GetSection("EmailSettings:Mail").Value,
+                           _configure.GetSection("EmailSettings:Passowrd").Value, dbForm.Email, message.Body, "Aztobir University Answer Message");
+                await Delete(id);
+                return "ok";
+            }
+            catch (Exception ex)
+            {
+                count++;
+                if (count != 3)
+                {
+                    goto TryAgain;
+                }
+                return "Bad Request";
+            }
+        }
         public async Task Delete(int id)
         {
             var dbForm = await _unitOfWork.ContactGetRepositorys.Get(x => !x.IsDeleted && x.Id == id);
