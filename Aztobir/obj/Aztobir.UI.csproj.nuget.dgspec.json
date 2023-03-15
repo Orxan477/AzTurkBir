@@ -54,7 +54,7 @@
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[11.2.2, )"
+              "version": "[10.3.6, )"
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",

@@ -37,6 +37,7 @@ namespace Aztobir.Business.Implementations.Home.City
                 return "This name is exist";
             }
         }
+
         public async Task<string> Update(int id, CityUpdateVM city)
         {
             if (city.Name != null)
@@ -76,6 +77,13 @@ namespace Aztobir.Business.Implementations.Home.City
             if (dbCity is null) throw new Exception("Not Found");
             var city = _mapper.Map<CityVM>(dbCity);
             return city;
+        }
+        public async Task<CityUpdateVM> GetUpdate(int id)
+        {
+            var dbCity = await _unitOfWork.CityGetRepository.Get(x => x.Id == id && !x.IsDeleted);
+            if (dbCity is null) throw new Exception("Not Found");
+            var city = _mapper.Map<CityUpdateVM>(dbCity);
+            return city; 
         }
 
         public async Task<List<CityVM>> GetAll()

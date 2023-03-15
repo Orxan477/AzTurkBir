@@ -33,6 +33,8 @@ namespace Aztobir.Business.Profiles
             CreateMap<CreateFAQVM, FAQ>();
             CreateMap<CityCreateVM, City>();
             CreateMap<News, NewsVM>();
+            CreateMap<City, CityUpdateVM>();
+            CreateMap<Team, UpdateTeamVM>();
             CreateMap<Setting, SettingListVM>();
             CreateMap<News, NewsVM>();
             CreateMap<CreateContactVM, Contact>();

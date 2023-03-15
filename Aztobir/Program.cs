@@ -3,6 +3,7 @@ using Aztobir.Business.Interfaces;
 using Aztobir.Business.Validators.Goal;
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Business.ViewModels.Account;
+using Aztobir.Business.ViewModels.Team;
 using Aztobir.Core.İnterfaces;
 using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
@@ -35,8 +36,9 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Lockout.MaxFailedAccessAttempts = 8;
     opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
 });
-
-builder.Services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<GoalCreateVMValidator>());
+builder.Services.AddControllers(
+    options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+builder.Services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<UpdateTeamVM>());
 
 
 var app = builder.Build();

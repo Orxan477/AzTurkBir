@@ -137,7 +137,13 @@ namespace Aztobir.Business.Implementations.Team
             TeamDetailVM teams = _mapper.Map<TeamDetailVM>(dbTeam);
             return teams;
         }
-
+        public async Task<UpdateTeamVM> GetUpdate(int id)
+        {
+            var dbCity = await _unitOfWork.TeamGetRepository.Get(x => x.Id == id && !x.IsDeleted);
+            if (dbCity is null) throw new Exception("Not Found");
+            var city = _mapper.Map<UpdateTeamVM>(dbCity);
+            return city;
+        }
         public async Task<List<TeamVM>> GetAll()
         {
             var dbTeam = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted, "Position");

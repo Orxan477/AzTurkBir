@@ -2,6 +2,7 @@
 using Aztobir.Business.ViewModels.Team;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Aztobir.UI.Areas.admin.Controllers
@@ -72,7 +73,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                var model = await _aztobirService.TeamService.Get(id);
+                var model = await _aztobirService.TeamService.GetUpdate(id);
                 await GetSelectedItemAsync();
                 return View(model);
             }
@@ -87,6 +88,11 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int id, UpdateTeamVM team)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(team);
+            }
+            //if (ModelState["Photo"].ValidationState == ModelValidationState.Valid) 
             try
             {
                 var model = await _aztobirService.TeamService.Update(id, team, _env.WebRootPath,PhotoSize());

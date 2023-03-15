@@ -29,7 +29,6 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             if (dbFAQ is null) throw new Exception("Not Found");
             if (faq.Question != null)
             {
-
                 if (dbFAQ.Question.Trim().ToLower() != faq.Question.Trim().ToLower())
                 {
                     dbFAQ.Question = faq.Question;
@@ -63,7 +62,13 @@ namespace Aztobir.Business.Implementations.Home.FAQ
             FAQVM faq = _mapper.Map<FAQVM>(dbFAQ);
             return faq;
         }
-
+        public async Task<UpdateFAQVM> GetUpdate(int id)
+        {
+            var dbCity = await _unitOfWork.FAQGetRepository.Get(x => x.Id == id && !x.IsDeleted);
+            if (dbCity is null) throw new Exception("Not Found");
+            var city = _mapper.Map<UpdateFAQVM>(dbCity);
+            return city;
+        }
         public async Task<List<FAQVM>> GetAll()
         {
             var dbFAQ = await _unitOfWork.FAQGetRepository.GetAll(x => !x.IsDeleted);

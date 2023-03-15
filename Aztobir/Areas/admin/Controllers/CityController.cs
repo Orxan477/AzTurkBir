@@ -3,6 +3,7 @@ using Aztobir.Business.ViewModels.Home.City;
 using Aztobir.Business.ViewModels.Home.University;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Aztobir.UI.Areas.admin.Controllers
 {
@@ -50,7 +51,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         {
             try
             {
-                var city = await _aztobirService.CityService.Get(id);
+                var city = await _aztobirService.CityService.GetUpdate(id);
                 return View(city);
             }
             catch (Exception ex)
@@ -63,9 +64,10 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int id, CityUpdateVM city)
         {
+            //if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View(city);
+            var model = await _aztobirService.CityService.Update(id, city);
             try
             {
-                var model = await _aztobirService.CityService.Update(id, city);
                 if (model != "ok")
                 {
                     ModelState.AddModelError(string.Empty, model);

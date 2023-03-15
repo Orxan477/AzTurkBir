@@ -6,6 +6,7 @@ namespace Aztobir.Business.Interfaces.Home.City
     {
         Task<List<CityVM>> GetAll();
         Task<CityVM> Get(int id);
+        Task<CityUpdateVM> GetUpdate(int id);
         Task<string> Create(CityCreateVM city);
         Task<string> Update(int id, CityUpdateVM city);
         Task Delete(int id);

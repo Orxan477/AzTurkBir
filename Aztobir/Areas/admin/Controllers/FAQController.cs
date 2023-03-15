@@ -60,7 +60,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/faq/update/{id}")]
         public async Task<IActionResult> Update(int id)
         {
-            var faq = await _aztobirService.FAQService.Get(id);
+            var faq = await _aztobirService.FAQService.GetUpdate(id);
             if (faq is null) return NotFound();
             return View(faq);
         }
