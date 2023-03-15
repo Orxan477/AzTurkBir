@@ -37,7 +37,7 @@ namespace Aztobir.Business.Implementations.Home.City
                 return "This name is exist";
             }
         }
-        public async Task<string> Update(int id, CityVM city)
+        public async Task<string> Update(int id, CityUpdateVM city)
         {
             if (city.Name != null)
             {
