@@ -62,6 +62,10 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SendMessage(int id, SendMessageVM message)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(message);
+            }
             try
             {
                 var model = await _aztobirService.UniversityFormService.SendMessage(id, message);
