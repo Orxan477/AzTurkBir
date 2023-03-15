@@ -32,7 +32,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, FeedbackVM feedback, string env,int size)
+        public async Task<string> Update(int id, UpdateFeedbackVM feedback, string env,int size)
         {
             var dbFeedback = await _unitOfWork.FeedbackGetRepository.Get(x => !x.IsDeleted && x.Id == id);
             if (dbFeedback is null) throw new Exception("Not Found");
