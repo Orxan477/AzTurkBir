@@ -33,7 +33,7 @@ namespace Aztobir.UI.Controllers
             }
             catch (Exception ex)
             {
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound","Error",new {area="null"});
             }
         }
     }

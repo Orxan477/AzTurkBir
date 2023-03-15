@@ -71,7 +71,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception)
             {
-                return Json("Not Found");
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         [Route("/admin/university/images/update/{id}")]

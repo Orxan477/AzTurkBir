@@ -45,8 +45,7 @@ namespace Aztobir.UI.Controllers
             }
             catch (Exception ex)
             {
-
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         [HttpPost]
@@ -54,7 +53,7 @@ namespace Aztobir.UI.Controllers
         public async Task<IActionResult> Detail(UniversityFormVM universityForm)
         {
             var model = await _aztobirService.UniversityFormService.Create(universityForm);
-            if (model is null) return Json("Bad Request");
+            if (model is null) return RedirectToAction("CustomBadRequest", "Error", new { area = "null" });
             return View(nameof(Index));
         }
     }

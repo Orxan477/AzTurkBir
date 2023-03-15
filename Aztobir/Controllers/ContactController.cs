@@ -26,7 +26,7 @@ namespace Aztobir.UI.Controllers
         public async  Task<IActionResult> SendContact(CreateContactVM createContact)
         {
             var model=await _aztobirService.ContactService.Create(createContact);
-            if (model is null) return Json("Bad Request");
+            if (model is null) return RedirectToAction("CustomBadRequest", "Error", new { area = "null" });
             return RedirectToAction(nameof(Index));
         }
     }

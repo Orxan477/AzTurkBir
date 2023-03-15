@@ -10,13 +10,13 @@ namespace Aztobir.UI.Areas.admin.Controllers
     [Area("admin")]
     [Authorize(Roles = "Admin")]
     public class AboutController : Controller
-    {
+    { 
         private string _errorMessage;
         private IAztobirService _aztobirService;
         private IWebHostEnvironment _env;
 
         public AboutController(IAztobirService aztobirService, IWebHostEnvironment env)
-        {
+        {  
             _aztobirService = aztobirService;
             _env = env;
         }
@@ -42,7 +42,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         public async Task<IActionResult> Update()
         {
             var about = await _aztobirService.AboutService.Get();
-            if (about is null) return NotFound();
+            if (about is null) return RedirectToAction("CustomNotFound","Error",new { area = "null" });
             return View(about);
         }
         [Route("/admin/about/update/")]
@@ -61,7 +61,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         private int PhotoSize()

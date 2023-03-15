@@ -61,7 +61,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         public async Task<IActionResult> Update(int id)
         {
             var faq = await _aztobirService.FAQService.GetUpdate(id);
-            if (faq is null) return NotFound();
+            if (faq is null) return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             return View(faq);
         }
         [Route("/admin/faq/update/{id}")]
@@ -77,8 +77,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         [Route("/admin/faq/delete/{id}")]

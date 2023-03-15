@@ -43,7 +43,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         [Route("/admin/city/update/{id}")]
@@ -56,7 +56,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         [Route("/admin/city/update/{id}")]
@@ -77,8 +77,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         [Route("/admin/city/delete/{id}")]
@@ -91,8 +90,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
     }

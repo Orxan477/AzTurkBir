@@ -37,7 +37,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-
                 return RedirectToAction("Index", "Goal", new { area = "admin" });
             }
         }
@@ -47,7 +46,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             var about = await _aztobirService.GoalService.GetAll();
             if (about.Count()>=3)
             {
-                return Json("Bad Request");
+                return RedirectToAction("CustomBadRequest", "Error", new { area = "null" });
             }
             return View();
         }
@@ -61,7 +60,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             var about = await _aztobirService.GoalService.GetAll();
             if (about.Count() >= 3)
             {
-                return Json("Bad Request");
+                return RedirectToAction("CustomBadRequest", "Error", new { area = "null" });
             }
             await _aztobirService.GoalService.Create(goal);
             return RedirectToAction("Index");
@@ -71,7 +70,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         public async Task<IActionResult> Update(int id)
         {
             var goal = await _aztobirService.GoalService.GetUpdate(id);
-            if (goal is null) return NotFound();
+            if (goal is null) return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             return View(goal);
         }
         [Route("/admin/goal/update/{id}")]
@@ -87,7 +86,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             catch (Exception ex)
             {
-                return Json(ex.Message);
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
         [Route("/admin/goal/delete/{id}")]
