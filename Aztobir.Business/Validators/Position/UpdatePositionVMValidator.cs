@@ -7,7 +7,7 @@ namespace Aztobir.Business.Validators.Position
     {
         public UpdatePositionVMValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().NotNull().MaximumLength(50);
+            RuleFor(x => x.Name).MaximumLength(50);
         }
     }
 }

@@ -85,7 +85,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/team/update/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int id, TeamDetailVM team)
+        public async Task<IActionResult> Update(int id, UpdateTeamVM team)
         {
             try
             {

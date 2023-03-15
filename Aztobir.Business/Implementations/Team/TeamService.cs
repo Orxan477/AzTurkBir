@@ -32,7 +32,7 @@ namespace Aztobir.Business.Implementations.Team
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }
-        public async Task<string> Update(int id, TeamDetailVM team, string env, int size)
+        public async Task<string> Update(int id, UpdateTeamVM team, string env, int size)
         {
             var dbTeam = await _unitOfWork.TeamGetRepository.Get(x => !x.IsDeleted && x.Id == id, "Position");
             if (dbTeam is null) throw new Exception("NotFound");
