@@ -16,7 +16,7 @@ namespace Aztobir.Business.Validators.Contact
             RuleFor(x => x.Phone).NotEmpty().NotNull().MaximumLength(14);
             RuleFor(x => x.Subject).NotEmpty().NotNull().MaximumLength(50);
             RuleFor(x => x.Message).NotEmpty().NotNull().MaximumLength(500);
-            RuleFor(x => x.Email).EmailAddress().NotEmpty().NotNull().MaximumLength(00);
+            RuleFor(x => x.Email).EmailAddress().NotEmpty().NotNull().MaximumLength(50);
         }
     }
 }
