@@ -52,5 +52,32 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
         }
+        [Route("/admin/university/form/sendMessage/{id}")]
+        public IActionResult SendMessage()
+        {
+            return View();
+        }
+        [Route("/admin/university/form/sendMessage/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SendMessage(int id, SendMessageVM message)
+        {
+            try
+            {
+                var model = await _aztobirService.UniversityFormService.SendMessage(id, message);
+                if (model != "ok")
+                {
+                    return RedirectToAction("CustomBadRequest", "Error", new { area = "null" });
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace Aztobir.Business.Interfaces.Home.University
     {
         Task<List<UniversityViewFormVM>> GetAll();
         Task<UniversityViewFormVM> Get(int id);
+        Task<string> SendMessage(int id, SendMessageVM message);
         Task<string> Create(UniversityFormVM universityForm);
         Task Delete(int id);
     }
