@@ -20,13 +20,13 @@ namespace Aztobir.UI.Areas.admin.Controllers
             _env = env;
         }
         [Route("/admin/team/index")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            TeamViewVM team = new TeamViewVM()
-            {
-                Teams = await _aztobirService.TeamService.GetAll(),
-            };
-            return View(team);
+            int takeCount = int.Parse("1");
+            //int count = int.Parse(GetSetting("TakeCount"));
+            ViewBag.TakeCount = takeCount;
+            var model = await _aztobirService.TeamService.GetPaginete(page, takeCount);
+            return View(model);
         }
         [Route("/admin/team/Detail/{id}")]
         public async Task<IActionResult> Detail(int id)

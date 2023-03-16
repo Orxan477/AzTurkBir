@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Team;
 using Aztobir.Business.Utilities;
+using Aztobir.Business.ViewModels;
 using Aztobir.Business.ViewModels.Team;
 using Aztobir.Core.İnterfaces;
 using Microsoft.AspNetCore.Http;
@@ -151,6 +152,29 @@ namespace Aztobir.Business.Implementations.Team
             return teams;
         }
 
+        public async Task<Paginate<TeamVM>> GetPaginete(int page, int take)
+        {
+            var model = await _unitOfWork.TeamGetRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
 
+            var productsVM = GetProductList(model);
+            var dbForm = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted);
+            int pageCount = GetPageCount(take, dbForm);
+            return new Paginate<TeamVM>(productsVM, page, pageCount);
+        }
+        private int GetPageCount(int take, List<Core.Models.Team> contacts)
+        {
+            var prodCount = contacts.Count();
+            return (int)Math.Ceiling((decimal)prodCount / take);
+        }
+        private List<TeamVM> GetProductList(List<Core.Models.Team> contact)
+        {
+            List<TeamVM> model = new List<TeamVM>();
+            foreach (var item in contact)
+            {
+                TeamVM feedback = _mapper.Map<TeamVM>(item);
+                model.Add(feedback);
+            }
+            return model;
+        }
     }
 }

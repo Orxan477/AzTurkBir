@@ -1,4 +1,5 @@
-﻿using Aztobir.Business.ViewModels.Team;
+﻿using Aztobir.Business.ViewModels;
+using Aztobir.Business.ViewModels.Team;
  
 namespace Aztobir.Business.Interfaces.Team
 {
@@ -7,6 +8,7 @@ namespace Aztobir.Business.Interfaces.Team
         Task<List<TeamVM>> GetAll();
         Task<TeamDetailVM> Get(int id);
         Task<UpdateTeamVM> GetUpdate(int id);
+        Task<Paginate<TeamVM>> GetPaginete(int page, int take);
         Task<string> Create(CreateTeamVM team, string env,int size);
         Task<string> Update(int id, UpdateTeamVM team, string env,int size);
         Task Delete(int id);
