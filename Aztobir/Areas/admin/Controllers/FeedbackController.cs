@@ -20,13 +20,13 @@ namespace Aztobir.UI.Areas.admin.Controllers
             _env = env;
         }
         [Route("/admin/feedback/index")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            HomeVM home = new HomeVM()
-            {
-                Feedbacks = await _aztobirService.FeedbackService.GetAll(),
-            };
-            return View(home);
+            int takeCount = int.Parse("3");
+            //int count = int.Parse(GetSetting("TakeCount"));
+            ViewBag.TakeCount = takeCount;
+            var model = await _aztobirService.FeedbackService.GetPaginete(page, takeCount);
+            return View(model);
         }
         [Route("/admin/feedback/detail/{id}")]
         public async Task<IActionResult> Detail(int id)

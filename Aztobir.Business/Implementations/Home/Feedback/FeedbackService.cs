@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Utilities;
+using Aztobir.Business.ViewModels;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Core.İnterfaces;
 using Microsoft.AspNetCore.Http;
@@ -111,6 +112,29 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             return feedbacks;
         }
 
-        
+        public async Task<Paginate<FeedbackVM>> GetPaginete(int page, int take)
+        {
+            var model = await _unitOfWork.FeedbackGetRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
+
+            var productsVM = GetProductList(model);
+            var dbForm = await _unitOfWork.FeedbackGetRepository.GetAll(x => !x.IsDeleted);
+            int pageCount = GetPageCount(take, dbForm);
+            return new Paginate<FeedbackVM>(productsVM, page, pageCount);
+        }
+        private int GetPageCount(int take, List<Core.Models.Feedback> contacts)
+        {
+            var prodCount = contacts.Count();
+            return (int)Math.Ceiling((decimal)prodCount / take);
+        }
+        private List<FeedbackVM> GetProductList(List<Core.Models.Feedback> contact)
+        {
+            List<FeedbackVM> model = new List<FeedbackVM>();
+            foreach (var item in contact)
+            {
+                FeedbackVM feedback = _mapper.Map<FeedbackVM>(item);
+                model.Add(feedback);
+            }
+            return model;
+        }
     }
 }
