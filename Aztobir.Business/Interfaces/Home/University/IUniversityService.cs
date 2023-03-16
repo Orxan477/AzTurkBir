@@ -1,4 +1,5 @@
-﻿using Aztobir.Business.ViewModels.Home.Feedback;
+﻿using Aztobir.Business.ViewModels;
+using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.University;
 
 namespace Aztobir.Business.Interfaces.Home.University
@@ -12,6 +13,7 @@ namespace Aztobir.Business.Interfaces.Home.University
         Task<List<FeedbackVM>> GetFeedbacks(int id);
         Task<string> Create(CreateUniversityVM uni,string env,int size);
         Task<string> Update(int id, UpdateUniveresityVM uni,string env,int size);
+        Task<Paginate<UniversityVM>> GetPaginete(int page, int take);
         Task Delete(int id);
     }
 }

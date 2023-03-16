@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Home.Contact;
+using Aztobir.Business.ViewModels;
 using Aztobir.Business.ViewModels.Home.Contact;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.İnterfaces;
@@ -90,6 +91,32 @@ namespace Aztobir.Business.Implementations.Home.Contact
             var dbForm = await _unitOfWork.ContactGetRepositorys.GetAll(x => !x.IsDeleted);
             List<ContactVM> forms = _mapper.Map<List<ContactVM>>(dbForm);
             return forms;
+        }
+
+        public async Task<Paginate<ContactVM>> GetPaginete(int page, int take)
+        {
+            var model = await _unitOfWork.ContactGetRepositorys.GetPaginateProducts(x => !x.IsDeleted, x => x.Id,page, take);
+
+            var productsVM = GetProductList(model);
+            var dbForm = await _unitOfWork.ContactGetRepositorys.GetAll(x => !x.IsDeleted);
+            int pageCount = GetPageCount(take, dbForm);
+            return new Paginate<ContactVM>(productsVM, page, pageCount);
+
+        }
+        private int GetPageCount(int take, List<Core.Models.Contact> contacts)
+        {
+            var prodCount = contacts.Count();
+            return (int)Math.Ceiling((decimal)prodCount / take);
+        }
+        private List<ContactVM> GetProductList(List<Core.Models.Contact> contact)
+        {
+            List<ContactVM> model = new List<ContactVM>();
+            foreach (var item in contact)
+            {
+                ContactVM feedback = _mapper.Map<ContactVM>(item);
+                model.Add(feedback);
+            }
+            return model;
         }
     }
 }

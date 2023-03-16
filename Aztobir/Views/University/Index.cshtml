@@ -1,5 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Index";
+    int count = ViewBag.TakeCount;
+    int page = Model.PageCount;
+    int productNum = ((Model.CurrentPage - 1) * count) + 1;
+    int previous = Model.CurrentPage - 1;
+    int next = Model.CurrentPage + 1;
 }
 
 <div class="breadcrumb-banner-area bg-img-2 bg-opacity-2 ptb-100">

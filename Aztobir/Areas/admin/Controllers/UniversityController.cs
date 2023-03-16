@@ -21,13 +21,17 @@ namespace Aztobir.UI.Areas.admin.Controllers
             _env = env;
         }
         [Route("/admin/university/index")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            UniversityViewVM universityView = new UniversityViewVM()
-            {
-                Universities = await _aztobirService.UniversityService.GetAll(),
-            };
-            return View(universityView);
+            //UniversityViewVM universityView = new UniversityViewVM()
+            //{
+            //    Universities = await _aztobirService.UniversityService.GetAll(),
+            //};
+            int takeCount = int.Parse("8");
+            //int count = int.Parse(GetSetting("TakeCount"));
+            ViewBag.TakeCount = takeCount;
+            var model = await _aztobirService.UniversityService.GetPaginete(page, takeCount);
+            return View(model);
         }
         [Route("/admin/university/detail/{id}")]
         public async Task<IActionResult> Detail(int id)

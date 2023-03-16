@@ -1,11 +1,13 @@
-﻿using AutoMapper; 
+﻿using AutoMapper;
 using Aztobir.Business.Interfaces;
+using Aztobir.Business.ViewModels;
 using Aztobir.Business.ViewModels.Home;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Business.ViewModels.University;
 using Aztobir.Core.Models;
 using Aztobir.Data.DAL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Aztobir.UI.Controllers
 {
@@ -15,19 +17,54 @@ namespace Aztobir.UI.Controllers
         private IMapper _mapper;
         private AppDbContext _context;
 
-        public UniversityController(IAztobirService aztobirService,IMapper mapper,AppDbContext context)
+        public UniversityController(IAztobirService aztobirService, IMapper mapper, AppDbContext context)
         {
             _aztobirService = aztobirService;
             _mapper = mapper;
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            UniversityViewVM universityView = new UniversityViewVM()
+            int count = int.Parse("6");
+            //int count = int.Parse(GetSetting("TakeCount"));
+            ViewBag.TakeCount = count;
+            var products = _context.Universities
+                                 .Where(x => !x.IsDeleted)
+                                 .OrderByDescending(x => x.Id)
+                                 .Skip((page - 1) * count)
+                                 .Take(count)
+                                 .ToList();
+            //List<Product>products1= await  _repository.GetPaginate(count, page, "MenuImage,Category");
+            //return Json(products1);
+
+            var productsVM = GetProductList(products);
+            int pageCount = GetPageCount(count);
+            //Paginate<UniversityVM> model = new Paginate<UniversityVM>(productsVM, page, pageCount);
+            //return Json(model);
+            ////ViewBag.RestaurantName = GetSetting("RestaurantName");
+            //return View(model);
+
+
+            //UniversityViewVM universityView = new UniversityViewVM()
+            //{
+            //    Universities = new Paginate<UniversityVM>(productsVM, page, pageCount),
+            //};
+            return View();
+        }
+        private int GetPageCount(int take)
+        {
+            var prodCount = _context.Feedbacks.Count();
+            return (int)Math.Ceiling((decimal)prodCount / take);
+        }
+        private List<UniversityVM> GetProductList(List<University> uni)
+        {
+            List<UniversityVM> model = new List<UniversityVM>();
+            foreach (var item in uni)
             {
-                Universities = await _aztobirService.UniversityService.GetAll(),
-            };
-            return View(universityView);
+                UniversityVM feedback = _mapper.Map<UniversityVM>(item);
+                model.Add(feedback);
+            }
+            return model;
         }
         public async Task<IActionResult> Detail(int id)
         {

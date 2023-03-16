@@ -1,4 +1,5 @@
-﻿using Aztobir.Business.ViewModels.Home.Contact;
+﻿using Aztobir.Business.ViewModels;
+using Aztobir.Business.ViewModels.Home.Contact;
 using Aztobir.Business.ViewModels.Home.University;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Aztobir.Business.Interfaces.Home.Contact
         Task<ContactVM> Get(int id);
         Task<string> Create(CreateContactVM contact);
         Task<string> SendMessage(int id, SendMessageVM message);
+        Task<Paginate<ContactVM>> GetPaginete(int page, int take);
         Task Delete(int id);
     }
 }

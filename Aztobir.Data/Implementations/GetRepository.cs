@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 namespace Aztobir.Data.Implementations
 {
     public class GetRepository<TEntity> : IGetRepository<TEntity>
-        where TEntity:class
+        where TEntity : class
     {
         private AppDbContext _context;
 
@@ -23,13 +23,13 @@ namespace Aztobir.Data.Implementations
 
         public async Task<List<TEntity>> GetAll(Expression<Func<TEntity, bool>> exp, params string[] includes)
         {
-            
+
             var query = GetQuery(includes);
             return exp is null
                 ? await query.ToListAsync()
                 : await query.Where(exp).ToListAsync();
         }
-        public async Task<List<TEntity>> GetTake(Expression<Func<TEntity, bool>> exp,int count, params string[] includes)
+        public async Task<List<TEntity>> GetTake(Expression<Func<TEntity, bool>> exp, int count, params string[] includes)
         {
 
             var query = GetQuery(includes);
@@ -41,7 +41,7 @@ namespace Aztobir.Data.Implementations
         {
             var query = GetQuery(includes);
 
-            return  await query.OrderByDescending(date).ToListAsync();
+            return await query.OrderByDescending(date).ToListAsync();
         }
         private IQueryable<TEntity> GetQuery(string[] includes)
         {
@@ -56,5 +56,14 @@ namespace Aztobir.Data.Implementations
             }
             return query;
         }
+
+        public async Task<List<TEntity>> GetPaginateProducts(Expression<Func<TEntity, bool>> exp, Expression<Func<TEntity, int>> descending, int page, int count, params string[] includes)
+        {
+            var query = GetQuery(includes);
+            return exp is null
+                ? await query.ToListAsync()
+                : await query.Where(exp).OrderByDescending(descending).Skip((page - 1) * count).Take(count).ToListAsync();
+        }
     }
-}
+    }
+

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Home.University;
 using Aztobir.Business.Utilities;
+using Aztobir.Business.ViewModels;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.İnterfaces;
@@ -149,6 +150,31 @@ namespace Aztobir.Business.Implementations.Home.University
                 return false;
             }
             return true;
+        }
+
+        public async Task<Paginate<UniversityVM>> GetPaginete(int page, int take)
+        {
+            var model = await _unitOfWork.UniversityGetRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
+
+            var productsVM = GetProductList(model);
+            var dbForm = await _unitOfWork.UniversityGetRepository.GetAll(x => !x.IsDeleted);
+            int pageCount = GetPageCount(take, dbForm);
+            return new Paginate<UniversityVM>(productsVM, page, pageCount);
+        }
+        private int GetPageCount(int take, List<Core.Models.University> contacts)
+        {
+            var prodCount = contacts.Count();
+            return (int)Math.Ceiling((decimal)prodCount / take);
+        }
+        private List<UniversityVM> GetProductList(List<Core.Models.University> contact)
+        {
+            List<UniversityVM> model = new List<UniversityVM>();
+            foreach (var item in contact)
+            {
+                UniversityVM feedback = _mapper.Map<UniversityVM>(item);
+                model.Add(feedback);
+            }
+            return model;
         }
     }
 }
