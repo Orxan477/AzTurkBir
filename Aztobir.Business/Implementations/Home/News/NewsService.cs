@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Aztobir.Business.Interfaces.Home.News;
 using Aztobir.Business.Utilities;
+using Aztobir.Business.ViewModels;
 using Aztobir.Business.ViewModels.Home.News;
 using Aztobir.Core.İnterfaces;
 using Microsoft.AspNetCore.Http;
@@ -118,6 +119,31 @@ namespace Aztobir.Business.Implementations.Home.News
             var dbNews = await _unitOfWork.GetNewsRepository.GetTake(x => !x.IsDeleted,count);
             List<NewsVM> news = _mapper.Map<List<NewsVM>>(dbNews);
             return news;
+        }
+
+        public async Task<Paginate<NewsVM>> GetPaginete(int page, int take)
+        {
+            var model = await _unitOfWork.GetNewsRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
+
+            var productsVM = GetProductList(model);
+            var dbForm = await _unitOfWork.GetNewsRepository.GetAll(x => !x.IsDeleted);
+            int pageCount = GetPageCount(take, dbForm);
+            return new Paginate<NewsVM>(productsVM, page, pageCount);
+        }
+        private int GetPageCount(int take, List<Core.Models.News> contacts)
+        {
+            var prodCount = contacts.Count();
+            return (int)Math.Ceiling((decimal)prodCount / take);
+        }
+        private List<NewsVM> GetProductList(List<Core.Models.News> contact)
+        {
+            List<NewsVM> model = new List<NewsVM>();
+            foreach (var item in contact)
+            {
+                NewsVM feedback = _mapper.Map<NewsVM>(item);
+                model.Add(feedback);
+            }
+            return model;
         }
     }
 }

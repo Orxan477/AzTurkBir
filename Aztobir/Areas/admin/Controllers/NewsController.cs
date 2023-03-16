@@ -23,13 +23,14 @@ namespace Aztobir.UI.Areas.admin.Controllers
             _env = env;
         }
         [Route("/admin/news/index")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            NewsViewVM news = new NewsViewVM()
-            {
-                News = await _aztobirService.NewsService.GetAll(),
-            };
-            return View(news);
+
+            int takeCount = int.Parse("3");
+            //int count = int.Parse(GetSetting("TakeCount"));
+            ViewBag.TakeCount = takeCount;
+            var model = await _aztobirService.NewsService.GetPaginete(page, takeCount);
+            return View(model);
         }
         [Route("/admin/news/detail/{id}")]
         public async Task<IActionResult> Detail(int id)

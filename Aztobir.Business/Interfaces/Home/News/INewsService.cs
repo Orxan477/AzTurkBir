@@ -1,4 +1,5 @@
-﻿using Aztobir.Business.ViewModels.Home.News;
+﻿using Aztobir.Business.ViewModels;
+using Aztobir.Business.ViewModels.Home.News;
 
 namespace Aztobir.Business.Interfaces.Home.News
 {
@@ -10,6 +11,8 @@ namespace Aztobir.Business.Interfaces.Home.News
         Task<UpdateNewsVM> GetUpdate(int id);
         Task<string> Create(CreateNewsVM news,string env,int size);
         Task<string> Update(int id, UpdateNewsVM news, string env,int size);
+        Task<Paginate<NewsVM>> GetPaginete(int page, int take);
+
 
         Task Delete(int id);
     }
