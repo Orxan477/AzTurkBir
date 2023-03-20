@@ -12,7 +12,7 @@ namespace Aztobir.UI.Areas.admin.ViewComponents
         }
         public IViewComponentResult Invoke()
         {
-            ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Logo");
+            ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Header-Logo");
             return View();
         }
     }

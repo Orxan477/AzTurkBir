@@ -41,7 +41,7 @@ namespace Aztobir.UI.Controllers
 
         public IActionResult Login()
         {
-            ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Logo");
+            ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Header-Logo");
             return View();
         }
         [HttpPost]

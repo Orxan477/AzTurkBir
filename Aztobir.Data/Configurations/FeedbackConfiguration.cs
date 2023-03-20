@@ -8,7 +8,7 @@ namespace Aztobir.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Feedback> builder)
         {
-            builder.Property(x => x.Comment).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.Comment).HasMaxLength(250).IsRequired();
             builder.Property(x => x.Image).IsRequired();
         }
     }

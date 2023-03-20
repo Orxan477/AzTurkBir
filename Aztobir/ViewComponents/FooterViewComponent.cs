@@ -12,7 +12,7 @@ namespace Aztobir.UI.ViewComponents
         }
         public IViewComponentResult Invoke()
         {
-            ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Logo");
+            ViewBag.Logo = _aztobirService.SettingSerivice.GetSetting("Footer-Logo");
             ViewBag.Facebook = _aztobirService.SettingSerivice.GetSetting("Facebook");
             ViewBag.Twitter = _aztobirService.SettingSerivice.GetSetting("Twitter");
             ViewBag.Instagram = _aztobirService.SettingSerivice.GetSetting("Instagram");

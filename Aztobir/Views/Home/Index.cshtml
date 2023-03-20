@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     int num = 0;
+    int sliderNum = 0;
 }
 
 <!-- slider-area-start -->
@@ -10,18 +11,18 @@
     <div class="slider-active owl-carousel ">
         @foreach (var news in Model.News)
         {
-                <div class="single-slider ptb-150 bg-opacity" style="background-image:url(/assets/img/@news.Image); background-size:cover; background-repeat:no-repeat; height:100vh;">
-                    <div class="container">
-                        <div class="slider-text" style="color:white">
-                            <h3>@news.Name</h3>
-                                <div>
-                                    @(Html.Raw(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"..."))
-                                </div>
-                            <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">Daha Fazla</a>
+            <div class="single-slider ptb-150 bg-opacity" style="background-image:url(/assets/img/@news.Image); background-size:cover; background-repeat:no-repeat; height:100vh;">
+                <div class="container">
+                    <div class="slider-text" style="color:white">
+                        <h3>@news.Name</h3>
+                        <div>
+                            @(Html.Raw(news.Content.Length<=110?news.Content:news.Content.Substring(0,110)+"..."))
                         </div>
+                        <a asp-controller="news" asp-action="detail" asp-route-id="@news.Id">Daha Fazla</a>
                     </div>
                 </div>
-                num++;
+            </div>
+            num++;
         }
     </div>
 </div>
@@ -34,12 +35,42 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
         <div class="row">
-            @await Component.InvokeAsync("University")
+            @*@await Component.InvokeAsync("University")*@
+            <div class="space-24">
+                <div class="teachers-active owl-carousel">
+                    @foreach (var uni in Model.Universities)
+                    {
+                        <div class="single-teachers mb-30">
+                            <div class="courses-img">
+                                <a asp-controller="university" asp-action="detail" asp-route-id="@uni.Id">
+                                    <img src="~/assets/img/@uni.Image" alt="" />
+                                </a>
+                            </div>
+                            <div class="courses-text">
+                                <div class="class-des">
+                                    <h3><a href="course-details.html">@uni.Name</a></h3>
+                                    <div class="class-schedule">
+                                        <ul>
+                                            <li>Şehir: <span>@uni.City</span></li>
+                                            <li>Dil-Hazırlık eğitimi: @uni.EducationLanguage</li>
+                                            <li>Öğrenci sayı: @uni.StudentCount</li>
+                                            <li>Fakülte sayı: @uni.FacultyCount</li>
+                                            <li>Statü: @(@uni.Status==true ? "var" : "yoxdur")</li>
+                                        </ul>
+                                    </div>
+                                    <span class="arrow"><a asp-controller="university" asp-action="detail" asp-route-id="@uni.Id">Daha Fazla</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <!-- courses-area-start -->
 <!-- testimonial-area-start -->
+
 
 <div class="container-fluid w-75" style="margin-bottom:60px;">
     <div class="section-title text-center">
@@ -50,14 +81,13 @@
     </div>
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
          style="background-color: rgb(236, 236, 236);">
-        @foreach (var feedback in Model.Feedbacks)
-        {
-            <div class="carousel-inner">
-                <div class="carousel-item active " data-bs-interval="10000">
+        <div class="carousel-inner">
+            @foreach (var feedback in Model.Feedbacks)
+            {
+                <div class="carousel-item @(sliderNum<1 ? "active" : " ") " data-bs-interval="10000">
                     <div class="col-lg-12 d-flex">
                         <div class="col-lg-6">
-                            <h5 class="text-center">İştirakçı fikirləri</h5>
-                            <img style="margin:0 auto;border-radius:50%;width:100px;height:100px;" src="~/assets/img/@feedback.Image" class="d-block" alt="...">
+                            <img style="margin:0 auto;border-radius:50%;width:100px;height:100px; margin-top:1%;" src="~/assets/img/@feedback.Image" class="d-block" alt="...">
                             <div class="text-center" style="margin:0 110px;">@(Html.Raw(feedback.Comment))</div>
                         </div>
                         <div class="col-lg-6">
@@ -65,8 +95,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+                sliderNum++;
+            }
+        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                 data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -106,7 +137,7 @@
                         </h2>
                         <div id="collapse-@faq.Id" class="accordion-collapse collapse" aria-labelledby="heading-@faq.Id" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                               @(Html.Raw(faq.Response))
+                                @(Html.Raw(faq.Response))
                             </div>
                         </div>
                     </div>
@@ -117,3 +148,11 @@
     </div>
 </div>
 <!--FAQ End-->
+<style>
+    .courses-text{
+        color:black;
+    }
+    .single-teachers:hover{
+        background-color:white;
+    }
+</style>

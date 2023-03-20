@@ -8,11 +8,11 @@ namespace Aztobir.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
-            builder.Property(x => x.FullName).HasMaxLength(100).IsRequired();
-            builder.Property(x => x.Phone).HasMaxLength(14).IsRequired();
-            builder.Property(x => x.Subject).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.Message).HasMaxLength(500).IsRequired();
-            builder.Property(x => x.Email).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.FullName).HasMaxLength(150).IsRequired();
+            builder.Property(x => x.Phone).HasMaxLength(20).IsRequired();
+            builder.Property(x => x.Subject).HasMaxLength(70).IsRequired();
+            builder.Property(x => x.Message).HasMaxLength(550).IsRequired();
+            builder.Property(x => x.Email).HasMaxLength(80).IsRequired();
         }
     }
 }

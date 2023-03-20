@@ -8,8 +8,8 @@ namespace Aztobir.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<News> builder)
         {
-            builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
-            builder.Property(x => x.Content).HasMaxLength(2000).IsRequired();
+            builder.Property(x => x.Name).HasMaxLength(150).IsRequired();
+            builder.Property(x => x.Content).HasMaxLength(2555).IsRequired();
             builder.Property(x => x.Image).IsRequired();
         }
     }

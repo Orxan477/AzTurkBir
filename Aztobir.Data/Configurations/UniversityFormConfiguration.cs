@@ -13,9 +13,9 @@ namespace Aztobir.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<UniversityForm> builder)
         {
-            builder.Property(x => x.FullName).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.Email).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.Message).HasMaxLength(500).IsRequired();
+            builder.Property(x => x.FullName).HasMaxLength(80).IsRequired();
+            builder.Property(x => x.Email).HasMaxLength(80).IsRequired();
+            builder.Property(x => x.Message).HasMaxLength(550).IsRequired();
         }
     }
 }

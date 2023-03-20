@@ -8,8 +8,8 @@ namespace Aztobir.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<FAQ> builder)
         {
-            builder.Property(x => x.Question).HasMaxLength(100).IsRequired();
-            builder.Property(x => x.Response).HasMaxLength(500).IsRequired();
+            builder.Property(x => x.Question).HasMaxLength(150).IsRequired();
+            builder.Property(x => x.Response).HasMaxLength(550).IsRequired();
         }
     }
 }
