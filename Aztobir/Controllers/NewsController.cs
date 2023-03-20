@@ -11,13 +11,13 @@ namespace Aztobir.UI.Controllers
         {
             _aztobirService = aztobirService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            NewsViewVM news = new NewsViewVM()
-            {
-                News = await _aztobirService.NewsService.GetAll(),
-            };
-            return View(news);
+            int takeCount = int.Parse("3");
+            //int count = int.Parse(GetSetting("TakeCount"));
+            ViewBag.TakeCount = takeCount;
+            var model = await _aztobirService.NewsService.GetPaginete(page, takeCount);
+            return View(model);
         }
         public async Task<IActionResult> Detail(int id)
         {

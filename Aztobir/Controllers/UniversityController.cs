@@ -25,31 +25,11 @@ namespace Aztobir.UI.Controllers
         }
         public async Task<IActionResult> Index(int page = 1)
         {
-            int count = int.Parse("6");
+            int takeCount = int.Parse("3");
             //int count = int.Parse(GetSetting("TakeCount"));
-            ViewBag.TakeCount = count;
-            var products = _context.Universities
-                                 .Where(x => !x.IsDeleted)
-                                 .OrderByDescending(x => x.Id)
-                                 .Skip((page - 1) * count)
-                                 .Take(count)
-                                 .ToList();
-            //List<Product>products1= await  _repository.GetPaginate(count, page, "MenuImage,Category");
-            //return Json(products1);
-
-            var productsVM = GetProductList(products);
-            int pageCount = GetPageCount(count);
-            //Paginate<UniversityVM> model = new Paginate<UniversityVM>(productsVM, page, pageCount);
-            //return Json(model);
-            ////ViewBag.RestaurantName = GetSetting("RestaurantName");
-            //return View(model);
-
-
-            //UniversityViewVM universityView = new UniversityViewVM()
-            //{
-            //    Universities = new Paginate<UniversityVM>(productsVM, page, pageCount),
-            //};
-            return View();
+            ViewBag.TakeCount = takeCount;
+            var model = await _aztobirService.UniversityService.GetPaginete(page, takeCount);
+            return View(model);
         }
         private int GetPageCount(int take)
         {

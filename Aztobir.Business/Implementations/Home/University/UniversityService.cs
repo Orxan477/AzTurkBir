@@ -155,7 +155,6 @@ namespace Aztobir.Business.Implementations.Home.University
         public async Task<Paginate<UniversityVM>> GetPaginete(int page, int take)
         {
             var model = await _unitOfWork.UniversityGetRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
-
             var productsVM = GetProductList(model);
             var dbForm = await _unitOfWork.UniversityGetRepository.GetAll(x => !x.IsDeleted);
             int pageCount = GetPageCount(take, dbForm);

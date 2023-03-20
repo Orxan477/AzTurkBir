@@ -12,8 +12,6 @@ namespace Aztobir.Business.Interfaces.Home.News
         Task<string> Create(CreateNewsVM news,string env,int size);
         Task<string> Update(int id, UpdateNewsVM news, string env,int size);
         Task<Paginate<NewsVM>> GetPaginete(int page, int take);
-
-
         Task Delete(int id);
     }
 }
