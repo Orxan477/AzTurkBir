@@ -71,7 +71,7 @@ namespace Aztobir.Business.Implementations.Home.FAQ
         }
         public async Task<List<FAQVM>> GetAll()
         {
-            var dbFAQ = await _unitOfWork.FAQGetRepository.GetAll(x => !x.IsDeleted);
+            var dbFAQ = await _unitOfWork.FAQGetRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             List<FAQVM> faq = _mapper.Map<List<FAQVM>>(dbFAQ);
             return faq;
         }

@@ -109,7 +109,7 @@ namespace Aztobir.Business.Implementations.Home.News
         }
         public async Task<List<NewsVM>> GetAll()
         {
-            var dbNews = await _unitOfWork.GetNewsRepository.GetAll(x => !x.IsDeleted);
+            var dbNews = await _unitOfWork.GetNewsRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             List<NewsVM> news = _mapper.Map<List<NewsVM>>(dbNews);
             return news;
         }
@@ -120,13 +120,19 @@ namespace Aztobir.Business.Implementations.Home.News
             List<NewsVM> news = _mapper.Map<List<NewsVM>>(dbNews);
             return news;
         }
+        public async Task<List<NewsVM>> GetTakeRecent()
+        {
+            var dbNews = await _unitOfWork.GetNewsRepository.GetAllRecent(x => !x.IsDeleted, x => x.Id, 1, 3);
+            List<NewsVM> news = _mapper.Map<List<NewsVM>>(dbNews);
+            return news;
+        }
 
         public async Task<Paginate<NewsVM>> GetPaginete(int page, int take)
         {
             var model = await _unitOfWork.GetNewsRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
 
             var productsVM = GetProductList(model);
-            var dbForm = await _unitOfWork.GetNewsRepository.GetAll(x => !x.IsDeleted);
+            var dbForm = await _unitOfWork.GetNewsRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             int pageCount = GetPageCount(take, dbForm);
             return new Paginate<NewsVM>(productsVM, page, pageCount);
         }

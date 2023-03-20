@@ -40,14 +40,14 @@ namespace Aztobir.Business.Implementations.Home.University
 
         public async Task<List<UniversityVM>> GetAll()
         {
-            var dbUniversities = await _unitOfWork.UniversityGetRepository.GetAll(x => !x.IsDeleted, "City");
+            var dbUniversities = await _unitOfWork.UniversityGetRepository.GetAll(x => !x.IsDeleted, x => x.Id, "City");
             List<UniversityVM> universities = _mapper.Map<List<UniversityVM>>(dbUniversities);
             return universities;
         }
 
         public async Task<List<FacultiesVM>> GetFaculties(int id)
         {
-            var dbFaculties = await _unitOfWork.GetFacultiesRepository.GetAll(x => x.UniversityId == id);
+            var dbFaculties = await _unitOfWork.GetFacultiesRepository.GetAll(x => x.UniversityId == id, x => x.Id);
             if (dbFaculties is null) throw new Exception("Not Found");
             List<FacultiesVM> faculties = _mapper.Map<List<FacultiesVM>>(dbFaculties);
             return faculties;
@@ -55,14 +55,14 @@ namespace Aztobir.Business.Implementations.Home.University
 
         public async Task<List<UniPhotosVM>> GetPhotos(int id)
         {
-            var dbPhotos = await _unitOfWork.UniversityPhotosGetRepository.GetAll(x => !x.IsDeleted && x.UniversityId == id);
+            var dbPhotos = await _unitOfWork.UniversityPhotosGetRepository.GetAll(x => !x.IsDeleted && x.UniversityId == id, x => x.Id);
             if (dbPhotos is null) throw new Exception("Not Found");
             List<UniPhotosVM> photos = _mapper.Map<List<UniPhotosVM>>(dbPhotos);
             return photos;
         }
         public async Task<List<FeedbackVM>> GetFeedbacks(int id)
         {
-            var dbFeedback = await _unitOfWork.FeedbackGetRepository.GetAll(x => x.Id == id, "University");
+            var dbFeedback = await _unitOfWork.FeedbackGetRepository.GetAll(x => x.Id == id, x => x.Id, "University");
             List<FeedbackVM> feedbacks = _mapper.Map<List<FeedbackVM>>(dbFeedback);
             return feedbacks;
         }
@@ -156,7 +156,7 @@ namespace Aztobir.Business.Implementations.Home.University
         {
             var model = await _unitOfWork.UniversityGetRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
             var productsVM = GetProductList(model);
-            var dbForm = await _unitOfWork.UniversityGetRepository.GetAll(x => !x.IsDeleted);
+            var dbForm = await _unitOfWork.UniversityGetRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             int pageCount = GetPageCount(take, dbForm);
             return new Paginate<UniversityVM>(productsVM, page, pageCount);
         }

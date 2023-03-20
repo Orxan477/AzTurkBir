@@ -147,7 +147,7 @@ namespace Aztobir.Business.Implementations.Team
         }
         public async Task<List<TeamVM>> GetAll()
         {
-            var dbTeam = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted, "Position");
+            var dbTeam = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted, x => x.Id, "Position");
             List<TeamVM> teams = _mapper.Map<List<TeamVM>>(dbTeam);
             return teams;
         }
@@ -157,7 +157,7 @@ namespace Aztobir.Business.Implementations.Team
             var model = await _unitOfWork.TeamGetRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
 
             var productsVM = GetProductList(model);
-            var dbForm = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted);
+            var dbForm = await _unitOfWork.TeamGetRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             int pageCount = GetPageCount(take, dbForm);
             return new Paginate<TeamVM>(productsVM, page, pageCount);
         }

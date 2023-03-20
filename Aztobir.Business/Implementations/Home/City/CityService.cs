@@ -88,7 +88,7 @@ namespace Aztobir.Business.Implementations.Home.City
 
         public async Task<List<CityVM>> GetAll()
         {
-            var dbCities = await _unitOfWork.CityGetRepository.GetAll(x => !x.IsDeleted);
+            var dbCities = await _unitOfWork.CityGetRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             if (dbCities is null) throw new Exception("Not Found");
             var cities = _mapper.Map<List<CityVM>>(dbCities);
             return cities;

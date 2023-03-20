@@ -67,7 +67,7 @@ namespace Aztobir.Business.Implementations.Home
 
         public async Task<List<PositionVM>> GetAll()
         {
-            var dbPositions = await _unitOfWork.PositionGetRepository.GetAll(x => !x.IsDeleted);
+            var dbPositions = await _unitOfWork.PositionGetRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             List<PositionVM> positions = _mapper.Map<List<PositionVM>>(dbPositions);
             return positions;
         }

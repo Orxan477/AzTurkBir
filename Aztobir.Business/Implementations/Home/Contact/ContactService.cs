@@ -88,7 +88,7 @@ namespace Aztobir.Business.Implementations.Home.Contact
 
         public async Task<List<ContactVM>> GetAll()
         {
-            var dbForm = await _unitOfWork.ContactGetRepositorys.GetAll(x => !x.IsDeleted);
+            var dbForm = await _unitOfWork.ContactGetRepositorys.GetAll(x => !x.IsDeleted, x => x.Id);
             List<ContactVM> forms = _mapper.Map<List<ContactVM>>(dbForm);
             return forms;
         }
@@ -98,7 +98,7 @@ namespace Aztobir.Business.Implementations.Home.Contact
             var model = await _unitOfWork.ContactGetRepositorys.GetPaginateProducts(x => !x.IsDeleted, x => x.Id,page, take);
 
             var productsVM = GetProductList(model);
-            var dbForm = await _unitOfWork.ContactGetRepositorys.GetAll(x => !x.IsDeleted);
+            var dbForm = await _unitOfWork.ContactGetRepositorys.GetAll(x => !x.IsDeleted, x => x.Id);
             int pageCount = GetPageCount(take, dbForm);
             return new Paginate<ContactVM>(productsVM, page, pageCount);
 

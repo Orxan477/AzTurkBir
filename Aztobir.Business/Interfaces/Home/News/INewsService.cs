@@ -7,6 +7,7 @@ namespace Aztobir.Business.Interfaces.Home.News
     {
         Task<List<NewsVM>> GetAll();
         Task<List<NewsVM>> GetTake(int count);
+        Task<List<NewsVM>> GetTakeRecent();
         Task<NewsVM> Get(int id);
         Task<UpdateNewsVM> GetUpdate(int id);
         Task<string> Create(CreateNewsVM news,string env,int size);

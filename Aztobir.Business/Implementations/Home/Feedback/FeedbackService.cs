@@ -107,7 +107,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
         }
         public async Task<List<FeedbackVM>> GetAll()
         {
-            var dbFeedback = await _unitOfWork.FeedbackGetRepository.GetAll(x => !x.IsDeleted, "University");
+            var dbFeedback = await _unitOfWork.FeedbackGetRepository.GetAll(x => !x.IsDeleted, x=>x.Id,"University");
             List<FeedbackVM> feedbacks = _mapper.Map<List<FeedbackVM>>(dbFeedback);
             return feedbacks;
         }
@@ -117,7 +117,7 @@ namespace Aztobir.Business.Implementations.Home.Feedback
             var model = await _unitOfWork.FeedbackGetRepository.GetPaginateProducts(x => !x.IsDeleted, x => x.Id, page, take);
 
             var productsVM = GetProductList(model);
-            var dbForm = await _unitOfWork.FeedbackGetRepository.GetAll(x => !x.IsDeleted);
+            var dbForm = await _unitOfWork.FeedbackGetRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             int pageCount = GetPageCount(take, dbForm);
             return new Paginate<FeedbackVM>(productsVM, page, pageCount);
         }

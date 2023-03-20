@@ -3,14 +3,18 @@
 .single-slider {
   padding: 255px 0;
 }
-
+    .img-logo-header {
+        width: 25%;
+    }
 }
 
 
 /* Normal desktop :992px. */
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1400px) {
 
-
+    .img-logo-header {
+        width: 26%;
+    }
 }
 
  
@@ -26,7 +30,9 @@
 .subscribe-text h4 {
   font-size: 24px;
 }
-
+    .img-logo-header {
+        width: 25%;
+    }
 }
 
  
@@ -59,12 +65,16 @@
 .logo {
   margin-top: 15px;
 }
-
+    .img-logo-header {
+        width: 48%;
+    }
 }
  
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container {width:450px}
- 
+    .img-logo-header {
+        width: 48%;
+    }
 }
  

@@ -35,7 +35,7 @@ namespace Aztobir.Business.Implementations.Setting
 
         public async Task<List<SettingListVM>> SettingList()
         {
-            var dbSettings = await _unitOfWork.SettingRepository.GetAll(x => !x.IsDeleted);
+            var dbSettings = await _unitOfWork.SettingRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             List<SettingListVM> settings = _mapper.Map<List<SettingListVM>>(dbSettings);
             return settings;
         }

@@ -94,7 +94,7 @@ namespace Aztobir.Business.Implementations.Home.University
 
         public async Task<List<UniversityViewFormVM>> GetAll()
         {
-            var dbForm = await _unitOfWork.GetUniversityFormRepository.GetAll(x => !x.IsDeleted, "University");
+            var dbForm = await _unitOfWork.GetUniversityFormRepository.GetAll(x => !x.IsDeleted, x => x.Id, "University");
             List<UniversityViewFormVM> forms = _mapper.Map<List<UniversityViewFormVM>>(dbForm);
             return forms;
         }

@@ -50,7 +50,7 @@ namespace Aztobir.Business.Implementations.About
 
         public async Task<List<GoalVM>> GetAll()
         {
-           var goal= await _unitOfWork.GoalGetRepository.GetAll(x => !x.IsDeleted);
+           var goal= await _unitOfWork.GoalGetRepository.GetAll(x => !x.IsDeleted, x => x.Id);
             List<GoalVM> goalVM = _mapper.Map<List<GoalVM>>(goal);
             return goalVM;
             
