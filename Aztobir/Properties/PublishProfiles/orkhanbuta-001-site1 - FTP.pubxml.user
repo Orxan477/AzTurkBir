@@ -8,6 +8,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://win8021.site4now.net:21/aztobir</_PublishTargetUrl>
-    <History>False|2023-03-09T13:49:39.9124159Z;False|2023-03-07T17:41:51.1050071+04:00;</History>
+    <History>False|2023-03-20T16:28:21.4106957Z;False|2023-03-09T17:49:39.9124159+04:00;False|2023-03-07T17:41:51.1050071+04:00;</History>
   </PropertyGroup>
 </Project>
