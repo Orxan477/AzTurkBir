@@ -3,8 +3,9 @@ using Aztobir.Core.İnterfaces.About;
 using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.Interfaces.Home.City;
 using Aztobir.Core.Interfaces.Home.Contact;
-using Aztobir.Core.Interfaces.Home.FAQ;
+using Aztobir.Core.Interfaces.Home.Faculty;
 using Aztobir.Core.İnterfaces.Home.FAQ;
+using Aztobir.Core.Interfaces.Home.FAQ;
 using Aztobir.Core.Interfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.İnterfaces.Home.News;
@@ -13,12 +14,13 @@ using Aztobir.Core.Interfaces.Home.Position;
 using Aztobir.Core.Interfaces.Home.University;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Setting;
-using Aztobir.Core.Interfaces.Team;
 using Aztobir.Core.İnterfaces.Team;
+using Aztobir.Core.Interfaces.Team;
 using Aztobir.Data.DAL;
 using Aztobir.Data.Implementations.About;
 using Aztobir.Data.Implementations.Home.City;
 using Aztobir.Data.Implementations.Home.Contact;
+using Aztobir.Data.Implementations.Home.Faculty;
 using Aztobir.Data.Implementations.Home.FAQ;
 using Aztobir.Data.Implementations.Home.Feedback;
 using Aztobir.Data.Implementations.Home.News;
@@ -59,6 +61,8 @@ namespace Aztobir.Data.Implementations
         private CRUDUnivertsityFormRepository _cRUDUnivertsityFormRepository;
         private ContactCRUDRepository _contactCRUDRepository;
         private ContactGetRepository _contactGetRepository;
+        private FacultyGetRepository _facultyGetRepository;
+        private FacultyCRUDRepository _facultyCRUDRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -115,6 +119,10 @@ namespace Aztobir.Data.Implementations
         public IContactGetRepository ContactGetRepositorys => _contactGetRepository ?? new ContactGetRepository(_context);
 
         public IContactCRUDRepository ContactCRUDRepositorys => _contactCRUDRepository ?? new ContactCRUDRepository(_context);
+
+        public IFacultyCRUDRepository FacultyCRUDRepository => _facultyCRUDRepository ?? new FacultyCRUDRepository(_context);
+
+        public IFacultyGetRepository FacultyGetRepository => _facultyGetRepository ?? new FacultyGetRepository(_context);
 
         public async Task SaveChangesAsync()
         {

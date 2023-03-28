@@ -2,18 +2,19 @@
 using Aztobir.Core.Interfaces.About;
 using Aztobir.Core.Interfaces.Home.City;
 using Aztobir.Core.Interfaces.Home.Contact;
-using Aztobir.Core.İnterfaces.Home.FAQ;
+using Aztobir.Core.Interfaces.Home.Faculty;
 using Aztobir.Core.Interfaces.Home.FAQ;
+using Aztobir.Core.İnterfaces.Home.FAQ;
 using Aztobir.Core.İnterfaces.Home.Feedback;
 using Aztobir.Core.Interfaces.Home.Feedback;
-using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.News;
+using Aztobir.Core.İnterfaces.Home.News;
 using Aztobir.Core.Interfaces.Home.Position;
 using Aztobir.Core.İnterfaces.Home.University;
 using Aztobir.Core.Interfaces.Home.University;
 using Aztobir.Core.Interfaces.Setting;
-using Aztobir.Core.İnterfaces.Team;
 using Aztobir.Core.Interfaces.Team;
+using Aztobir.Core.İnterfaces.Team;
 
 namespace Aztobir.Core.İnterfaces
 {
@@ -46,6 +47,8 @@ namespace Aztobir.Core.İnterfaces
         public ICRUDUnivertsityFormRepository CRUDUniversityFormRepository { get;  }
         public IContactGetRepository ContactGetRepositorys { get;  }
         public IContactCRUDRepository ContactCRUDRepositorys { get;  }
+        public IFacultyCRUDRepository FacultyCRUDRepository { get;  }
+        public IFacultyGetRepository FacultyGetRepository { get;  }
         Task SaveChangesAsync();
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/UuAzSF7Z1KyZ2EPXk1+0O9lPMX+atGyN8LVTzs+PDU=",
+  "Hash": "9cS6Tsdy6d9gZdBZaFNHR3Sy44QB7hcAjlLhqMp5tTE=",
   "Source": "Aztobir.UI",
   "BasePath": "_content/Aztobir.UI",
   "Mode": "Default",
@@ -30090,6 +30090,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\39325b66-4fe9-4ddf-bdc2-45a4504a48ad_14.jpg"
     },
     {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\3bdbb9d6-ca6c-4d65-9846-c1add08bbd71_2.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/3bdbb9d6-ca6c-4d65-9846-c1add08bbd71_2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\3bdbb9d6-ca6c-4d65-9846-c1add08bbd71_2.jpg"
+    },
+    {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\4.jpg",
       "SourceId": "Aztobir.UI",
       "SourceType": "Discovered",
@@ -30226,6 +30243,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\6.jpg"
     },
     {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\69fa013c-ab66-4a58-a4ed-59b7269d5648_!_1_~1-моя_благодарность!.gif.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/69fa013c-ab66-4a58-a4ed-59b7269d5648_!_1_~1-моя_благодарность!.gif.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\69fa013c-ab66-4a58-a4ed-59b7269d5648_!_1_~1-моя_благодарность!.gif.jpg"
+    },
+    {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\6adcde63-6528-4e6f-9dfd-931cd3c43dbc_i-18937.jpg",
       "SourceId": "Aztobir.UI",
       "SourceType": "Discovered",
@@ -30275,6 +30309,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\7.jpg"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\71673abf-4947-4c62-becc-23a5d8ae275a_0_a20d_2144824f_XL.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/71673abf-4947-4c62-becc-23a5d8ae275a_0_a20d_2144824f_XL.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\71673abf-4947-4c62-becc-23a5d8ae275a_0_a20d_2144824f_XL.jpg"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\71f526b0-9cc2-408e-b73e-5087a789e1d8_цветики6[1].jpg",
@@ -30362,6 +30413,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\85b00eef-7487-4316-bd16-b93a471d142e_14.jpg"
     },
     {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\886e8b92-44c5-4369-8ecf-24ebd7d6f317_0_____~1.JPG",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/886e8b92-44c5-4369-8ecf-24ebd7d6f317_0_____~1.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\886e8b92-44c5-4369-8ecf-24ebd7d6f317_0_____~1.JPG"
+    },
+    {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\8aa02886-584a-4111-b4de-f62ebe9a4065_1002.jpg",
       "SourceId": "Aztobir.UI",
       "SourceType": "Discovered",
@@ -30396,6 +30464,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\8f53709e-2dbd-4102-b08e-8ebd0de68e1b_pu90ui.jpeg"
     },
     {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\96e3fe46-8ffe-40a0-ae54-dc13988d5b5a_-------_-_-------.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/96e3fe46-8ffe-40a0-ae54-dc13988d5b5a_-------_-_-------.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\96e3fe46-8ffe-40a0-ae54-dc13988d5b5a_-------_-_-------.jpg"
+    },
+    {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\affc88b5-1e2c-42f5-96ed-987b4f5fa2c7_0_____~1.JPG",
       "SourceId": "Aztobir.UI",
       "SourceType": "Discovered",
@@ -30411,6 +30496,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\affc88b5-1e2c-42f5-96ed-987b4f5fa2c7_0_____~1.JPG"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\b5779562-fda4-4717-9370-13ba129a89fc_14.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/b5779562-fda4-4717-9370-13ba129a89fc_14.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\b5779562-fda4-4717-9370-13ba129a89fc_14.jpg"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\b701d437-af07-4dc3-bea0-bedccf2bdc77_!_1_~1.jpeg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/b701d437-af07-4dc3-bea0-bedccf2bdc77_!_1_~1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\b701d437-af07-4dc3-bea0-bedccf2bdc77_!_1_~1.jpeg"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\bdu.jpg",
@@ -30445,6 +30564,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\c8990622-e534-4e44-af48-19fbceb6919a_i-18937.jpg"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\cb88282c-3fcf-4295-964a-0fd80d9b996a_1002.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/cb88282c-3fcf-4295-964a-0fd80d9b996a_1002.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\cb88282c-3fcf-4295-964a-0fd80d9b996a_1002.jpg"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\cefc1056-6e10-4417-803b-87a98922a1d2_!_1_~1.jpeg",
