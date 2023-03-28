@@ -8,7 +8,6 @@ namespace Aztobir.Business.Validators.Faculty
         public FacultyUpdateVMValidator()
         {
             RuleFor(x => x.Name).MaximumLength(50);
-            RuleFor(x => x.UniversityId).NotEmpty().NotNull();
         }
     }
 }
