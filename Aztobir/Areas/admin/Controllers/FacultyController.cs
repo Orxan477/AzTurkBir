@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Aztobir.Business.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aztobir.UI.Areas.admin.Controllers
@@ -7,10 +8,16 @@ namespace Aztobir.UI.Areas.admin.Controllers
     [Authorize(Roles = "Admin")]
     public class FacultyController : Controller
     {
+        private IAztobirService _aztobirService;
+
+        public FacultyController(IAztobirService aztobirService)
+        {
+            _aztobirService = aztobirService;
+        }
         [Route("/admin/faculty/index")]
         public IActionResult Index()
         {
-            return View();
+            return View(_aztobirService.FacultyService.GetAll());
         }
     }
 }
