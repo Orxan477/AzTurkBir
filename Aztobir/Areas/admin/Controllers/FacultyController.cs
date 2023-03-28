@@ -22,7 +22,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             return View(await _aztobirService.FacultyService.GetAll());
         }
         [Route("/admin/faculty/create/")]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -39,7 +39,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             else
             {
-                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+                return RedirectToAction("Index","Faculty");
             }
         }
         [Route("/admin/faculty/update/{id}")]

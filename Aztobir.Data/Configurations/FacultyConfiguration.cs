@@ -9,7 +9,6 @@ namespace Aztobir.Data.Configurations
         public void Configure(EntityTypeBuilder<Faculty> builder)
         {
             builder.Property(x => x.Name).HasMaxLength(70).IsRequired();
-            builder.Property(x => x.UniversityId).IsRequired();
         }
     }
 }

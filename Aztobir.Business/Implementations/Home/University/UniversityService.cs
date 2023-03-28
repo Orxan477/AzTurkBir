@@ -44,13 +44,15 @@ namespace Aztobir.Business.Implementations.Home.University
             List<UniversityVM> universities = _mapper.Map<List<UniversityVM>>(dbUniversities);
             return universities;
         }
-
+        //duzelecek
         public async Task<List<FacultiesVM>> GetFaculties(int id)
         {
-            var dbFaculties = await _unitOfWork.GetFacultiesRepository.GetAll(x => x.UniversityId == id, x => x.Id);
-            if (dbFaculties is null) throw new Exception("Not Found");
-            List<FacultiesVM> faculties = _mapper.Map<List<FacultiesVM>>(dbFaculties);
-            return faculties;
+            //var dbFaculties = await _unitOfWork.GetFacultiesRepository.GetAll(x => x.Id);
+            //if (dbFaculties is null) throw new Exception("Not Found");
+            //List<FacultiesVM> faculties = _mapper.Map<List<FacultiesVM>>(dbFaculties);
+            //return faculties;
+
+            throw new NotImplementedException();
         }
 
         public async Task<List<UniPhotosVM>> GetPhotos(int id)

@@ -208,7 +208,7 @@ namespace Aztobir.Data.Migrations
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
 
-                    b.Property<int>("UniversityId")
+                    b.Property<int?>("UniversityId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -219,6 +219,38 @@ namespace Aztobir.Data.Migrations
                     b.HasIndex("UniversityId");
 
                     b.ToTable("Faculties");
+                });
+
+            modelBuilder.Entity("Aztobir.Core.Models.FacultyUniversity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FacultyId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("UniversityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FacultyId");
+
+                    b.HasIndex("UniversityId");
+
+                    b.ToTable("FacultyUniversities");
                 });
 
             modelBuilder.Entity("Aztobir.Core.Models.FAQ", b =>
@@ -746,11 +778,26 @@ namespace Aztobir.Data.Migrations
 
             modelBuilder.Entity("Aztobir.Core.Models.Faculty", b =>
                 {
-                    b.HasOne("Aztobir.Core.Models.University", "University")
+                    b.HasOne("Aztobir.Core.Models.University", null)
                         .WithMany("Faculties")
+                        .HasForeignKey("UniversityId");
+                });
+
+            modelBuilder.Entity("Aztobir.Core.Models.FacultyUniversity", b =>
+                {
+                    b.HasOne("Aztobir.Core.Models.Faculty", "Faculty")
+                        .WithMany()
+                        .HasForeignKey("FacultyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Aztobir.Core.Models.University", "University")
+                        .WithMany()
                         .HasForeignKey("UniversityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Faculty");
 
                     b.Navigation("University");
                 });

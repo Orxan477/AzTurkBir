@@ -43,7 +43,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
             }
             else
             {
-                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+                return View(nameof(Index));
             }
         }
         [Route("/admin/city/update/{id}")]
