@@ -24,7 +24,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/faculty/create/")]
         public async Task<IActionResult> Create()
         {
-            await GetSelectedItemAsync();
             return View();
         }
         [Route("/admin/faculty/create/")]
@@ -36,7 +35,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
             if (model != "ok")
             {
                 ModelState.AddModelError(string.Empty, model);
-                await GetSelectedItemAsync();
                 return View(faculty);
             }
             else
@@ -50,7 +48,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
             try
             {
                 var city = await _aztobirService.FacultyService.GetUpdate(id);
-                await GetSelectedItemAsync();
                 return View(city);
             }
             catch (Exception ex)
@@ -70,7 +67,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 if (model != "ok")
                 {
                     ModelState.AddModelError(string.Empty, model);
-                    await GetSelectedItemAsync();
                     return View(faculty);
                 }
                 return RedirectToAction("Index");
@@ -92,10 +88,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
             {
                 return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
             }
-        }
-        private async Task GetSelectedItemAsync()
-        {
-            ViewBag.faculty = new SelectList(await _aztobirService.FacultyService.GetAll(), "Id", "Name");
         }
     }
 }
