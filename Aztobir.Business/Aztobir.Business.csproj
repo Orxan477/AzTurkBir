@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Implementations\Home\Faculty\" />
     <Folder Include="Implementations\Home\Position\" />
   </ItemGroup>
 

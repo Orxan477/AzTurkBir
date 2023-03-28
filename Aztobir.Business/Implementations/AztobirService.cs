@@ -4,6 +4,7 @@ using Aztobir.Business.Implementations.Account;
 using Aztobir.Business.Implementations.Home;
 using Aztobir.Business.Implementations.Home.City;
 using Aztobir.Business.Implementations.Home.Contact;
+using Aztobir.Business.Implementations.Home.Faculty;
 using Aztobir.Business.Implementations.Home.FAQ;
 using Aztobir.Business.Implementations.Home.Feedback;
 using Aztobir.Business.Implementations.Home.News;
@@ -15,6 +16,7 @@ using Aztobir.Business.Interfaces.About;
 using Aztobir.Business.Interfaces.Account;
 using Aztobir.Business.Interfaces.Home.City;
 using Aztobir.Business.Interfaces.Home.Contact;
+using Aztobir.Business.Interfaces.Home.Faculty;
 using Aztobir.Business.Interfaces.Home.FAQ;
 using Aztobir.Business.Interfaces.Home.Feedback;
 using Aztobir.Business.Interfaces.Home.News;
@@ -49,6 +51,7 @@ namespace Aztobir.Business.Implementations
         private SettingService _settingService;
         private UniversityFormService _universityFormService;
         private ContactService _contactService;
+        private FacultyService _facultyService;
         
         public AztobirService(IUnitOfWork unitOfWork,IMapper mapper, SignInManager<AppUser> signInManager, IConfiguration configure)
         {
@@ -84,5 +87,7 @@ namespace Aztobir.Business.Implementations
         public IUniversityFormService UniversityFormService => _universityFormService ?? new UniversityFormService(_unitOfWork, _mapper,_configure);
 
         public IContactService ContactService => _contactService ?? new ContactService(_unitOfWork, _mapper,_configure);
+
+        public IFacultyService FacultyService => _facultyService ?? new FacultyService(_unitOfWork, _mapper);
     }
 }
