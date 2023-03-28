@@ -1,6 +1,8 @@
 ﻿using Aztobir.Business.Interfaces;
+using Aztobir.Business.ViewModels.Home.Faculty;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Aztobir.UI.Areas.admin.Controllers
 {
@@ -15,9 +17,85 @@ namespace Aztobir.UI.Areas.admin.Controllers
             _aztobirService = aztobirService;
         }
         [Route("/admin/faculty/index")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_aztobirService.FacultyService.GetAll());
+            return View(await _aztobirService.FacultyService.GetAll());
+        }
+        [Route("/admin/faculty/create/")]
+        public async Task<IActionResult> Create()
+        {
+            await GetSelectedItemAsync();
+            return View();
+        }
+        [Route("/admin/faculty/create/")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(FacultyCreateVM faculty)
+        {
+            var model = await _aztobirService.FacultyService.Create(faculty);
+            if (model != "ok")
+            {
+                ModelState.AddModelError(string.Empty, model);
+                await GetSelectedItemAsync();
+                return View(faculty);
+            }
+            else
+            {
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+            }
+        }
+        [Route("/admin/faculty/update/{id}")]
+        public async Task<IActionResult> Update(int id)
+        {
+            try
+            {
+                var city = await _aztobirService.FacultyService.GetUpdate(id);
+                await GetSelectedItemAsync();
+                return View(city);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+            }
+        }
+        [Route("/admin/faculty/update/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id, FacultyUpdateVM faculty)
+        {
+            //if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View(city);
+            var model = await _aztobirService.FacultyService.Update(id, faculty);
+            try
+            {
+                if (model != "ok")
+                {
+                    ModelState.AddModelError(string.Empty, model);
+                    await GetSelectedItemAsync();
+                    return View(faculty);
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+            }
+        }
+        [Route("/admin/faculty/delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _aztobirService.FacultyService.Delete(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("CustomNotFound", "Error", new { area = "null" });
+            }
+        }
+        private async Task GetSelectedItemAsync()
+        {
+            ViewBag.faculty = new SelectList(await _aztobirService.FacultyService.GetAll(), "Id", "Name");
         }
     }
 }

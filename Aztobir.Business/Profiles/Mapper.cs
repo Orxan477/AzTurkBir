@@ -2,6 +2,7 @@
 using Aztobir.Business.ViewModels.About;
 using Aztobir.Business.ViewModels.Home.City;
 using Aztobir.Business.ViewModels.Home.Contact;
+using Aztobir.Business.ViewModels.Home.Faculty;
 using Aztobir.Business.ViewModels.Home.FAQ;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.News;
@@ -38,6 +39,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<Setting, SettingListVM>();
             CreateMap<Goal, GoalUpdateVM>();
             CreateMap<News, NewsVM>();
+            CreateMap<Faculty, FacultyVM>();
             CreateMap<News, UpdateNewsVM>();
             CreateMap<CreateContactVM, Contact>();
             CreateMap<Contact, ContactVM>();
