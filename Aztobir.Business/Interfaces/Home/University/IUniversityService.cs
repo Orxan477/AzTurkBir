@@ -1,4 +1,5 @@
 ﻿using Aztobir.Business.ViewModels;
+using Aztobir.Business.ViewModels.Home.Faculty;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.University;
 
@@ -11,6 +12,8 @@ namespace Aztobir.Business.Interfaces.Home.University
         Task<List<FacultiesVM>> GetFaculties(int id);
         Task<List<UniPhotosVM>> GetPhotos(int id);
         Task<List<FeedbackVM>> GetFeedbacks(int id);
+        Task<List<FacultyVM>> GetFacultyNames(int id);
+        Task<List<FacultyUniversityVM>> GetFacultyCount(int id);
         Task<string> Create(CreateUniversityVM uni,string env,int size);
         Task<string> Update(int id, UpdateUniveresityVM uni,string env,int size);
         Task<Paginate<UniversityVM>> GetPaginete(int page, int take);

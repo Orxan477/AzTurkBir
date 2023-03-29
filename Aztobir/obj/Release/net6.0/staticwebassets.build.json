@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9cS6Tsdy6d9gZdBZaFNHR3Sy44QB7hcAjlLhqMp5tTE=",
+  "Hash": "RKbgMEdoNBEMlz+wZ+7IVc0n6wBBcLLxv/KvTAYvxBE=",
   "Source": "Aztobir.UI",
   "BasePath": "_content/Aztobir.UI",
   "Mode": "Default",
@@ -30156,6 +30156,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\437b8a12-da23-4b33-ab43-96c8026b58f2_azturkbir_vertical.png"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\4694764e-48c8-44d6-a62d-2362c469d61d_!_1_~1.jpeg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/4694764e-48c8-44d6-a62d-2362c469d61d_!_1_~1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\4694764e-48c8-44d6-a62d-2362c469d61d_!_1_~1.jpeg"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\483beff3-cc19-4d2d-9a68-c2aa71cd66a8_!_1_~1-моя_благодарность!.gif.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/483beff3-cc19-4d2d-9a68-c2aa71cd66a8_!_1_~1-моя_благодарность!.gif.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\483beff3-cc19-4d2d-9a68-c2aa71cd66a8_!_1_~1-моя_благодарность!.gif.jpg"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\5.jpg",

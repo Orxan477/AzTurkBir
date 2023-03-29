@@ -41,7 +41,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 UniversityViewVM universityView = new UniversityViewVM()
                 {
                     University = await _aztobirService.UniversityService.Get(id),
-                    Faculties = await _aztobirService.UniversityService.GetFaculties(id),
+                    //Faculties = await _aztobirService.UniversityService.GetFaculties(id),
                 };
                 return View(universityView);
             }
@@ -62,7 +62,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateUniversityVM uni)
         {
-            return Json(uni);
             if (!ModelState.IsValid)
             {
                 await GetSelectedItemAsync();

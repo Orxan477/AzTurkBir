@@ -2,6 +2,7 @@
 using Aztobir.Business.Interfaces.Home.University;
 using Aztobir.Business.Utilities;
 using Aztobir.Business.ViewModels;
+using Aztobir.Business.ViewModels.Home.Faculty;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.İnterfaces;
@@ -37,6 +38,25 @@ namespace Aztobir.Business.Implementations.Home.University
             if (dbUniversity is null) throw new Exception("Not Found");
             UniversityVM university = _mapper.Map<UniversityVM>(dbUniversity);
             return university;
+        }
+        public async Task<List<FacultyUniversityVM>> GetFacultyCount(int id)
+        {
+            var dbUniversity = await _unitOfWork.FacultyUniversitiesGetRepository.GetFacultiesUniversity(x => !x.IsDeleted && x.UniversityId == id);
+            if (dbUniversity is null) throw new Exception("Not Found");
+            List<FacultyUniversityVM> university = _mapper.Map<List<FacultyUniversityVM>>(dbUniversity);
+            return university;
+        }
+        public async Task<List<FacultyVM>> GetFacultyNames(int id) 
+        {
+            List<FacultyVM> names=new List<FacultyVM>();
+            var model = await GetFacultyCount(id);
+            foreach (var item in model)
+            {
+                var modelFaculty=await _unitOfWork.FacultyGetRepository.Get(x => !x.IsDeleted && x.Id == item.FacultyId);
+                FacultyVM modelFacultyVM = _mapper.Map<FacultyVM>(modelFaculty);
+                names.Add(modelFacultyVM);
+            }
+            return names;
         }
 
         public async Task<List<UniversityVM>> GetAll()
@@ -82,15 +102,16 @@ namespace Aztobir.Business.Implementations.Home.University
             newUni.CreatedAt = DateTime.Now;
             await _unitOfWork.CRUDUniversityRepository.CreateAsync(newUni);
             await _unitOfWork.SaveChangesAsync();
-            var latestUni = _unitOfWork.UniversityGetRepository.GetLatestFirstOrDefault(x => !x.IsDeleted, x => x.Id);
+            var latestUni = await _unitOfWork.UniversityGetRepository.GetLatestFirstOrDefault(x => !x.IsDeleted, x => x.Id);
             foreach (var facultyId in uni.FacultiesId)
             {
                 FacultyUniversity faculty = new FacultyUniversity()
                 {
                     FacultyId = facultyId,
                     UniversityId = latestUni.Id,
+                    CreatedAt= DateTime.Now,
                 };
-
+                await _unitOfWork.FacultyUniversitiesCRUDRepository.CreateAsync(faculty);
             }
             await _unitOfWork.SaveChangesAsync();
             return "ok";

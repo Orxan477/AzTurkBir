@@ -41,6 +41,7 @@ namespace Aztobir.Business.Profiles
             CreateMap<News, NewsVM>();
             CreateMap<Faculty, FacultyVM>();
             CreateMap<Faculty, FacultyUpdateVM>();
+            CreateMap<FacultyUniversity, FacultyUniversityVM>();
             CreateMap<FacultyCreateVM, Faculty>();
             CreateMap<News, UpdateNewsVM>();
             CreateMap<CreateContactVM, Contact>();

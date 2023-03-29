@@ -50,6 +50,7 @@ namespace Aztobir.Core.İnterfaces
         public IFacultyCRUDRepository FacultyCRUDRepository { get;  }
         public IFacultyGetRepository FacultyGetRepository { get;  }
         public IFacultyUniversityCRUDRepository FacultyUniversitiesCRUDRepository { get;  }
+        public IFacultyUniversityGetRepository FacultyUniversitiesGetRepository { get;  }
         Task SaveChangesAsync();
     }
 }
