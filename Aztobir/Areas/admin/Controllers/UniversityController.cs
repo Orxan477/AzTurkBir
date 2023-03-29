@@ -23,10 +23,6 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [Route("/admin/university/index")]
         public async Task<IActionResult> Index(int page=1)
         {
-            //UniversityViewVM universityView = new UniversityViewVM()
-            //{
-            //    Universities = await _aztobirService.UniversityService.GetAll(),
-            //};
             int takeCount = int.Parse("8");
             //int count = int.Parse(GetSetting("TakeCount"));
             ViewBag.TakeCount = takeCount;
@@ -41,7 +37,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
                 UniversityViewVM universityView = new UniversityViewVM()
                 {
                     University = await _aztobirService.UniversityService.Get(id),
-                    //Faculties = await _aztobirService.UniversityService.GetFaculties(id),
+                    Faculties = await _aztobirService.UniversityService.GetFacultyNames(id),
                 };
                 return View(universityView);
             }
@@ -96,6 +92,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int id, UpdateUniveresityVM uni)
         {
+            //return Json(uni.FacultiesId);
             try
             {
                 var model = await _aztobirService.UniversityService.Update(id, uni, _env.WebRootPath,PhotoSize());

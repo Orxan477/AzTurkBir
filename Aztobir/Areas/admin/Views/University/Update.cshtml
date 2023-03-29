@@ -39,6 +39,11 @@
                         <span asp-validation-for="Content" class="text-danger"></span>
                     </div>
                     <div class="form-group">
+                        <select multiple asp-for="FacultiesId" asp-items="@ViewBag.faculty" class="form-control">
+                                <span class="text-danger" asp-validation-for="FacultiesId"></span>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label asp-for="StudentCount">Telebe sayı</label>
                         <input asp-for="StudentCount" class="form-control tinymce">
                         <span asp-validation-for="StudentCount" class="text-danger"></span>

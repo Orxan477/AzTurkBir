@@ -166,6 +166,26 @@ namespace Aztobir.Business.Implementations.Home.University
                     dbUni.Image = image;
                 }
             }
+            if (uni.FacultiesId != null)
+            {
+                var model = await _unitOfWork.FacultyUniversitiesGetRepository.GetFacultiesUniversity(x => x.UniversityId == dbUni.Id&& !x.IsDeleted);
+                foreach (var item in model)
+                {
+                    item.IsDeleted = true;
+                    _unitOfWork.FacultyUniversitiesCRUDRepository.DeleteAsync(item);
+                }
+
+                foreach (var facultyId in uni.FacultiesId)
+                {
+                    FacultyUniversity faculty = new FacultyUniversity()
+                    {
+                        FacultyId = facultyId,
+                        UniversityId = dbUni.Id,
+                        CreatedAt = DateTime.Now,
+                    };
+                    await _unitOfWork.FacultyUniversitiesCRUDRepository.CreateAsync(faculty);
+                }
+            }
             dbUni.UpdatedAt = DateTime.Now;
             dbUni.CityId = uni.CityId;
             _unitOfWork.CRUDUniversityRepository.UpdateAsync(dbUni);

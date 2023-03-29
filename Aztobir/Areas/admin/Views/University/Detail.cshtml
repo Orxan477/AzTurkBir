@@ -39,9 +39,14 @@
                             <td>@Model.University.StudentCount</td>
                         </tr>
                         <tr>
-                            <td>Fakulte sayı</td>
-                            <td>@Model.University.FacultyCount</td>
-                        </tr>
+                            <td>Fakulteler</td>
+                        
+                            @foreach (var item in Model.Faculties)
+                            {
+                                <th class="d-block">* @item.Name</th>
+
+                            }
+                            </tr>
                         <tr>
                             <td>Statü</td>
                             <td>@(@Model.University.Status==true ? "var" : "yoxdur")</td>
@@ -53,9 +58,9 @@
                         <tr>
                             <td>Fotoğraflar</td>
                             <td>
-                                 <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="create" class="btn btn-primary" asp-route-id="@Model.University.Id"><i class="mdi mdi-library-plus"></i></a>
-                                 <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="detail" class="btn btn-success" asp-route-id="@Model.University.Id"><i class="mdi mdi-folder-image"></i></a>
-                             </td>
+                                <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="create" class="btn btn-primary" asp-route-id="@Model.University.Id"><i class="mdi mdi-library-plus"></i></a>
+                                <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="detail" class="btn btn-success" asp-route-id="@Model.University.Id"><i class="mdi mdi-folder-image"></i></a>
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -65,7 +70,7 @@
                                 <a style="padding:5px;" asp-area="admin" asp-controller="university" asp-action="Update" class="btn btn-warning" asp-route-id="@Model.University.Id"><i class="mdi mdi-table-edit"></i></a>
                                 <a style="padding:5px;" asp-area="admin" asp-controller="university" asp-action="Delete" class="btn btn-danger delete-btn" asp-route-id="@Model.University.Id"><i class="mdi mdi-comment-remove-outline"></i></a>
                                 @*<form method="post" asp-action="Delete" asp-route-id="@Model.University.Id" class="d-inline">
-                                       <button type="submit" style="padding:5px;"  class="btn btn-danger" ><i class="mdi mdi-comment-remove-outline"></i></button>
+                                <button type="submit" style="padding:5px;"  class="btn btn-danger" ><i class="mdi mdi-comment-remove-outline"></i></button>
                                 </form> *@
                             </td>
                         </tr>
