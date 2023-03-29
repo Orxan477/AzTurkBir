@@ -11,6 +11,7 @@ namespace Aztobir.Core.İnterfaces
         Task<TEntity> Get(Expression<Func<TEntity, bool>> exp=null , params string[] includes);
         Task<List<TEntity>> GetTake(Expression<Func<TEntity, bool>> exp, int count, params string[] includes);
 
+        Task<TEntity> GetLatestFirstOrDefault(Expression<Func<TEntity, bool>> exp, Expression<Func<TEntity, int>> descending,  params string[] includes);
     }
 }
 

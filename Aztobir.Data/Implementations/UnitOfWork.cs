@@ -63,6 +63,7 @@ namespace Aztobir.Data.Implementations
         private ContactGetRepository _contactGetRepository;
         private FacultyGetRepository _facultyGetRepository;
         private FacultyCRUDRepository _facultyCRUDRepository;
+        private FacultyUniversityCRUDRepository _facultyUniversityCRUDRepository;
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -123,6 +124,8 @@ namespace Aztobir.Data.Implementations
         public IFacultyCRUDRepository FacultyCRUDRepository => _facultyCRUDRepository ?? new FacultyCRUDRepository(_context);
 
         public IFacultyGetRepository FacultyGetRepository => _facultyGetRepository ?? new FacultyGetRepository(_context);
+
+        public IFacultyUniversityCRUDRepository FacultyUniversitiesCRUDRepository => _facultyUniversityCRUDRepository ?? new FacultyUniversityCRUDRepository(_context);
 
         public async Task SaveChangesAsync()
         {

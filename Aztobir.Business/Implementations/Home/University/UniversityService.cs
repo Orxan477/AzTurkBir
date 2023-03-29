@@ -5,6 +5,7 @@ using Aztobir.Business.ViewModels;
 using Aztobir.Business.ViewModels.Home.Feedback;
 using Aztobir.Business.ViewModels.Home.University;
 using Aztobir.Core.İnterfaces;
+using Aztobir.Core.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace Aztobir.Business.Implementations.Home.University
@@ -80,6 +81,17 @@ namespace Aztobir.Business.Implementations.Home.University
             newUni.Image = image;
             newUni.CreatedAt = DateTime.Now;
             await _unitOfWork.CRUDUniversityRepository.CreateAsync(newUni);
+            await _unitOfWork.SaveChangesAsync();
+            var latestUni = _unitOfWork.UniversityGetRepository.GetLatestFirstOrDefault(x => !x.IsDeleted, x => x.Id);
+            foreach (var facultyId in uni.FacultiesId)
+            {
+                FacultyUniversity faculty = new FacultyUniversity()
+                {
+                    FacultyId = facultyId,
+                    UniversityId = latestUni.Id,
+                };
+
+            }
             await _unitOfWork.SaveChangesAsync();
             return "ok";
         }

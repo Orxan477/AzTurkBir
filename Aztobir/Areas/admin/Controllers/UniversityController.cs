@@ -62,6 +62,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateUniversityVM uni)
         {
+            return Json(uni);
             if (!ModelState.IsValid)
             {
                 await GetSelectedItemAsync();
@@ -129,6 +130,7 @@ namespace Aztobir.UI.Areas.admin.Controllers
         private async Task GetSelectedItemAsync()
         {
             ViewBag.city = new SelectList(await _aztobirService.CityService.GetAll(), "Id", "Name");
+            ViewBag.faculty = new SelectList(await _aztobirService.FacultyService.GetAll(), "Id", "Name");
         }
         private int PhotoSize()
         {

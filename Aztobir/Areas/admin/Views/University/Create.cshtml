@@ -39,15 +39,8 @@
                         <span asp-validation-for="Content" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <select multiple name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
+                        <select multiple asp-for="FacultiesId" asp-items="@ViewBag.faculty" class="form-control">
+                                <span class="text-danger" asp-validation-for="FacultiesId"></span>
                         </select>
                     </div>
                     <div class="form-group">

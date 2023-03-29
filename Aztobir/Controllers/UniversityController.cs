@@ -58,7 +58,7 @@ namespace Aztobir.UI.Controllers
                     Feedbacks = await _aztobirService.UniversityService.GetFeedbacks(id),
                     UniversityId = id,
                 };
-                return View(universityView);
+                return Json(universityView);
             }
             catch (Exception ex)
             {

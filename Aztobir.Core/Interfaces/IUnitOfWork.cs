@@ -49,6 +49,7 @@ namespace Aztobir.Core.İnterfaces
         public IContactCRUDRepository ContactCRUDRepositorys { get;  }
         public IFacultyCRUDRepository FacultyCRUDRepository { get;  }
         public IFacultyGetRepository FacultyGetRepository { get;  }
+        public IFacultyUniversityCRUDRepository FacultyUniversitiesCRUDRepository { get;  }
         Task SaveChangesAsync();
     }
 }

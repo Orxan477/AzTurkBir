@@ -61,8 +61,14 @@ namespace Aztobir.Data.Implementations
         {
             var query = GetQuery(includes);
             return exp is null
-                ? await query.ToListAsync()
+                ? await query.OrderByDescending(descending).ToListAsync()
                 : await query.Where(exp).OrderByDescending(descending).Skip((page - 1) * count).Take(count).ToListAsync();
+        }
+
+        public async Task<TEntity> GetLatestFirstOrDefault(Expression<Func<TEntity, bool>> exp, Expression<Func<TEntity, int>> descending, params string[] includes)
+        {
+            var query = GetQuery(includes);
+            return await query.Where(exp).OrderByDescending(descending).FirstOrDefaultAsync();
         }
     }
     }
