@@ -29,11 +29,11 @@
 	</div>
 	<!-- breadcrumb-banner-area-end -->
 	<!-- our-blog-area-start -->
-	<div class="our-blog-area pb-70 pt-100">
+	<div class="our-blog-area pb-70 pt-80">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3> Haberler</h3>
-				<p>Latest news & event of our Student</p>
+				<h3>@ViewBag.News_Head</h3>
+				<p>@ViewBag.News_Content</p>
 			</div>
 			<div class="row">
 				@foreach (var news in Model.Items) //count, obsi viewModele salmaq

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RKbgMEdoNBEMlz+wZ+7IVc0n6wBBcLLxv/KvTAYvxBE=",
+  "Hash": "OinZXcA6gQ3WxkhlujX31RtnZs8SoGPjIlZnjrHMTN8=",
   "Source": "Aztobir.UI",
   "BasePath": "_content/Aztobir.UI",
   "Mode": "Default",
@@ -30277,6 +30277,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\6.jpg"
     },
     {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\634ea507-4c23-4f35-a1ac-181f35ad0a10_0_a20d_2144824f_XL.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/634ea507-4c23-4f35-a1ac-181f35ad0a10_0_a20d_2144824f_XL.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\634ea507-4c23-4f35-a1ac-181f35ad0a10_0_a20d_2144824f_XL.jpg"
+    },
+    {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\69fa013c-ab66-4a58-a4ed-59b7269d5648_!_1_~1-моя_благодарность!.gif.jpg",
       "SourceId": "Aztobir.UI",
       "SourceType": "Discovered",
@@ -30564,6 +30581,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\b701d437-af07-4dc3-bea0-bedccf2bdc77_!_1_~1.jpeg"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\b76bc5dd-7916-4cc3-80cf-7273376dd948_bf1084e_tying_the_knot.jpg",
+      "SourceId": "Aztobir.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\",
+      "BasePath": "_content/Aztobir.UI",
+      "RelativePath": "assets/img/b76bc5dd-7916-4cc3-80cf-7273376dd948_bf1084e_tying_the_knot.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\b76bc5dd-7916-4cc3-80cf-7273376dd948_bf1084e_tying_the_knot.jpg"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\Buta Grup\\Aztobir\\Aztobir\\wwwroot\\assets\\img\\bdu.jpg",

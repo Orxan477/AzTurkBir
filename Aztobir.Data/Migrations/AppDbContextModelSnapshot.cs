@@ -542,6 +542,11 @@ namespace Aztobir.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<string>("EducationPlan")
+                        .IsRequired()
+                        .HasMaxLength(3500)
+                        .HasColumnType("nvarchar(3500)");
+
                     b.Property<int>("FacultyCount")
                         .HasColumnType("int");
 

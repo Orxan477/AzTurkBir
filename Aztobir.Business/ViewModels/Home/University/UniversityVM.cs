@@ -11,6 +11,7 @@ namespace Aztobir.Business.ViewModels.Home.University
         public string EducationLanguage { get; set; }
         public int StudentCount { get; set; }
         public int FacultyCount { get; set; }
+        public string EducationPlan { get; set; }
         public string Content { get; set; }
         public string Image { get; set; }
         public List<int> FacultiesId { get; set; }

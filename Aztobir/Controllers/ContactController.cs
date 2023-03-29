@@ -19,6 +19,8 @@ namespace Aztobir.UI.Controllers
             ViewBag.Adress = _aztobirService.SettingSerivice.GetSetting("Adress");
             ViewBag.Email1 = _aztobirService.SettingSerivice.GetSetting("Email1");
             ViewBag.Email2 = _aztobirService.SettingSerivice.GetSetting("Email2");
+            ViewBag.Contact_Head = _aztobirService.SettingSerivice.GetSetting("Contact-Head");
+            ViewBag.Contact_Content = _aztobirService.SettingSerivice.GetSetting("Contact-Content");
             return View();
         }
         [HttpPost]

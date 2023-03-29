@@ -56,6 +56,10 @@
                             <td>@Html.Raw(Model.University.Content)</td>
                         </tr>
                         <tr>
+                            <td>Tedris planı</td>
+                            <td>@Html.Raw(Model.University.EducationPlan)</td>
+                        </tr>
+                        <tr>
                             <td>Fotoğraflar</td>
                             <td>
                                 <a style="padding:5px;" asp-area="admin" asp-controller="universityimages" asp-action="create" class="btn btn-primary" asp-route-id="@Model.University.Id"><i class="mdi mdi-library-plus"></i></a>

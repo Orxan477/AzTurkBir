@@ -21,6 +21,12 @@ namespace Aztobir.Controllers
                 News = await _aztobirService.NewsService.GetTake(3),
                 Feedbacks = await _aztobirService.FeedbackService.GetAll(),
             };
+            ViewBag.Universitet_Head = _aztobirService.SettingSerivice.GetSetting("Universitet-Head");
+            ViewBag.Universitet_Content = _aztobirService.SettingSerivice.GetSetting("Universitet-Content");
+            ViewBag.Feedback_Content= _aztobirService.SettingSerivice.GetSetting("Feedback-Content");
+            ViewBag.Feedback_Head = _aztobirService.SettingSerivice.GetSetting("Feedback-Head");
+            ViewBag.Faq_Head = _aztobirService.SettingSerivice.GetSetting("Faq-Head");
+            ViewBag.Faq_Content = _aztobirService.SettingSerivice.GetSetting("Faq-Content");
             return View(home);
         }
     }

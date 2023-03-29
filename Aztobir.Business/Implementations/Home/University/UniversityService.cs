@@ -135,6 +135,13 @@ namespace Aztobir.Business.Implementations.Home.University
                     dbUni.Content = uni.Content;
                 }
             }
+            if (uni.EducationPlan != null)
+            {
+                if (dbUni.EducationPlan.ToLower().Trim() != uni.EducationPlan.ToLower().Trim())
+                {
+                    dbUni.EducationPlan = uni.EducationPlan;
+                }
+            }
             if (dbUni.StudentCount != uni.StudentCount)
             {
                 dbUni.StudentCount = uni.StudentCount;

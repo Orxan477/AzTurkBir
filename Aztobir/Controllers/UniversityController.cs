@@ -22,6 +22,8 @@ namespace Aztobir.UI.Controllers
             //int count = int.Parse(GetSetting("TakeCount"));
             ViewBag.TakeCount = takeCount;
             var model = await _aztobirService.UniversityService.GetPaginete(page, takeCount);
+            ViewBag.Universitet_Head = _aztobirService.SettingSerivice.GetSetting("Universitet-Head");
+            ViewBag.Universitet_Content = _aztobirService.SettingSerivice.GetSetting("Universitet-Content");
             return View(model);
         }
         public async Task<IActionResult> Detail(int id)
@@ -33,10 +35,9 @@ namespace Aztobir.UI.Controllers
                     University = await _aztobirService.UniversityService.Get(id),
                     Faculties = await _aztobirService.UniversityService.GetFacultyNames(id),
                     Photos = await _aztobirService.UniversityService.GetPhotos(id),
-                    Feedbacks = await _aztobirService.UniversityService.GetFeedbacks(id),
                     UniversityId = id,
                 };
-                return Json(universityView);
+                return View(universityView);
             }
             catch (Exception ex)
             {

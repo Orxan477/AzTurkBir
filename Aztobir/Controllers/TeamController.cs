@@ -17,6 +17,8 @@ namespace Aztobir.UI.Controllers
             {
                 Teams = await _aztobirService.TeamService.GetAll(),
             };
+            ViewBag.Team_Head = _aztobirService.SettingSerivice.GetSetting("Team-Head");
+            ViewBag.Team_Content = _aztobirService.SettingSerivice.GetSetting("Team-Content");
             return View(team);
         }
         public async Task<IActionResult> Detail(int id)

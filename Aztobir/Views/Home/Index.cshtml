@@ -32,8 +32,8 @@
 <div class="courses-area pb-30 w-75 mx-auto">
     <div class="container">
         <div class="section-title text-center mt-5">
-            <h3>UNİVERSİTELER</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h3>@ViewBag.Universitet_Head</h3>
+            <p>@ViewBag.Universitet_Content</p>
         </div>
         <div class="row">
             @*@await Component.InvokeAsync("University")*@
@@ -75,9 +75,9 @@
 
 <div class="container-fluid w-75" style="margin-bottom:60px;">
     <div class="section-title text-center">
-        <h3>Feedback</h3>
+        <h3>@ViewBag.Feedback_Head</h3>
         <p>
-            Stay up to date with all our latest news and launches. Only the best quality makes it onto our blog!
+            @ViewBag.Feedback_Content
         </p>
     </div>
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
@@ -120,9 +120,9 @@
 <!--FAQ Start-->
 <div class="container">
     <div class="section-title text-center">
-        <h3>FAQ</h3>
+        <h3>@ViewBag.Faq_Head</h3>
         <p>
-            Stay up to date with all our latest news and launches. Only the best quality makes it onto our blog!
+            @ViewBag.Faq_Content
         </p>
     </div>
     <div class="row mb-5">

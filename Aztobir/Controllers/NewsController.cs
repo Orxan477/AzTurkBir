@@ -17,6 +17,8 @@ namespace Aztobir.UI.Controllers
             //int count = int.Parse(GetSetting("TakeCount"));
             ViewBag.TakeCount = takeCount;
             var model = await _aztobirService.NewsService.GetPaginete(page, takeCount);
+            ViewBag.News_Head = _aztobirService.SettingSerivice.GetSetting("News-Head");
+            ViewBag.News_Content = _aztobirService.SettingSerivice.GetSetting("News-Content");
             return View(model);
         }
         public async Task<IActionResult> Detail(int id)

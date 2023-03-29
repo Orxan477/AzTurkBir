@@ -12,6 +12,7 @@ namespace Aztobir.Business.ViewModels.Home.University
         public List<int> FacultiesId { get; set; }
         public int FacultyCount { get; set; }
         public string Content { get; set; }
+        public string EducationPlan { get; set; }
         public bool Status { get; set; }
     }
 }

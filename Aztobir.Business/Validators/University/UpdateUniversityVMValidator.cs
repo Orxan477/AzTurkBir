@@ -10,6 +10,8 @@ namespace Aztobir.Business.Validators.University
             RuleFor(x => x.Name).MaximumLength(50);
             RuleFor(x => x.Content).MaximumLength(3000);
             RuleFor(x => x.EducationLanguage).MaximumLength(10);
+            RuleFor(x => x.EducationPlan).MaximumLength(3000);
+
         }
     }
 }

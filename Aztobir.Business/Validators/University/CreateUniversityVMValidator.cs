@@ -14,6 +14,7 @@ namespace Aztobir.Business.Validators.University
             RuleFor(x => x.EducationLanguage).NotEmpty().NotNull().MaximumLength(10);
             RuleFor(x => x.StudentCount).NotEmpty().NotNull();
             RuleFor(x => x.FacultyCount).NotEmpty().NotNull();
+            RuleFor(x => x.EducationPlan).NotEmpty().NotNull().MaximumLength(3000);
             RuleFor(x => x.FacultiesId).NotEmpty().NotNull();
         }
     }
