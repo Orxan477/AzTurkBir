@@ -16,6 +16,7 @@ namespace Aztobir.Data.Configurations
             builder.Property(x => x.StudentCount).IsRequired();
             builder.Property(x => x.EducationPlan).HasMaxLength(3500).IsRequired();
             builder.Property(x => x.Image).IsRequired();
+            builder.Property(x => x.ImageHead).IsRequired();
         }
     }
 }

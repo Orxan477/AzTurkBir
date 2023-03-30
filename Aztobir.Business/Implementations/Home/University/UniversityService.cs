@@ -98,7 +98,13 @@ namespace Aztobir.Business.Implementations.Home.University
                 return _errorMessage;
             }
             string image = await Extension.SaveFileAsync(uni.Photo, env, "assets/img");
+            if (!CheckImageValid(uni.PhotoHead, "image/", size))
+            {
+                return _errorMessage;
+            }
+            string imageHead = await Extension.SaveFileAsync(uni.PhotoHead, env, "assets/img");
             newUni.Image = image;
+            newUni.ImageHead = imageHead;
             newUni.CreatedAt = DateTime.Now;
             await _unitOfWork.CRUDUniversityRepository.CreateAsync(newUni);
             await _unitOfWork.SaveChangesAsync();
@@ -171,6 +177,18 @@ namespace Aztobir.Business.Implementations.Home.University
                 {
                     string image = await Extension.SaveFileAsync(uni.Photo, env, "assets/img");
                     dbUni.Image = image;
+                }
+            }
+            if (uni.PhotoHead != null)
+            {
+                if (!CheckImageValid(uni.PhotoHead, "image/", size))
+                {
+                    return _errorMessage;
+                }
+                else
+                {
+                    string image = await Extension.SaveFileAsync(uni.PhotoHead, env, "assets/img");
+                    dbUni.ImageHead = image;
                 }
             }
             if (uni.FacultiesId != null)

@@ -14,12 +14,24 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(url).then(data => {
-                    if (data.ok) {
-                            window.location.reload(true);
-                    }
-                    else {
-                        alert("warning");
-                    }
+                    //if (data.ok) {
+                    //        window.location.reload(true);
+                    //}
+                    
+
+                        if (data.ok) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success')
+                        }
+                        else {
+                            alert("warning");
+                        }
+
+                
+                    setTimeout(function () { window.location.reload(true);  }, 900);
+                    //
                 })
 
             }

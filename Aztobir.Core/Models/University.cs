@@ -10,6 +10,7 @@
         public int StudentCount { get; set; }
         public int FacultyCount { get; set; }
         public string Content { get; set; }
+        public string ImageHead { get; set; }
         public string EducationPlan { get; set; }
         public bool Status { get; set; }
         public IList<Faculty> Faculties { get; set; }

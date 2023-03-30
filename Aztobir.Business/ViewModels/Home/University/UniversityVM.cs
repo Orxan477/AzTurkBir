@@ -12,10 +12,13 @@ namespace Aztobir.Business.ViewModels.Home.University
         public int StudentCount { get; set; }
         public int FacultyCount { get; set; }
         public string EducationPlan { get; set; }
+        public string ImageHead { get; set; }
+
         public string Content { get; set; }
         public string Image { get; set; }
         public List<int> FacultiesId { get; set; }
         public bool Status { get; set; }
         public IFormFile Photo { get; set; }
+        public IFormFile PhotoHead { get; set; }
     }
 }

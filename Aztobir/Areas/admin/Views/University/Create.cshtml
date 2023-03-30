@@ -22,9 +22,14 @@
                     </div>
                     <div class="form-group col-lg-12">
                         <div class="form-group">
-                            <label asp-for="Photo"></label>
+                            <label asp-for="Photo">Logo</label>
                             <input asp-for="Photo" class="form-control tinymce">
                             <span asp-validation-for="Photo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhotoHead">Başlıq şəkil</label>
+                            <input asp-for="PhotoHead" class="form-control tinymce">
+                            <span asp-validation-for="PhotoHead" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="CityId">City</label>
