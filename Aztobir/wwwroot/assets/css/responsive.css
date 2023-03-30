@@ -7,6 +7,9 @@
     .img-logo-header {
         width: 25%;
     }
+    .footer-logo-az{
+        width:38%;
+    }
 }
 
 
@@ -15,6 +18,9 @@
 
     .img-logo-header {
         width: 26%;
+    }
+    .footer-logo-az {
+        width: 38%;
     }
 }
 
@@ -36,6 +42,9 @@
 
     .img-logo-header {
         width: 25%;
+    }
+    .footer-logo-az {
+        width: 49%;
     }
 }
 
@@ -80,6 +89,9 @@
     .img-logo-header {
         width: 26%;
     }
+    .footer-logo-az {
+        width: 28%;
+    }
 }
 
 /* Large Mobile :480px. */
@@ -91,9 +103,15 @@
     .img-logo-header {
         width: 48%;
     }
+    .footer-logo-az {
+        width: 28%;
+    }
 }
 @media (max-width: 480px) {
     .img-logo-header {
         width: 32%;
+    }
+    .footer-logo-az {
+        width: 28%;
     }
 }
